@@ -79,7 +79,7 @@ A weather application that fetches real-time data from an API and displays it.
 ## 🔗 Resources
 
 - **YouTube Playlist**: [Learn JavaScript](https://www.youtube.com/playlist?list=PLwgFb6VsUj_l3XGLgZTf5lXq9rPAQ9COu)
-- **MDN Web Docs**: [JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+- **Web Docs**: [JavaScript Guide]((https://javascript.info/))
 
 -----------------------------******************-----------------------------------
 Happy coding! 🎉
