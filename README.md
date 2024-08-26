@@ -81,12 +81,7 @@ A weather application that fetches real-time data from an API and displays it.
 - **YouTube Playlist**: [Learn JavaScript](https://www.youtube.com/playlist?list=PLwgFb6VsUj_l3XGLgZTf5lXq9rPAQ9COu)
 - **MDN Web Docs**: [JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
 
-## 🤝 Contributions
-
-As this is a personal learning project, contributions are not expected. However, if you have suggestions or tips, feel free to open an issue or drop me a message!
-
----
-
+-----------------------------******************-----------------------------------
 Happy coding! 🎉
 
 ---
