@@ -42,7 +42,7 @@
 //   i++;
 // }
 
-// sum of 10 number from 0 to 10
+// sum of first ten natural numbers using for loop
 //1+2+3+4+5+6+7+8+9+10
 
 let num = 10;
