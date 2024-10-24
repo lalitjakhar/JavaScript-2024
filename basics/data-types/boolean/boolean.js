@@ -11,6 +11,7 @@ let num2 = 7;
 // double equal to is check only value not data types
 // console.log(num1 == num2);
 
+
 // triple equal to is check both value and data types
 // let num1 = 7;
 // let num2 = "kjsdhdskbhdcbhd";
