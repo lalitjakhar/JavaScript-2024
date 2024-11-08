@@ -82,6 +82,7 @@ A weather application that fetches real-time data from an API and displays it.
 - **Web Docs**: [JavaScript Guide](https://javascript.info/)
 
 -----------------------------******************-----------------------------------
-Happy coding! 🎉
 
----
+
+
+# Happy coding! 🎉
