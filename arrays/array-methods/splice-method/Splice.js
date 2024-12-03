@@ -1,6 +1,10 @@
 // Splice Method
 
 // start , delete , insert
+// start , delete , insert
+// start , delete , insert
+// start , delete , insert
+
 
 const myArray = ["item1", "item2", "item3", "item4"];
 
