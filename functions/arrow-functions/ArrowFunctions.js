@@ -1,7 +1,7 @@
 // Arrow Function
 
 const singHappyBirthday = () => {
-  console.log("Happy Birthday To You.......😍");
+  console.log("Happy Birthday To You.......Happy Birthday To You.......Happy Birthday To You.......😍");
 };
 singHappyBirthday();
 
