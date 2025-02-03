@@ -16,6 +16,15 @@ const value2 = "valuekey2";
 //   [key2]: value2,
 // };
 
+// const obj = {
+//   [key1]: value1,
+//   [key2]: value2,
+// };
+// const obj = {
+//   [key1]: value1,
+//   [key2]: value2,
+// };
+
 const obj = {};
 
 obj[key1] = value1;
