@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript Learning Journey — Easy Guide</title>
+    <title>JavaScript Learning Journey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./hub.css" />
@@ -16,404 +16,102 @@
     <div class="atmosphere" aria-hidden="true"></div>
 
     <header class="hero">
-      <div class="hero-copy">
+      <div class="hero-inner">
         <p class="brand">JavaScript Learning Journey</p>
-        <h1>JS explained the easy way</h1>
-        <p class="lead">
-          Tiny demos first. Real lessons next. No scary words without meaning.
-        </p>
+        <h1>Learn JavaScript simply</h1>
+        <p class="lead">One lesson at a time — clear examples, live results.</p>
         <div class="cta-row">
-          <a class="cta" href="./basics/variables/index.html">Start Lesson 1</a>
-          <a class="cta ghost" href="#path">See the full path</a>
+          <a class="cta" href="./basics/variables/index.html">Start learning</a>
+          <a class="cta ghost" href="./exercises/index.html">Practice</a>
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
         <div class="terminal">
-          <div class="terminal-bar">
-            <span></span><span></span><span></span>
-          </div>
-          <pre class="terminal-body"><span class="c-muted">// your first JavaScript</span>
+          <div class="terminal-bar"><span></span><span></span><span></span></div>
+          <pre class="terminal-body"><span class="c-muted">// lesson 1</span>
 <span class="c-key">const</span> name = <span class="c-str">"Lalit"</span>;
-<span class="c-fn">console</span>.<span class="c-fn">log</span>(<span class="c-str">`Hello, ${name}!`</span>);
+<span class="c-fn">console</span>.log(<span class="c-str">`Hi, ${name}`</span>);
 
-<span class="c-out">→ Hello, Lalit!</span></pre>
+<span class="c-out">→ Hi, Lalit</span></pre>
         </div>
       </div>
     </header>
 
-    <main>
-      <section class="section plain" id="what">
-        <h2>What is JavaScript?</h2>
-        <p class="section-lead">
-          JavaScript is the language that makes websites <strong>do things</strong> —
-          buttons click, forms check, data load, apps feel alive.
-        </p>
-        <div class="analogy-row">
-          <div class="analogy">
-            <p class="analogy-label">Think of it like</p>
-            <p><strong>HTML</strong> = house structure</p>
-            <p><strong>CSS</strong> = paint & furniture</p>
-            <p><strong>JavaScript</strong> = electricity & switches</p>
-          </div>
-          <div class="analogy">
-            <p class="analogy-label">You will learn to</p>
-            <p>Store information</p>
-            <p>Make decisions</p>
-            <p>Repeat work</p>
-            <p>Talk to the page</p>
-          </div>
-        </div>
-      </section>
+    <main class="home-main">
+      <section class="section">
+        <h2>Lessons</h2>
+        <p class="section-lead">Follow this order. Each link opens a visual lesson.</p>
 
-      <section class="section" id="try">
-        <h2>Try it here first</h2>
-        <p class="section-lead">
-          Press the buttons. Watch the result. This is how JS feels — then open
-          the folder lessons for more depth.
-        </p>
-
-        <article class="playground" data-demo="variables">
-          <div class="playground-head">
-            <h3>1. Variables — boxes for data</h3>
-            <p>A variable stores a value so you can use it later.</p>
-          </div>
-          <div class="playground-body">
-            <label>
-              Your name
-              <input id="demo-name" type="text" value="Lalit" maxlength="20" />
-            </label>
-            <button type="button" class="run-btn" data-run="variables">
-              Run
-            </button>
-            <pre class="output" id="out-variables" aria-live="polite">Result shows here…</pre>
-          </div>
-          <a class="lesson-link" href="./basics/variables/index.html"
-            >Open full lesson →</a
-          >
-        </article>
-
-        <article class="playground" data-demo="conditions">
-          <div class="playground-head">
-            <h3>2. Decisions — if / else</h3>
-            <p>Ask a yes/no question, then choose what happens next.</p>
-          </div>
-          <div class="playground-body">
-            <label>
-              Age
-              <input id="demo-age" type="number" value="18" min="1" max="120" />
-            </label>
-            <button type="button" class="run-btn" data-run="conditions">
-              Run
-            </button>
-            <pre class="output" id="out-conditions" aria-live="polite">Result shows here…</pre>
-          </div>
-          <a class="lesson-link" href="./basics/if-else/index.html"
-            >Open full lesson →</a
-          >
-        </article>
-
-        <article class="playground" data-demo="arrays">
-          <div class="playground-head">
-            <h3>3. Arrays — a list of items</h3>
-            <p>Like a shopping list: item 0, item 1, item 2…</p>
-          </div>
-          <div class="playground-body">
-            <label>
-              Add a fruit
-              <input id="demo-fruit" type="text" value="mango" maxlength="20" />
-            </label>
-            <button type="button" class="run-btn" data-run="arrays">
-              Add & show list
-            </button>
-            <pre class="output" id="out-arrays" aria-live="polite">Result shows here…</pre>
-          </div>
-          <a class="lesson-link" href="./arrays/intro/index.html"
-            >Open full lesson →</a
-          >
-        </article>
-
-        <article class="playground" data-demo="functions">
-          <div class="playground-head">
-            <h3>4. Functions — reusable recipes</h3>
-            <p>Write once, use many times. Give inputs, get an answer back.</p>
-          </div>
-          <div class="playground-body">
-            <label>
-              Number A
-              <input id="demo-a" type="number" value="4" />
-            </label>
-            <label>
-              Number B
-              <input id="demo-b" type="number" value="7" />
-            </label>
-            <button type="button" class="run-btn" data-run="functions">
-              Add them
-            </button>
-            <pre class="output" id="out-functions" aria-live="polite">Result shows here…</pre>
-          </div>
-          <a class="lesson-link" href="./functions/intro/index.html"
-            >Open full lesson →</a
-          >
-        </article>
-
-        <article class="playground" data-demo="dom">
-          <div class="playground-head">
-            <h3>5. DOM — change the page</h3>
-            <p>JavaScript can find HTML and update what you see.</p>
-          </div>
-          <div class="playground-body">
-            <p id="dom-target" class="dom-target">I am waiting to change…</p>
-            <button type="button" class="run-btn" data-run="dom">
-              Change this text
-            </button>
-            <pre class="output" id="out-dom" aria-live="polite">Result shows here…</pre>
-          </div>
-          <a class="lesson-link" href="./dom/select/index.html"
-            >Open full lesson →</a
-          >
-        </article>
-      </section>
-
-      <section class="section" id="path">
-        <h2>Your full learning path</h2>
-        <p class="section-lead">
-          Follow top to bottom. Each step has a simple meaning and a place to
-          practice.
-        </p>
-
-        <div class="path-list">
-          <details class="path-item" open>
-            <summary>
-              <span class="step-num">01</span>
-              <span class="step-title">Basics</span>
-              <span class="step-hint">Words, numbers, yes/no, loops</span>
-            </summary>
-            <div class="path-body">
-              <p>
-                <strong>In plain English:</strong> how to store values, ask
-                questions with <code>if</code>, and repeat with loops.
-              </p>
-              <p><strong>You will be able to:</strong> print messages, check age, count from 1 to 10.</p>
-              <div class="links">
-                <a href="./basics/variables/index.html">variables (visual)</a>
-                <a href="./basics/if-else/index.html">if-else (visual)</a>
-                <a href="./basics/loop/for-loop/index.html">for loop (visual)</a>
-                <a href="./basics/console-log/index.html">console.log</a>
-              </div>
-            </div>
-          </details>
-
-          <details class="path-item">
-            <summary>
-              <span class="step-num">02</span>
-              <span class="step-title">Arrays</span>
-              <span class="step-hint">Lists of many values</span>
-            </summary>
-            <div class="path-body">
-              <p>
-                <strong>In plain English:</strong> one variable holding many
-                items — names, scores, products.
-              </p>
-              <p><strong>You will be able to:</strong> add/remove items, double every number, keep only even ones.</p>
-              <div class="links">
-                <a href="./arrays/intro/index.html">intro (visual)</a>
-                <a href="./arrays/methods/push-pop/index.html">push-pop</a>
-                <a href="./arrays/array-methods/map-method/index.html">map</a>
-                <a href="./arrays/array-methods/filter/index.html">filter</a>
-                <a href="./arrays/array-methods/reduce/index.html">reduce</a>
-              </div>
-            </div>
-          </details>
-
-          <details class="path-item">
-            <summary>
-              <span class="step-num">03</span>
-              <span class="step-title">Objects</span>
-              <span class="step-hint">Named details about one thing</span>
-            </summary>
-            <div class="path-body">
-              <p>
-                <strong>In plain English:</strong> a person has a name, age, city
-                — objects store related info together.
-              </p>
-              <div class="links">
-                <a href="./objects/intro/index.html">intro</a>
-                <a href="./objects/iterate/index.html">iterate</a>
-                <a href="./objects/destructuring/index.html">destructuring</a>
-              </div>
-            </div>
-          </details>
-
-          <details class="path-item">
-            <summary>
-              <span class="step-num">04</span>
-              <span class="step-title">Functions</span>
-              <span class="step-hint">Write once, reuse forever</span>
-            </summary>
-            <div class="path-body">
-              <p>
-                <strong>In plain English:</strong> a recipe for a task. Give
-                ingredients (inputs), get a dish (return value).
-              </p>
-              <div class="links">
-                <a href="./functions/intro/index.html">intro</a>
-                <a href="./functions/arrow-functions/index.html">arrow functions</a>
-                <a href="./functions/callback-function/index.html">callbacks</a>
-              </div>
-            </div>
-          </details>
-
-          <details class="path-item">
-            <summary>
-              <span class="step-num">05</span>
-              <span class="step-title">How JS works</span>
-              <span class="step-hint">Why order & hoisting matter</span>
-            </summary>
-            <div class="path-body">
-              <p>
-                <strong>In plain English:</strong> how the computer reads your
-                code — helpful when something looks “weird.”
-              </p>
-              <div class="links">
-                <a href="./how-js-works/index.html">open lesson</a>
-              </div>
-            </div>
-          </details>
-
-          <details class="path-item">
-            <summary>
-              <span class="step-num">06</span>
-              <span class="step-title">Set, Map & chaining</span>
-              <span class="step-hint">Unique lists & safe access</span>
-            </summary>
-            <div class="path-body">
-              <p>
-                <strong>In plain English:</strong> Set = unique items. Map =
-                fancy key→value box. <code>?.</code> = don’t crash if missing.
-              </p>
-              <div class="links">
-                <a href="./set-map-chaining/sets/index.html">Set</a>
-                <a href="./set-map-chaining/maps/index.html">Map</a>
-                <a href="./set-map-chaining/optional-chaining/index.html">optional chaining</a>
-              </div>
-            </div>
-          </details>
-
-          <details class="path-item">
-            <summary>
-              <span class="step-num">07</span>
-              <span class="step-title">OOP</span>
-              <span class="step-hint">Objects with methods & this</span>
-            </summary>
-            <div class="path-body">
-              <p>
-                <strong>In plain English:</strong> blueprint for making many
-                similar objects (like many users from one <code>class</code>).
-              </p>
-              <div class="links">
-                <a href="./oop/methods/this/index.html">this</a>
-                <a href="./oop/prototype/index.html">prototype</a>
-                <a href="./oop/getter-setter/index.html">getters / setters</a>
-              </div>
-            </div>
-          </details>
-
-          <details class="path-item">
-            <summary>
-              <span class="step-num">08</span>
-              <span class="step-title">Errors</span>
-              <span class="step-hint">Catch problems safely</span>
-            </summary>
-            <div class="path-body">
-              <p>
-                <strong>In plain English:</strong> when something breaks, catch
-                it and show a friendly message instead of crashing.
-              </p>
-              <div class="links">
-                <a href="./error-handling/index.html">try / catch</a>
-              </div>
-            </div>
-          </details>
-
-          <details class="path-item">
-            <summary>
-              <span class="step-num">09</span>
-              <span class="step-title">Async JS</span>
-              <span class="step-hint">Wait for data without freezing</span>
-            </summary>
-            <div class="path-body">
-              <p>
-                <strong>In plain English:</strong> some work takes time (API
-                calls). Promises & async/await let you wait cleanly.
-              </p>
-              <div class="links">
-                <a href="./async-js/promises/index.html">promises</a>
-                <a href="./async-js/async-await/index.html">async / await</a>
-                <a href="./async-js/fetch/index.html">fetch</a>
-              </div>
-            </div>
-          </details>
-
-          <details class="path-item">
-            <summary>
-              <span class="step-num">10</span>
-              <span class="step-title">DOM & projects</span>
-              <span class="step-hint">Make a real interactive page</span>
-            </summary>
-            <div class="path-body">
-              <p>
-                <strong>In plain English:</strong> connect buttons and forms to
-                your JS — build a todo app.
-              </p>
-              <div class="links">
-                <a href="./dom/select/index.html">select</a>
-                <a href="./dom/events/index.html">events</a>
-                <a href="./dom/project/index.html">todo project</a>
-              </div>
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <section class="section study">
-        <h2>How to study without getting lost</h2>
-        <ol class="study-steps">
+        <ol class="lesson-list">
           <li>
-            <strong>Try the demo</strong> on this page until it makes sense.
+            <a href="./basics/variables/index.html">
+              <span class="n">01</span>
+              <span class="t">Variables</span>
+              <span class="d">Store data in named boxes</span>
+            </a>
           </li>
           <li>
-            <strong>Open the lesson file</strong> and change one line. Refresh.
+            <a href="./basics/if-else/index.html">
+              <span class="n">02</span>
+              <span class="t">if / else</span>
+              <span class="d">Make decisions in code</span>
+            </a>
           </li>
           <li>
-            <strong>Open Console</strong>
-            (<kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>J</kbd> (Mac) or
-            <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd> (Windows).
+            <a href="./basics/loop/for-loop/index.html">
+              <span class="n">03</span>
+              <span class="t">Loops</span>
+              <span class="d">Repeat work easily</span>
+            </a>
           </li>
           <li>
-            <strong>Do a challenge</strong> in
-            <a href="./exercises/index.html">exercises/</a> before the next topic.
+            <a href="./arrays/intro/index.html">
+              <span class="n">04</span>
+              <span class="t">Arrays</span>
+              <span class="d">Lists of values</span>
+            </a>
+          </li>
+          <li>
+            <a href="./arrays/array-methods/map-method/index.html">
+              <span class="n">05</span>
+              <span class="t">map · filter · reduce</span>
+              <span class="d">Transform lists</span>
+            </a>
+          </li>
+          <li>
+            <a href="./objects/intro/index.html">
+              <span class="n">06</span>
+              <span class="t">Objects</span>
+              <span class="d">Named details together</span>
+            </a>
+          </li>
+          <li>
+            <a href="./functions/intro/index.html">
+              <span class="n">07</span>
+              <span class="t">Functions</span>
+              <span class="d">Reusable recipes</span>
+            </a>
+          </li>
+          <li>
+            <a href="./async-js/promises/index.html">
+              <span class="n">08</span>
+              <span class="t">Async &amp; fetch</span>
+              <span class="d">Wait for data</span>
+            </a>
+          </li>
+          <li>
+            <a href="./dom/project/index.html">
+              <span class="n">09</span>
+              <span class="t">DOM project</span>
+              <span class="d">Build a todo app</span>
+            </a>
           </li>
         </ol>
-        <a class="cta" href="./exercises/index.html">Go to practice challenges</a>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>
-        Playlist:
-        <a
-          href="https://www.youtube.com/playlist?list=PLwgFb6VsUj_l3XGLgZTf5lXq9rPAQ9COu"
-          target="_blank"
-          rel="noreferrer"
-          >Learn JavaScript</a
-        >
-        · Docs:
-        <a href="https://javascript.info/" target="_blank" rel="noreferrer"
-          >javascript.info</a
-        >
-      </p>
+      <a href="https://javascript.info/" target="_blank" rel="noreferrer">javascript.info</a>
     </footer>
-
-    <script src="./hub.js"></script>
   </body>
 </html>
