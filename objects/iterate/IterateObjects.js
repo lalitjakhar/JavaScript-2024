@@ -6,18 +6,21 @@ const person = {
   "person hobbies": ["sleeping", "listening music"],
 };
 
-// for in loop
-// Object.keys
+// 1) for...in — loops over keys
+for (let key in person) {
+  console.log(key, ":", person[key]);
+}
 
-// for (let key in person) {
-//   //   console.log(`${key} : ${person[key]}`);
-//   console.log(key, ":", person[key]);
-// }
+// 2) Object.keys — array of keys
+console.log("Keys:", Object.keys(person));
+console.log("Is array?", Array.isArray(Object.keys(person)));
 
-// console.log(typeof Object.keys(person));
-// const val = Array.isArray(Object.keys(person));
-// console.log(val);
+// 3) for...of over Object.keys
+for (let key of Object.keys(person)) {
+  console.log(person[key]);
+}
 
-// for (let key of Object.keys(person)) {
-//   console.log(person[key]);
-// }
+// 4) Object.entries — [key, value] pairs
+for (const [key, value] of Object.entries(person)) {
+  console.log(`${key} =>`, value);
+}

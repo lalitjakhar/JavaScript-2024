@@ -1,0 +1,20 @@
+{
+  "name": "javascript-learning-journey",
+  "version": "1.0.0",
+  "description": "Step-by-step JavaScript practice lessons and exercises",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve . -p 3000",
+    "basics": "node basics/console-log/consoleLog.js",
+    "challenge:1": "node exercises/challenges/01-basics.js",
+    "challenge:2": "node exercises/challenges/02-arrays.js",
+    "challenge:3": "node exercises/challenges/03-objects.js",
+    "challenge:4": "node exercises/challenges/04-functions.js",
+    "challenge:5": "node exercises/challenges/05-async.js",
+    "solution:1": "node exercises/solutions/01-basics.js",
+    "solution:2": "node exercises/solutions/02-arrays.js"
+  },
+  "keywords": ["javascript", "learning", "beginner"],
+  "author": "lalitjakhar",
+  "license": "MIT"
+}

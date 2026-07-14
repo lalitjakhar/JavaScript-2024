@@ -2,23 +2,22 @@
 
 const numbers = [3, 2, 6, 8, 4, 1, 9];
 
-// aim : sum of all numbers in array
-
+// aim: sum of all numbers in array
 const sum = numbers.reduce((accumulator, currentValue) => {
   return accumulator + currentValue;
-});
-console.log(sum);
+}, 0);
+console.log("Sum:", sum); // 33
 
-// other example
-
+// cart total — prices must be numbers (strings would concatenate!)
 const userCart = [
-  { productId: 1, productName: "mobile", price: "33000" },
-  { productId: 2, productName: "laptop", price: "122000" },
-  { productId: 3, productName: "tv", price: "18000" },
-  { productId: 4, productName: "refrigator", price: "12000" },
+  { productId: 1, productName: "mobile", price: 33000 },
+  { productId: 2, productName: "laptop", price: 122000 },
+  { productId: 3, productName: "tv", price: 18000 },
+  { productId: 4, productName: "refrigerator", price: 12000 },
 ];
 
 const totalAmount = userCart.reduce((totalPrice, currentProduct) => {
   return totalPrice + currentProduct.price;
 }, 0);
-console.log(totalAmount);
+
+console.log("Cart total:", totalAmount); // 185000

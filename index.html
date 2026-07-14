@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Learning Journey</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./hub.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <p class="brand">JavaScript Learning Journey</p>
+        <h1>Learn by running small lessons</h1>
+        <p class="lead">
+          Follow the path in order. Open a lesson, read the code, change a
+          value, check the console — that is how it sticks.
+        </p>
+        <div class="cta-row">
+          <a class="cta" href="./basics/console-log/index.html">Start Lesson 1</a>
+          <a class="cta ghost" href="./exercises/index.html">Practice challenges</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="path" aria-label="Learning path">
+          <h2>Learning path</h2>
+          <p class="section-note">Do these in order. Each link opens a runnable lesson.</p>
+
+          <ol class="steps">
+            <li>
+              <h3><a href="./basics/console-log/index.html">1. Basics</a></h3>
+              <p>Variables, types, operators, if/else, loops</p>
+              <div class="links">
+                <a href="./basics/variables/index.html">variables</a>
+                <a href="./basics/data-types/typeof/index.html">typeof</a>
+                <a href="./basics/if-else/index.html">if-else</a>
+                <a href="./basics/loop/for-loop/index.html">for loop</a>
+              </div>
+            </li>
+            <li>
+              <h3><a href="./arrays/intro/index.html">2. Arrays</a></h3>
+              <p>Lists, push/pop, map, filter, reduce</p>
+              <div class="links">
+                <a href="./arrays/intro/index.html">intro</a>
+                <a href="./arrays/methods/push-pop/index.html">push-pop</a>
+                <a href="./arrays/array-methods/map-method/index.html">map</a>
+                <a href="./arrays/array-methods/filter/index.html">filter</a>
+                <a href="./arrays/array-methods/reduce/index.html">reduce</a>
+              </div>
+            </li>
+            <li>
+              <h3><a href="./objects/intro/index.html">3. Objects</a></h3>
+              <p>Properties, notation, iterate, destructuring</p>
+              <div class="links">
+                <a href="./objects/intro/index.html">intro</a>
+                <a href="./objects/iterate/index.html">iterate</a>
+                <a href="./objects/destructuring/index.html">destructuring</a>
+                <a href="./objects/spread-operator/index.html">spread</a>
+              </div>
+            </li>
+            <li>
+              <h3><a href="./functions/intro/index.html">4. Functions</a></h3>
+              <p>Declarations, arrows, scope, callbacks</p>
+              <div class="links">
+                <a href="./functions/intro/index.html">intro</a>
+                <a href="./functions/arrow-functions/index.html">arrows</a>
+                <a href="./functions/callback-function/index.html">callbacks</a>
+                <a href="./functions/lexical-scope/index.html">lexical scope</a>
+              </div>
+            </li>
+            <li>
+              <h3><a href="./how-js-works/index.html">5. How JS works</a></h3>
+              <p>Execution context, hoisting, call stack basics</p>
+            </li>
+            <li>
+              <h3><a href="./set-map-chaining/sets/index.html">6. Set, Map & chaining</a></h3>
+              <p>Unique values, key maps, optional chaining</p>
+              <div class="links">
+                <a href="./set-map-chaining/sets/index.html">Set</a>
+                <a href="./set-map-chaining/maps/index.html">Map</a>
+                <a href="./set-map-chaining/optional-chaining/index.html">optional chaining</a>
+              </div>
+            </li>
+            <li>
+              <h3><a href="./oop/methods/this/index.html">7. OOP</a></h3>
+              <p><code>this</code>, call/apply/bind, prototypes, getters</p>
+              <div class="links">
+                <a href="./oop/methods/this/index.html">this</a>
+                <a href="./oop/prototype/index.html">prototype</a>
+                <a href="./oop/getter-setter/index.html">getters/setters</a>
+              </div>
+            </li>
+            <li>
+              <h3><a href="./error-handling/index.html">8. Errors</a></h3>
+              <p>try/catch, throw, reading error messages</p>
+            </li>
+            <li>
+              <h3><a href="./async-js/promises/index.html">9. Async JavaScript</a></h3>
+              <p>Promises, async/await, fetch + JSON</p>
+              <div class="links">
+                <a href="./async-js/promises/index.html">promises</a>
+                <a href="./async-js/async-await/index.html">async/await</a>
+                <a href="./async-js/fetch/index.html">fetch</a>
+              </div>
+            </li>
+            <li>
+              <h3><a href="./dom/select/index.html">10. DOM</a></h3>
+              <p>Select elements, events, build a real todo app</p>
+              <div class="links">
+                <a href="./dom/select/index.html">select</a>
+                <a href="./dom/events/index.html">events</a>
+                <a href="./dom/project/index.html">todo project</a>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="howto">
+          <h2>How to study each lesson</h2>
+          <ol>
+            <li>Open DevTools → Console (Mac: <kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>J</kbd>)</li>
+            <li>Read the comments in the <code>.js</code> file</li>
+            <li>Change one value and refresh</li>
+            <li>Complete the matching challenge in <a href="./exercises/index.html">exercises/</a></li>
+          </ol>
+        </section>
+      </main>
+
+      <footer>
+        <p>
+          Playlist:
+          <a
+            href="https://www.youtube.com/playlist?list=PLwgFb6VsUj_l3XGLgZTf5lXq9rPAQ9COu"
+            target="_blank"
+            rel="noreferrer"
+            >Learn JavaScript</a
+          >
+          · Docs:
+          <a href="https://javascript.info/" target="_blank" rel="noreferrer"
+            >javascript.info</a
+          >
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
