@@ -1,23 +1,22 @@
-// objects - reference type
-// arrays are good but not sufficient for real world Data
-// objects store key value pairs
-// objects don't have index
+// =============================================
+// Objects intro — named key/value data
+// Visual: objects/intro/index.html
+// =============================================
 
-// how to create objects
-
+// Objects store related details about ONE thing
 const person = {
   name: "Jakhar",
   age: 18,
   hobbies: ["sleeping", "listening music"],
 };
-console.log(person);
 
-// how to access data from objects
+console.log("1) whole object →", person);
 
-console.log(person.name);
-// console.log(person.age);
-console.log(person.hobbies);
+// Read values
+console.log("2) person.name →", person.name);
+console.log("2) person['age'] →", person["age"]);
+console.log("2) hobbies →", person.hobbies);
 
-// how to add key value pair to objects
+// Add a new key/value
 person.gender = "male";
-console.log(person.gender);
+console.log("3) after adding gender →", person);

@@ -1,70 +1,49 @@
-// 1111111111111111111111111111111111
-// basic function to say Happy Birthday
-function singHappyBirthday() {
-  console.log("Happy Birthday To You...........");
-}
-singHappyBirthday();
+// =============================================
+// Functions intro — reusable recipes
+// Visual: functions/intro/index.html
+// =============================================
 
-// 2222222222222222222222222
-//add two numbers
+// 1) No inputs — just run side effects / return a message
+function singHappyBirthday() {
+  return "Happy Birthday To You...........";
+}
+console.log("1)", singHappyBirthday());
+
+// 2) Return a value (don't only console.log inside)
 function twoPlusFour() {
-  //   console.log(2 + 4);
   return 2 + 4;
 }
-console.log(twoPlusFour());
-const returnedValue = twoPlusFour();
-console.log(returnedValue);
+console.log("2) twoPlusFour() →", twoPlusFour());
 
-twoPlusFour();
-
-// 3333333333333333333333333333
-// reusable function
+// 3) Parameters make functions reusable
 function sumTwoNumbers(number1, number2) {
   return number1 + number2;
 }
-const returnedNumberValue = sumTwoNumbers(4, 5);
-console.log(returnedNumberValue);
+console.log("3) sumTwoNumbers(4, 5) →", sumTwoNumbers(4, 5));
 
-// reusable function
-function sumThreeNumbers(number1, number2, number3) {
-  return number1 + number2 + number3;
+function sumThreeNumbers(a, b, c) {
+  return a + b + c;
 }
-const returnedThreeNumberValue = sumThreeNumbers(4, 5, 9);
-console.log(returnedThreeNumberValue);
+console.log("3) sumThreeNumbers(4, 5, 9) →", sumThreeNumbers(4, 5, 9));
 
-// 44444444444444444444444
-// odd or even
-// input :1 number1
-// output :true, false
+// 4) Return true / false
 function isEven(number) {
-  if (number % 2 === 0) {
-    return true;
-  }
-  return false;
+  return number % 2 === 0;
 }
-console.log(isEven(3));
+console.log("4) isEven(3) →", isEven(3));
+console.log("4) isEven(4) →", isEven(4));
 
-// 5555555555
-// input: string
-// output: firstCharacter
-
+// 5) Return first character of a string
 function firstCharacter(anyString) {
   return anyString[0];
 }
-console.log(firstCharacter("zbc"));
+console.log("5) firstCharacter('zbc') →", firstCharacter("zbc"));
 
-// 66666666666666666666
-// input : array, target : (number)
-// index of target if target present in array
-
+// 6) Search in an array — return index or -1
 function findTarget(array, target) {
   for (let i = 0; i < array.length; i++) {
-    if (array[i] === target) {
-      return i;
-    }
+    if (array[i] === target) return i;
   }
   return -1;
 }
-const myArray = [1, 5, 7, 8];
-const ans = findTarget(myArray, 8);
-console.log(ans);
+console.log("6) findTarget([1,5,7,8], 8) →", findTarget([1, 5, 7, 8], 8));

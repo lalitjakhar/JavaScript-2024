@@ -3,9 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Functions — Easy Intro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./FunctionsIntro.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../index.html">← Home</a>
+        <a href="../arrow-functions/index.html">Next: arrows →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 4 · Functions</p>
+      <h1>Functions — reusable recipes</h1>
+      <p class="lesson-lead">
+        A function is a <strong>reusable recipe</strong>. Give it inputs
+        (parameters), it does work, and can give back a result (return).
+      </p>
+
+      <div class="why">
+        <strong>Why functions?</strong> Write the logic once. Call it whenever
+        you need — with different inputs each time.
+      </div>
+
+      <section class="step">
+        <h2>1. Call a simple function</h2>
+        <div class="code-block">function singHappyBirthday() {
+  return "Happy Birthday To You...";
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-sing" type="button">Call function</button>
+        </div>
+        <pre class="output" id="out-sing">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Inputs → output</h2>
+        <p>Parameters are the ingredients. Return is the dish.</p>
+        <div class="code-block">function add(a, b) {
+  return a + b;
+}</div>
+        <div class="field-row">
+          <label>A <input id="num-a" type="number" value="4" /></label>
+          <label>B <input id="num-b" type="number" value="5" /></label>
+          <button class="btn" id="btn-add" type="button">add(a, b)</button>
+        </div>
+        <pre class="output" id="out-add">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Return true / false</h2>
+        <div class="code-block">function isEven(n) {
+  return n % 2 === 0;
+}</div>
+        <div class="field-row">
+          <label>Number <input id="even-n" type="number" value="7" /></label>
+          <button class="btn" id="btn-even" type="button">Check</button>
+        </div>
+        <pre class="output" id="out-even">Result…</pre>
+        <p class="tip">
+          Without <code>return</code>, a function gives <code>undefined</code>.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

@@ -3,9 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Objects — Easy Intro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./ObjectIntro.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../index.html">← Home</a>
+        <a href="../iterate/index.html">Next: iterate →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 3 · Objects</p>
+      <h1>Objects — named details</h1>
+      <p class="lesson-lead">
+        An object stores <strong>named details</strong> about one thing —
+        like a form: name, age, hobbies. Keys label each value.
+      </p>
+
+      <div class="why">
+        <strong>Why objects?</strong> Arrays are great for lists. Objects are
+        great when each piece of data has a meaning (name, price, email).
+      </div>
+
+      <section class="step">
+        <h2>1. Array vs Object</h2>
+        <div class="compare">
+          <div>
+            <h3>Array</h3>
+            <p>Positions: 0, 1, 2…<br />Good for lists of same kind.</p>
+          </div>
+          <div>
+            <h3>Object</h3>
+            <p>Names: name, age…<br />Good for one thing with many fields.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="step">
+        <h2>2. Create a person</h2>
+        <div class="code-block">const person = {
+  name: "Jakhar",
+  age: 18,
+  hobbies: ["sleeping", "music"]
+};</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-show" type="button">Show object</button>
+        </div>
+        <div class="array-view" id="view-person"></div>
+        <pre class="output" id="out-show">Click to see keys &amp; values…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Read a value</h2>
+        <div class="code-block">person.name   // dot notation
+person["age"] // bracket notation</div>
+        <div class="field-row">
+          <label>
+            Key
+            <select id="read-key">
+              <option value="name">name</option>
+              <option value="age">age</option>
+              <option value="hobbies">hobbies</option>
+            </select>
+          </label>
+          <button class="btn" id="btn-read" type="button">Read</button>
+        </div>
+        <pre class="output" id="out-read">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Add a new field</h2>
+        <div class="code-block">person.gender = "male";</div>
+        <div class="field-row">
+          <label>
+            Key
+            <input id="add-key" type="text" value="gender" />
+          </label>
+          <label>
+            Value
+            <input id="add-value" type="text" value="male" />
+          </label>
+          <button class="btn" id="btn-add" type="button">Add field</button>
+        </div>
+        <div class="array-view" id="view-updated"></div>
+        <pre class="output" id="out-add">Result…</pre>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

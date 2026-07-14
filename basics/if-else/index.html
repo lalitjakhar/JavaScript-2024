@@ -3,9 +3,102 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>if / else — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./IfElse.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../variables/index.html">← Variables</a>
+        <a href="../loop/for-loop/index.html">Next: loops →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 1 · Basics</p>
+      <h1>if / else — make decisions</h1>
+      <p class="lesson-lead">
+        Programs choose paths. <code>if</code> asks a yes/no question. If yes →
+        do A. Else → do B.
+      </p>
+
+      <div class="why">
+        <strong>Why learn this?</strong> Logins, games, forms, prices — all need
+        “if this, then that.”
+      </div>
+
+      <section class="step">
+        <h2>1. Can the user play?</h2>
+        <p class="example-label">Real example</p>
+        <div class="code-block">if (age > 18) {
+  console.log("You can play");
+} else {
+  console.log("Play something else");
+}</div>
+        <div class="field-row">
+          <label>
+            Age
+            <input id="age" type="number" value="19" min="1" max="120" />
+          </label>
+          <button class="btn" id="btn-age" type="button">Check</button>
+        </div>
+        <pre class="output" id="out-age">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Even or odd?</h2>
+        <p>
+          <code>%</code> gives the <strong>remainder</strong>. If remainder is
+          0 when divided by 2 → even.
+        </p>
+        <div class="code-block">if (num % 2 === 0) {
+  console.log("even");
+} else {
+  console.log("odd");
+}</div>
+        <div class="field-row">
+          <label>
+            Number
+            <input id="num" type="number" value="13" />
+          </label>
+          <button class="btn" id="btn-odd" type="button">Check</button>
+        </div>
+        <pre class="output" id="out-odd">Result…</pre>
+        <p class="tip">
+          Always prefer <code>===</code> (strict equals) over <code>==</code>.
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>3. Truthy / falsy values</h2>
+        <p>
+          Empty values are treated as “no”. Try clearing the name — the
+          <code>else</code> path runs.
+        </p>
+        <div class="code-block">if (firstName) {
+  console.log(firstName);
+} else {
+  console.log("firstName is empty");
+}</div>
+        <div class="field-row">
+          <label>
+            firstName
+            <input id="fname" type="text" value="" placeholder="type a name" />
+          </label>
+          <button class="btn" id="btn-name" type="button">Check</button>
+        </div>
+        <pre class="output" id="out-name">Result…</pre>
+        <p class="tip">
+          Falsy values: <code>""</code>, <code>0</code>, <code>null</code>,
+          <code>undefined</code>, <code>false</code>, <code>NaN</code>.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

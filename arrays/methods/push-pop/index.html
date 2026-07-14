@@ -3,9 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>push & pop — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./PushPop.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../intro/index.html">← Arrays intro</a>
+        <a href="../shift-unshift/index.html">Next: shift / unshift →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · methods</p>
+      <h1>push &amp; pop — change the end</h1>
+      <p class="lesson-lead">
+        Think of a queue waiting at the <strong>end</strong> of a line:
+        <code>push</code> joins the end, <code>pop</code> leaves from the end.
+      </p>
+
+      <div class="why">
+        <strong>Remember:</strong> Both work on the <em>last</em> index
+        (<code>length - 1</code>. Start of the array is untouched.
+      </div>
+
+      <section class="step">
+        <h2>Live demo</h2>
+        <p class="example-label">Code you’ll be running</p>
+        <div class="code-block">fruits.push("mango");  // add at end, returns new length
+const removed = fruits.pop(); // remove from end, returns removed item</div>
+        <div class="array-view" id="view-list"></div>
+        <div class="field-row">
+          <label>
+            Item to push
+            <input id="item" type="text" value="mango" />
+          </label>
+          <button class="btn" id="btn-push" type="button">push()</button>
+          <button class="btn ghost" id="btn-pop" type="button">pop()</button>
+        </div>
+        <pre class="output" id="out">Ready…</pre>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>What it does</th>
+              <th>Returns</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>push(x)</code></td>
+              <td>Add <code>x</code> at the end</td>
+              <td>New length</td>
+            </tr>
+            <tr>
+              <td><code>pop()</code></td>
+              <td>Remove last item</td>
+              <td>Removed item</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

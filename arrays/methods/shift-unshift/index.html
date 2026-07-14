@@ -3,9 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>shift & unshift — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./ShiftUnshift.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../push-pop/index.html">← push / pop</a>
+        <a href="../../array-methods/filter/index.html">Next: filter →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · methods</p>
+      <h1>unshift &amp; shift — change the start</h1>
+      <p class="lesson-lead">
+        Same idea as push/pop, but at the <strong>beginning</strong> (index 0).
+      </p>
+
+      <div class="why">
+        <strong>Memory trick:</strong><br />
+        push/pop → end · unshift/shift → start<br />
+        “unshift = un-shift things to make room at the front.”
+      </div>
+
+      <section class="step">
+        <h2>Live demo</h2>
+        <div class="code-block">fruits.unshift("banana"); // add at start
+const removed = fruits.shift(); // remove from start</div>
+        <div class="array-view" id="view-list"></div>
+        <div class="field-row">
+          <label>
+            Item to unshift
+            <input id="item" type="text" value="banana" />
+          </label>
+          <button class="btn" id="btn-unshift" type="button">unshift()</button>
+          <button class="btn ghost" id="btn-shift" type="button">shift()</button>
+        </div>
+        <pre class="output" id="out">Ready…</pre>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Where</th>
+              <th>Returns</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>unshift(x)</code></td>
+              <td>Add at start</td>
+              <td>New length</td>
+            </tr>
+            <tr>
+              <td><code>shift()</code></td>
+              <td>Remove from start</td>
+              <td>Removed item</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="tip">
+          Note: shifting re-indexes everything (old index 1 becomes 0), so it
+          can be slower on huge arrays — but perfect for learning.
+        </p>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

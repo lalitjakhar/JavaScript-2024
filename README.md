@@ -1,8 +1,8 @@
 # JavaScript Learning Journey
 
-A step-by-step practice repo: open a lesson, change one line, watch the console. Built for absolute beginners who want a clear path from zero to real DOM + async apps.
+A step-by-step practice repo with **visual lessons** (explanations + live examples + Run buttons). You don’t need the console to understand the basics.
 
-**Start here:** open [`index.html`](./index.html) in your browser (or run `npm start`).
+**Start here:** [`index.html`](./index.html) or run `npm start` → then open **Lesson 1** ([variables](./basics/variables/index.html)).
 
 **Playlist:** [Learn JavaScript](https://www.youtube.com/playlist?list=PLwgFb6VsUj_l3XGLgZTf5lXq9rPAQ9COu) · **Docs:** [javascript.info](https://javascript.info/)
 
@@ -11,24 +11,33 @@ A step-by-step practice repo: open a lesson, change one line, watch the console.
 ## Quick start
 
 ```bash
-# Option A — visual learning hub (recommended)
 npm start
-# then open http://localhost:3000
-
-# Option B — run any lesson with Node
-node basics/console-log/consoleLog.js
-
-# Option C — open any folder's index.html in the browser
-# DevTools → Console to see output
+# http://localhost:3000  →  Start Lesson 1
 ```
 
-### How to study (4 steps)
+### Recommended visual path (best explanations)
 
-1. Open the lesson’s `index.html` (or run the `.js` with Node).
-2. Read the comments — they explain *why*, not just *what*.
-3. Change one value, refresh, watch what breaks.
-4. Do the matching challenge in [`exercises/`](./exercises).
+1. [Variables](./basics/variables/index.html) → [if/else](./basics/if-else/index.html) → [for loop](./basics/loop/for-loop/index.html)
+2. [Arrays intro](./arrays/intro/index.html) → [push/pop](./arrays/methods/push-pop/index.html) → [shift/unshift](./arrays/methods/shift-unshift/index.html)
+3. [filter](./arrays/array-methods/filter/index.html) → [map](./arrays/array-methods/map-method/index.html) → [reduce](./arrays/array-methods/reduce/index.html)
+4. [Objects](./objects/intro/index.html) → [Functions](./functions/intro/index.html) → [Promises](./async-js/promises/index.html)
 
+Each page has: **why it matters** · **example code** · **interactive Run** · **on-page output**
+
+### Also runnable with Node
+
+```bash
+node basics/variables/variablePrint.js
+node arrays/intro/IntroArray.js
+node arrays/array-methods/map-method/Map.js
+```
+
+### How to study
+
+1. Open the visual `index.html` lesson first.
+2. Read the “Why” box and the example code.
+3. Click Run / change inputs — watch boxes and output update.
+4. Practice in [`exercises/`](./exercises).
 ---
 
 ## Learning path (follow this order)
@@ -78,6 +87,10 @@ Practice: [`basics/variables/`](./basics/variables) · [`basics/if-else/`](./bas
 
 Folder: [`arrays/`](./arrays)
 
+**Best start:** open the visual lesson [`arrays/intro/index.html`](./arrays/intro/index.html) — indexed boxes, buttons, and live output (no console needed).
+
+Then practice: [push-pop](./arrays/methods/push-pop) · [filter](./arrays/array-methods/filter) · [map](./arrays/array-methods/map-method) · [reduce](./arrays/array-methods/reduce)
+
 ```javascript
 const nums = [1, 2, 3, 4, 5];
 
@@ -86,7 +99,7 @@ const evens = nums.filter((n) => n % 2 === 0);
 const total = nums.reduce((sum, n) => sum + n, 0);
 ```
 
-Practice: [`arrays/intro/`](./arrays/intro) · [`arrays/array-methods/`](./arrays/array-methods)
+Also visual intros: [`objects/intro`](./objects/intro) · [`functions/intro`](./functions/intro)
 
 ---
 

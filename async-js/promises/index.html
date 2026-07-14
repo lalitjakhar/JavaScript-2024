@@ -3,10 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Promises — Async JS</title>
+    <title>Promises — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <p>Open the browser console to see promise output.</p>
-    <script src="./Promises.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../index.html">← Home</a>
+        <a href="../async-await/index.html">Next: async / await →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 9 · Async</p>
+      <h1>Promises — a value that arrives later</h1>
+      <p class="lesson-lead">
+        Some work takes time (timers, API calls). A Promise says: “I’ll give you
+        the answer when I’m done.”
+      </p>
+
+      <div class="why">
+        <strong>Three states:</strong> pending (waiting) → fulfilled (success)
+        or rejected (failed).
+      </div>
+
+      <section class="step">
+        <h2>Example 1: wait, then succeed</h2>
+        <div class="code-block">function wait(ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(`Waited ${ms}ms`), ms);
+  });
+}
+
+wait(800).then((msg) => console.log(msg));</div>
+        <div class="field-row">
+          <label>
+            Milliseconds
+            <input id="ms" type="number" value="800" min="200" max="3000" step="100" />
+          </label>
+          <button class="btn" id="btn-wait" type="button">Wait &amp; resolve</button>
+        </div>
+        <pre class="output" id="out-wait">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>Example 2: success vs failure</h2>
+        <div class="code-block">canVote(age)
+  .then((msg) => console.log("Success:", msg))
+  .catch((err) => console.log("Fail:", err.message));</div>
+        <div class="field-row">
+          <label>
+            Age
+            <input id="age" type="number" value="20" min="1" max="120" />
+          </label>
+          <button class="btn" id="btn-vote" type="button">canVote(age)</button>
+        </div>
+        <pre class="output" id="out-vote">Result…</pre>
+        <p class="tip">
+          <code>.then</code> handles success. <code>.catch</code> handles
+          errors. Always plan for both.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

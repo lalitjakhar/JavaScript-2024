@@ -3,9 +3,107 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Variables — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./variablePrint.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../index.html">← Home</a>
+        <a href="../if-else/index.html">Next: if / else →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 1 · Basics</p>
+      <h1>Variables — named boxes for data</h1>
+      <p class="lesson-lead">
+        A variable is a <strong>labeled box</strong>. You put a value inside,
+        and later you can read it or change it using the label (name).
+      </p>
+
+      <div class="why">
+        <strong>Why learn this?</strong> Almost every program stores something —
+        a name, a score, a count. Variables are how you remember data.
+      </div>
+
+      <section class="step">
+        <h2>1. Create and print a variable</h2>
+        <p class="example-label">Example code</p>
+        <div class="code-block">let firstName = "Lalit";
+console.log(firstName);  // → Lalit</div>
+        <div class="field-row">
+          <label>
+            Value to store
+            <input id="name-input" type="text" value="Lalit" />
+          </label>
+          <button class="btn" id="btn-create" type="button">Create &amp; print</button>
+        </div>
+        <pre class="output" id="out-create">Result…</pre>
+        <p class="tip">
+          Read it as: “make a box named <code>firstName</code>, put
+          <code>"Lalit"</code> inside, then show what’s inside.”
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>2. Change the value later</h2>
+        <p>
+          With <code>let</code>, you can replace what’s in the box. The name
+          stays the same.
+        </p>
+        <div class="code-block">let firstName = "Lalit";
+firstName = "Jakhar";   // replace the value
+console.log(firstName); // → Jakhar</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-change" type="button">Change to Jakhar</button>
+        </div>
+        <pre class="output" id="out-change">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. let vs const vs var</h2>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Can reassign?</th>
+              <th>When to use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>const</code></td>
+              <td>No</td>
+              <td>Default choice — value won’t change</td>
+            </tr>
+            <tr>
+              <td><code>let</code></td>
+              <td>Yes</td>
+              <td>When you need to update later</td>
+            </tr>
+            <tr>
+              <td><code>var</code></td>
+              <td>Yes</td>
+              <td>Old style — learn it, avoid in new code</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-row">
+          <button class="btn" id="btn-const" type="button">Try const mistake</button>
+        </div>
+        <pre class="output" id="out-const">Result…</pre>
+        <p class="tip">
+          Names are <strong>case-sensitive</strong>: <code>Name</code> and
+          <code>name</code> are different variables.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

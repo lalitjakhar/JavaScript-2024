@@ -3,9 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>reduce() — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Reduce.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../map-method/index.html">← map</a>
+        <a href="../../../objects/intro/index.html">Next: objects →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · reduce</p>
+      <h1>reduce() — many values → one answer</h1>
+      <p class="lesson-lead">
+        Carry a running total (the <em>accumulator</em>). Visit each item, update
+        the total, finish with one final value.
+      </p>
+
+      <div class="why">
+        <strong>Best mental model:</strong> a piggy bank. Start with 0. Drop in
+        each coin. End with the full sum.
+      </div>
+
+      <section class="step">
+        <h2>Example 1: sum with every step shown</h2>
+        <div class="code-block">const numbers = [3, 2, 6, 8, 4, 1, 9];
+
+const sum = numbers.reduce((total, n) => {
+  return total + n;
+}, 0); // 0 is the starting total</div>
+        <div class="array-view" id="view-nums"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-sum" type="button">Show running total</button>
+        </div>
+        <pre class="output" id="out-sum">Click to reduce…</pre>
+        <p class="tip">
+          Always pass a starting value (<code>0</code> for sums) so results stay
+          predictable.
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>Example 2: shopping cart total</h2>
+        <div class="code-block">const total = cart.reduce((sum, item) => sum + item.price, 0);</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-cart" type="button">Total cart</button>
+        </div>
+        <pre class="output" id="out-cart">Result…</pre>
+        <p class="tip">
+          Prices must be numbers. If they’re strings like
+          <code>"33000"</code>, <code>+</code> will concatenate instead of add.
+        </p>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

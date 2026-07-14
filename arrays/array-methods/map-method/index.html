@@ -3,9 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>map() — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Map.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../filter/index.html">← filter</a>
+        <a href="../reduce/index.html">Next: reduce →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · map</p>
+      <h1>map() — transform every item</h1>
+      <p class="lesson-lead">
+        <code>map</code> applies a rule to <strong>each</strong> item and builds
+        a new array of results. Length stays the same.
+      </p>
+
+      <div class="why">
+        <strong>Best mental model:</strong> “Turn every score into a grade” /
+        “Turn every user object into just their name.”
+      </div>
+
+      <section class="step">
+        <h2>Example 1: square numbers</h2>
+        <div class="code-block">const numbers = [3, 4, 2, 7, 9];
+const squared = numbers.map((n) => n * n);
+// → [9, 16, 4, 49, 81]</div>
+        <p>Before</p>
+        <div class="array-view" id="view-before"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-map" type="button">Run map (n → n²)</button>
+        </div>
+        <p>After</p>
+        <div class="array-view" id="view-after"></div>
+        <pre class="output" id="out-map">Click Run…</pre>
+      </section>
+
+      <section class="step">
+        <h2>Example 2: pull names from objects</h2>
+        <div class="code-block">const users = [
+  { firstName: "jakhar", age: "18" },
+  { firstName: "arpit", age: "29" },
+  { firstName: "sunny", age: "31" },
+];
+
+const names = users.map((user) => user.firstName);
+// → ["jakhar", "arpit", "sunny"]</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-names" type="button">Extract names</button>
+        </div>
+        <div class="array-view" id="view-names"></div>
+        <pre class="output" id="out-names">Result…</pre>
+        <p class="tip">
+          Chain tip later: <code>arr.filter(...).map(...)</code> — filter first,
+          then transform.
+        </p>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

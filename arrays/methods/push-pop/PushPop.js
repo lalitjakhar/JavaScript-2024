@@ -1,15 +1,15 @@
-// array push pop
+// =============================================
+// push / pop — end of array
+// Visual: arrays/methods/push-pop/index.html
+// =============================================
 
-let fruits = ["apple", "mango", "grapes"];
-console.log(fruits);
-// push-- add from last of array
-fruits.push("banana");
-console.log(fruits);
-// pop -remove from  last of array
-fruits.pop();
-console.log(fruits.pop());
-console.log(fruits);
+const fruits = ["apple", "banana"];
+console.log("start →", fruits);
 
-let poppedFruit = fruits.pop();
-console.log(fruits);
-console.log("popped fruit is", poppedFruit);
+// push: add at END, returns new length
+const newLength = fruits.push("mango");
+console.log("after push('mango') →", fruits, "| length returned:", newLength);
+
+// pop: remove from END, returns removed item
+const removed = fruits.pop();
+console.log("after pop() →", fruits, "| removed:", removed);

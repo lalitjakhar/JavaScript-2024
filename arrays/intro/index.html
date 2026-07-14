@@ -3,9 +3,153 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Arrays — Easy Intro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./IntroArray.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../index.html">← Home</a>
+        <a href="../methods/push-pop/index.html">Next: push &amp; pop →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 2 · Arrays</p>
+      <h1>Arrays — numbered lists</h1>
+      <p class="lesson-lead">
+        An array stores <strong>many values in order</strong>, like seats in a
+        row: seat 0, seat 1, seat 2…
+      </p>
+
+      <div class="why">
+        <strong>Why arrays?</strong> Names of students, cart items, scores —
+        anything that is a list belongs in an array.
+      </div>
+
+      <section class="step">
+        <h2>1. Create an array (the syntax)</h2>
+        <p>
+          Square brackets <code>[]</code> create a list. Items are separated by
+          commas.
+        </p>
+        <p class="example-label">Best starter example</p>
+        <div class="code-block">const fruits = ["apple", "banana", "grapes"];
+
+// index:         0         1          2
+console.log(fruits[0]); // "apple"
+console.log(fruits.length); // 3</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-show" type="button">Show as boxes</button>
+        </div>
+        <div class="array-view" id="view-fruits"></div>
+        <pre class="output" id="out-show">Click the button…</pre>
+        <p class="tip">
+          First item is always index <code>0</code>. Last item is
+          <code>length - 1</code>.
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>2. Read one item by index</h2>
+        <p>Ask: “What is in box number ___?”</p>
+        <div class="code-block">const item = fruits[2]; // grapes</div>
+        <div class="field-row">
+          <label>
+            Index
+            <input id="read-index" type="number" value="2" min="0" max="10" />
+          </label>
+          <button class="btn" id="btn-read" type="button">Read item</button>
+        </div>
+        <pre class="output" id="out-read">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Replace an item</h2>
+        <p>
+          You don’t recreate the whole list — you overwrite one seat.
+        </p>
+        <div class="code-block">fruits[1] = "mango";
+// ["apple", "mango", "grapes"]</div>
+        <div class="field-row">
+          <label>
+            Index
+            <input id="change-index" type="number" value="1" min="0" max="10" />
+          </label>
+          <label>
+            New value
+            <input id="change-value" type="text" value="mango" />
+          </label>
+          <button class="btn" id="btn-change" type="button">Update</button>
+        </div>
+        <div class="array-view" id="view-change"></div>
+        <pre class="output" id="out-change">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Mixed types &amp; checking arrays</h2>
+        <p>
+          JS allows mixed values. To check “is this really an array?”, use
+          <code>Array.isArray()</code> (not <code>typeof</code>).
+        </p>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Check</th>
+              <th>Result</th>
+              <th>Use?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>typeof fruits</code></td>
+              <td><code>"object"</code></td>
+              <td>Confusing — skip for arrays</td>
+            </tr>
+            <tr>
+              <td><code>Array.isArray(fruits)</code></td>
+              <td><code>true</code></td>
+              <td>Correct way ✓</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-row">
+          <button class="btn" id="btn-mixed" type="button">Show mixed array</button>
+          <button class="btn ghost" id="btn-check" type="button">Run typeof check</button>
+        </div>
+        <div class="array-view" id="view-mixed"></div>
+        <pre class="output" id="out-mixed">Result…</pre>
+        <pre class="output" id="out-check" style="margin-top: 0.5rem">Check output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>5. Practice: build your own list</h2>
+        <p>Add items yourself. Watch indexes grow from 0 upward.</p>
+        <div class="field-row">
+          <label>
+            New item
+            <input id="build-item" type="text" placeholder="e.g. kiwi" />
+          </label>
+          <button class="btn" id="btn-add" type="button">Add</button>
+          <button class="btn ghost" id="btn-clear" type="button">Clear</button>
+        </div>
+        <div class="array-view" id="view-build"></div>
+        <pre class="output" id="out-build">Your array is empty. Add something!</pre>
+        <p class="tip">
+          Next:
+          <a href="../methods/push-pop/index.html">push &amp; pop</a> (end of
+          list) ·
+          <a href="../methods/shift-unshift/index.html">shift &amp; unshift</a>
+          (start of list)
+        </p>
+      </section>
+    </div>
+
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

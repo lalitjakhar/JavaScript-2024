@@ -3,9 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>for loop — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./ForLoop.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../if-else/index.html">← if / else</a>
+        <a href="../../../arrays/intro/index.html">Next: arrays →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 1 · Basics</p>
+      <h1>for loop — repeat work</h1>
+      <p class="lesson-lead">
+        A loop runs the same steps many times. Useful for counting, printing
+        lists, and checking every item.
+      </p>
+
+      <div class="why">
+        <strong>Why learn this?</strong> Without loops you’d copy-paste the
+        same code 100 times. A loop does it in 3 lines.
+      </div>
+
+      <section class="step">
+        <h2>Anatomy of a for loop</h2>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Part</th>
+              <th>Meaning</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>start</td>
+              <td>where counting begins</td>
+              <td><code>let i = 1</code></td>
+            </tr>
+            <tr>
+              <td>condition</td>
+              <td>keep going while true</td>
+              <td><code>i &lt;= 5</code></td>
+            </tr>
+            <tr>
+              <td>step</td>
+              <td>how i changes each time</td>
+              <td><code>i++</code> (add 1)</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="code-block">for (let i = 1; i &lt;= 5; i++) {
+  console.log(i);
+}</div>
+        <div class="field-row">
+          <label>
+            Count up to
+            <input id="limit" type="number" value="5" min="1" max="20" />
+          </label>
+          <button class="btn" id="btn-loop" type="button">Run loop</button>
+        </div>
+        <div class="array-view" id="view-loop"></div>
+        <pre class="output" id="out-loop">Result…</pre>
+        <p class="tip">
+          <code>i++</code> means <code>i = i + 1</code>. Each pass is one
+          “iteration.”
+        </p>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Practice Challenges</title>
+    <title>Practice Challenges — Easy JS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,65 +13,136 @@
     <link rel="stylesheet" href="../hub.css" />
   </head>
   <body>
-    <div class="page">
-      <header class="hero">
-        <p class="brand"><a href="../index.html" style="color: inherit; text-decoration: none">← JavaScript Learning Journey</a></p>
-        <h1>Practice challenges</h1>
-        <p class="lead">
-          Try each task in your own file first. Peek at
-          <code>solutions/</code> only after you attempt it.
-        </p>
-      </header>
+    <div class="atmosphere" aria-hidden="true"></div>
 
-      <ol class="steps">
-        <li>
-          <h3>1. Basics</h3>
-          <p>Print even numbers from 1 to 20. Then check if a number is odd or even with if/else.</p>
-          <div class="links">
-            <a href="./challenges/01-basics.js">challenge</a>
-            <a href="./solutions/01-basics.js">solution</a>
+    <main style="padding-top: 2.5rem">
+      <p class="brand">
+        <a href="../index.html" style="color: inherit; text-decoration: none"
+          >← JavaScript Learning Journey</a
+        >
+      </p>
+      <h1 style="font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.03em; margin: 0.8rem 0 0.6rem">
+        Practice the easy way
+      </h1>
+      <p class="section-lead">
+        Read the goal in plain English. Try yourself first. Open the solution
+        only after you struggle a bit — that is when learning sticks.
+      </p>
+
+      <div class="path-list">
+        <details class="path-item" open>
+          <summary>
+            <span class="step-num">01</span>
+            <span class="step-title">Basics</span>
+            <span class="step-hint">Even numbers + odd/even check</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              <strong>Goal:</strong> Print even numbers from 1 to 20. Then check
+              if 7 is odd or even.
+            </p>
+            <p><strong>Hint:</strong> Use <code>%</code> (remainder). Even numbers give 0 when divided by 2.</p>
+            <div class="links">
+              <a href="./challenges/01-basics.js">your challenge file</a>
+              <a href="./solutions/01-basics.js">solution (later)</a>
+            </div>
           </div>
-        </li>
-        <li>
-          <h3>2. Arrays</h3>
-          <p>From <code>[1,2,3,4,5,6]</code>, keep only odds, then double them with map/filter.</p>
-          <div class="links">
-            <a href="./challenges/02-arrays.js">challenge</a>
-            <a href="./solutions/02-arrays.js">solution</a>
+        </details>
+
+        <details class="path-item">
+          <summary>
+            <span class="step-num">02</span>
+            <span class="step-title">Arrays</span>
+            <span class="step-hint">Filter odds, then double</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              <strong>Goal:</strong> From <code>[1,2,3,4,5,6]</code>, keep only
+              odds, then double them → <code>[2, 6, 10]</code>.
+            </p>
+            <p><strong>Hint:</strong> <code>filter</code> then <code>map</code>.</p>
+            <div class="links">
+              <a href="./challenges/02-arrays.js">your challenge file</a>
+              <a href="./solutions/02-arrays.js">solution (later)</a>
+            </div>
           </div>
-        </li>
-        <li>
-          <h3>3. Objects</h3>
-          <p>Make a <code>book</code> object and print <code>"Title by Author"</code>.</p>
-          <div class="links">
-            <a href="./challenges/03-objects.js">challenge</a>
-            <a href="./solutions/03-objects.js">solution</a>
+        </details>
+
+        <details class="path-item">
+          <summary>
+            <span class="step-num">03</span>
+            <span class="step-title">Objects</span>
+            <span class="step-hint">Book title + author</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              <strong>Goal:</strong> Make a book object and print
+              <code>"Atomic Habits by James Clear"</code>.
+            </p>
+            <div class="links">
+              <a href="./challenges/03-objects.js">your challenge file</a>
+              <a href="./solutions/03-objects.js">solution (later)</a>
+            </div>
           </div>
-        </li>
-        <li>
-          <h3>4. Functions</h3>
-          <p>Write <code>isEven(n)</code> and <code>sumArray(arr)</code>.</p>
-          <div class="links">
-            <a href="./challenges/04-functions.js">challenge</a>
-            <a href="./solutions/04-functions.js">solution</a>
+        </details>
+
+        <details class="path-item">
+          <summary>
+            <span class="step-num">04</span>
+            <span class="step-title">Functions</span>
+            <span class="step-hint">isEven + sumArray</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              <strong>Goal:</strong> Write <code>isEven(n)</code> and
+              <code>sumArray(arr)</code>.
+            </p>
+            <div class="links">
+              <a href="./challenges/04-functions.js">your challenge file</a>
+              <a href="./solutions/04-functions.js">solution (later)</a>
+            </div>
           </div>
-        </li>
-        <li>
-          <h3>5. Async</h3>
-          <p>Write a function that waits 1 second then returns <code>"done"</code> using async/await.</p>
-          <div class="links">
-            <a href="./challenges/05-async.js">challenge</a>
-            <a href="./solutions/05-async.js">solution</a>
+        </details>
+
+        <details class="path-item">
+          <summary>
+            <span class="step-num">05</span>
+            <span class="step-title">Async</span>
+            <span class="step-hint">Wait 1 second → "done"</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              <strong>Goal:</strong> After 1 second, log <code>"done"</code>
+              using async/await.
+            </p>
+            <div class="links">
+              <a href="./challenges/05-async.js">your challenge file</a>
+              <a href="./solutions/05-async.js">solution (later)</a>
+            </div>
           </div>
-        </li>
-        <li>
-          <h3>6. DOM</h3>
-          <p>Open the todo project and add a Clear All button that removes every todo.</p>
-          <div class="links">
-            <a href="../dom/project/index.html">todo project</a>
+        </details>
+
+        <details class="path-item">
+          <summary>
+            <span class="step-num">06</span>
+            <span class="step-title">DOM project</span>
+            <span class="step-hint">Extend the todo app</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              <strong>Goal:</strong> Add a “Clear All” button that removes every
+              todo from the list.
+            </p>
+            <div class="links">
+              <a href="../dom/project/index.html">open todo project</a>
+            </div>
           </div>
-        </li>
-      </ol>
-    </div>
+        </details>
+      </div>
+
+      <p style="margin-top: 2rem">
+        <a class="cta" href="../index.html">Back to easy guide</a>
+      </p>
+    </main>
   </body>
 </html>

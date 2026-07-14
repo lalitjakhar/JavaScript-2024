@@ -1,25 +1,17 @@
-// filter method
+// =============================================
+// filter — keep items that pass a test
+// Visual: arrays/array-methods/filter/index.html
+// =============================================
 
-//for even numbers
 const numbers = [1, 2, 3, 4, 5, 6, 4, 8, 7, 9];
 
-const isEven = function (number) {
-  return number % 2 === 0;
-};
+// Even numbers: remainder 0 when divided by 2
+const evenNumbers = numbers.filter((number) => number % 2 === 0);
+console.log("evens →", evenNumbers);
 
-const evenNumbers = numbers.filter(isEven);
-console.log(evenNumbers);
+// Odd numbers
+const oddNumbers = numbers.filter((number) => number % 2 !== 0);
+console.log("odds →", oddNumbers);
 
-//for odd numbers
-
-// const isOdd = function (number) {
-//   return number % 2 !== 0;
-// };
-
-// const oddNumbers = numbers.filter(isOdd);
-// console.log(oddNumbers);
-
-const oddNumbers = numbers.filter((number) => {
-  return number % 2 !== 0;
-});
-console.log(oddNumbers);
+// Original array is NOT changed
+console.log("original →", numbers);

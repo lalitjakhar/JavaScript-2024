@@ -1,27 +1,29 @@
-// intro to arrays
-// ordered collection of items
+// =============================================
+// ARRAYS intro
+// Run: node arrays/intro/IntroArray.js
+// Visual (best): open arrays/intro/index.html
+// =============================================
 
-// reference type
+// An array is an ordered list. Indexes start at 0.
+const fruits = ["apple", "banana", "grapes"];
+// indexes:        0         1          2
 
-// how to create arrays
+console.log("1) fruits[2] →", fruits[2]); // grapes
+console.log("2) length →", fruits.length); // 3
 
-let fruits = ["apple", "banana", "grapes"];
+const numbers = [1, 2, 3, 4, 5, 6];
+console.log("3) numbers →", numbers);
 
-console.log(fruits[2]);
+// Mixed types are allowed
+const mixed = [1, "string", null, undefined, 5, 6];
+console.log("4) mixed →", mixed);
 
-let numbers = [1, 2, 3, 4, 5, 6];
-console.log(numbers);
-
-let mixed = [1, "string", null, undefined, 5, 6];
-console.log(mixed);
-
-let fruits2 = ["apple", "banana", "grapes"];
-console.log(fruits2);
+// Change one item by index
+const fruits2 = ["apple", "banana", "grapes"];
 fruits2[1] = "mango";
-console.log(fruits2);
+console.log("5) after fruits2[1] = 'mango' →", fruits2);
 
-let fruits3 = ["apple", "banana", "grapes"];
-console.log(typeof fruits3);
-console.log(Array.isArray(fruits3));
-
-// array indexing
+// typeof is misleading for arrays — use Array.isArray
+const fruits3 = ["apple", "banana", "grapes"];
+console.log("6) typeof →", typeof fruits3); // "object"
+console.log("6) Array.isArray →", Array.isArray(fruits3)); // true
