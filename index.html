@@ -8,6 +8,17 @@
       content="Learn JavaScript from zero — what it is, how it works, and a full path of visual lessons from basics to DOM."
     />
     <title>JavaScript — Learn from Zero</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("js-learn-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+            document.documentElement.style.colorScheme = t;
+          }
+        } catch (e) {}
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,6 +29,92 @@
   </head>
   <body>
     <div class="atmosphere" aria-hidden="true"></div>
+
+    <header class="site-header" data-site-header>
+      <div class="site-nav">
+        <a class="site-nav-brand" href="./index.html" aria-label="JavaScript home">
+          <span class="site-nav-mark" aria-hidden="true">JS</span>
+          <span class="site-nav-brand-text">
+            <span class="site-nav-name">JavaScript</span>
+            <span class="site-nav-tag">Learn from zero</span>
+          </span>
+        </a>
+
+        <div class="site-nav-bar">
+          <div class="site-nav-theme" data-theme-slot></div>
+          <button
+            class="nav-menu-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-menu"
+            aria-label="Open menu"
+          >
+            <span class="nav-menu-icon" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+        </div>
+
+        <div class="site-nav-backdrop" data-nav-backdrop></div>
+
+        <nav
+          class="site-menu"
+          id="site-menu"
+          aria-label="Primary"
+          data-site-menu
+        >
+          <div class="site-menu-head">
+            <div>
+              <p class="site-menu-kicker">Navigate</p>
+              <p class="site-menu-title">JavaScript</p>
+            </div>
+            <button
+              class="nav-close-btn"
+              type="button"
+              data-nav-close
+              aria-label="Close menu"
+            >
+              <span aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M3.5 3.5l9 9M12.5 3.5l-9 9"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+
+          <ul class="site-menu-list">
+            <li>
+              <a href="#what-is-js" data-nav-link><span>Learn</span></a>
+            </li>
+            <li>
+              <a href="#building-blocks" data-nav-link><span>Ideas</span></a>
+            </li>
+            <li>
+              <a href="#curriculum" data-nav-link><span>Path</span></a>
+            </li>
+            <li>
+              <a href="./exercises/index.html" data-nav-link
+                ><span>Practice</span></a
+              >
+            </li>
+            <li>
+              <a href="#how-to-study" data-nav-link><span>Study</span></a>
+            </li>
+          </ul>
+
+          <div class="site-menu-foot">
+            <a class="cta site-menu-cta" href="./basics/console-log/index.html"
+              >Start learning</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
 
     <header class="hero">
       <div class="hero-inner">
@@ -50,15 +147,6 @@
         </div>
       </div>
     </header>
-
-    <nav class="jump-nav" aria-label="On this page">
-      <a href="#what-is-js">What is JS</a>
-      <a href="#trio">HTML · CSS · JS</a>
-      <a href="#building-blocks">6 ideas</a>
-      <a href="#facts">Beginner rules</a>
-      <a href="#curriculum">Full path</a>
-      <a href="#how-to-study">How to study</a>
-    </nav>
 
     <main class="home-main">
       <section class="section" id="what-is-js">
@@ -639,6 +727,7 @@
       </p>
     </footer>
 
+    <script src="./lesson-ui/theme.js"></script>
     <script src="./hub.js"></script>
   </body>
 </html>

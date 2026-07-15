@@ -85,4 +85,16 @@ window.Lesson = {
 
 document.addEventListener("DOMContentLoaded", () => {
   Lesson.enhanceTables();
+
+  // Mount theme toggle into lesson nav (shared Theme from theme.js)
+  if (window.Theme) {
+    const nav = document.querySelector(".lesson-nav");
+    if (nav && !nav.querySelector("[data-theme-toggle]")) {
+      const links = document.createElement("div");
+      links.className = "lesson-nav-links";
+      while (nav.firstChild) links.appendChild(nav.firstChild);
+      nav.appendChild(links);
+      Theme.mountToggle(nav);
+    }
+  }
 });

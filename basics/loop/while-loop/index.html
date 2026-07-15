@@ -4,6 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>while loop — Easy Lesson</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("js-learn-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+            document.documentElement.style.colorScheme = t;
+          }
+        } catch (e) {}
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -74,6 +85,7 @@ console.log(total); // 55</div>
         <p class="tip"><code>while</code> checks the condition <strong>before</strong> each iteration.</p>
       </section>
     </div>
+    <script src="../../../lesson-ui/theme.js"></script>
     <script src="../../../lesson-ui/lesson.js"></script>
     <script src="./lesson.js"></script>
   </body>

@@ -4,6 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>undefined, null, BigInt — Easy Lesson</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("js-learn-theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+            document.documentElement.style.colorScheme = t;
+          }
+        } catch (e) {}
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -56,6 +67,7 @@ console.log(myNumber + sameMyNumber); // 24n</div>
         <p class="tip">BigInt is for crypto, timestamps, large IDs. Regular numbers work for most cases.</p>
       </section>
     </div>
+    <script src="../../../lesson-ui/theme.js"></script>
     <script src="../../../lesson-ui/lesson.js"></script>
     <script src="./lesson.js"></script>
   </body>
