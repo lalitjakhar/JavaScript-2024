@@ -3,9 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Default Parameters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./DefaultParameter.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../lexical-scope/index.html">← Lexical scope</a>
+        <a href="../rest-parameters/index.html">Next: Rest parameters →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 4 · Functions</p>
+      <h1>Default Parameters</h1>
+      <p class="lesson-lead">
+        Give parameters a <strong>fallback value</strong>:
+        <code>function greet(name = "Guest") { ... }</code> — no more undefined errors!
+      </p>
+
+      <div class="why">
+        <strong>Why defaults?</strong> Handle missing arguments gracefully.
+        No need for <code>if (param === undefined)</code> checks.
+      </div>
+
+      <section class="step">
+        <h2>1. Without default</h2>
+        <p>Missing argument becomes <code>undefined</code>.</p>
+        <div class="code-block">function add(a, b) {
+  return a + b;
+}
+add(5); // 5 + undefined = NaN</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-no-default" type="button">Call with 1 arg</button>
+        </div>
+        <pre class="output" id="out-no-default">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. With default parameter</h2>
+        <div class="code-block">function add(a, b = 0) {
+  return a + b;
+}
+add(5); // 5 + 0 = 5</div>
+        <div class="field-row">
+          <label>A <input id="num-a" type="number" value="5" /></label>
+          <label>B (optional) <input id="num-b" type="text" placeholder="leave empty" /></label>
+          <button class="btn" id="btn-default" type="button">Add</button>
+        </div>
+        <pre class="output" id="out-default">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Multiple defaults</h2>
+        <div class="code-block">function greet(name = "Guest", message = "Hello") {
+  return `${message}, ${name}!`;
+}</div>
+        <div class="field-row">
+          <label>Name <input id="name-input" type="text" placeholder="optional" /></label>
+          <label>Message <input id="msg-input" type="text" placeholder="optional" /></label>
+          <button class="btn" id="btn-greet" type="button">Greet</button>
+        </div>
+        <pre class="output" id="out-greet">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Old way (before ES6)</h2>
+        <div class="code-block">function add(a, b) {
+  if (typeof b === "undefined") {
+    b = 0;
+  }
+  return a + b;
+}</div>
+        <p class="tip">
+          Default parameters are cleaner and more readable!
+        </p>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

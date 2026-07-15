@@ -3,9 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Naming Variables — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./namingVar.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../let-var/index.html">← let & var</a>
+        <a href="../../const/index.html">Next: const →</a>
+      </nav>
+      <p class="lesson-brand">Basics · naming rules</p>
+      <h1>Naming Variables — the rules</h1>
+      <p class="lesson-lead">
+        Variable names have strict rules. Follow them, or your code won't run.
+      </p>
+      <div class="why"><strong>Why learn this?</strong> Naming mistakes cause errors. Good names also make code readable.</div>
+      <section class="step">
+        <h2>1. Can't start with a number</h2>
+        <div class="code-block">// ❌ Invalid
+// let 1value = 10;
+
+// ✅ Valid
+let value1 = 10;
+console.log(value1 / 2);</div>
+        <div class="btn-row"><button class="btn" id="btn-number" type="button">Run</button></div>
+        <pre class="output" id="out-number">Result…</pre>
+        <p class="tip">Names can <strong>contain</strong> numbers, just not <strong>start</strong> with them.</p>
+      </section>
+      <section class="step">
+        <h2>2. Only letters, _, and $</h2>
+        <p>Use underscore <code>_</code> or dollar sign <code>$</code>. No spaces or special characters like <code>-</code>, <code>!</code>, <code>@</code>.</p>
+        <div class="code-block">// ✅ Valid
+let first_name = "Jakhar";
+let _firstname = "Jakhar";
+let first$name = "Jakhar";
+let $firstname = "Jakhar";
+
+// ❌ Invalid
+// let first-name = "Jakhar";
+// let first name = "Jakhar";</div>
+        <div class="btn-row"><button class="btn" id="btn-chars" type="button">Show valid</button></div>
+        <pre class="output" id="out-chars">Result…</pre>
+      </section>
+      <section class="step">
+        <h2>3. Use camelCase</h2>
+        <p>JavaScript convention: start lowercase, capitalize each new word.</p>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Style</th>
+              <th>Example</th>
+              <th>Use?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>camelCase</td>
+              <td><code>firstName</code></td>
+              <td>✅ Standard in JS</td>
+            </tr>
+            <tr>
+              <td>snake_case</td>
+              <td><code>first_name</code></td>
+              <td>⚠️ Works, but uncommon</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="tip">Good names are clear: <code>userAge</code> beats <code>x</code>.</p>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

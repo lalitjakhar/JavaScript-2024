@@ -3,9 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Arrays with const — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./ConstArray.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../clone-concatenate/index.html">← Clone & concatenate</a>
+        <a href="../destructuring-array/index.html">Next: Array destructuring →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · const keyword</p>
+      <h1>Arrays with const</h1>
+      <p class="lesson-lead">
+        <code>const</code> locks the <strong>variable name</strong>, not the
+        array contents. You can still push, pop, and change items.
+      </p>
+
+      <div class="why">
+        <strong>Why use const?</strong> It prevents accidental reassignment
+        (<code>fruits = []</code>) but allows normal array operations.
+      </div>
+
+      <section class="step">
+        <h2>1. const allows you to modify contents</h2>
+        <p>
+          <code>const</code> means "this variable always points to the same
+          array" — but you can change what's <em>inside</em> the array.
+        </p>
+        <p class="example-label">Code</p>
+        <div class="code-block">const fruits = ["apple", "mango"];
+fruits.push("banana");  // ✓ allowed
+fruits[0] = "orange";   // ✓ allowed
+console.log(fruits);    // ["orange", "mango", "banana"]</div>
+        <div class="array-view" id="view-const"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-modify" type="button">Modify const array</button>
+        </div>
+        <pre class="output" id="out-modify">Click to see…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. const prevents reassignment</h2>
+        <p>You cannot point the variable to a completely new array.</p>
+        <div class="code-block">const fruits = ["apple", "mango"];
+fruits = ["new", "array"];  // ❌ Error!
+// TypeError: Assignment to constant variable.</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-error" type="button">Try to reassign</button>
+        </div>
+        <pre class="output" id="out-error">Click to trigger error…</pre>
+        <p class="tip">
+          Use <code>const</code> by default. Only use <code>let</code> if you
+          truly need to reassign the entire array.
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>3. Interactive: build your const array</h2>
+        <p>Add items to a const array. It works perfectly.</p>
+        <div class="field-row">
+          <label>
+            New item
+            <input id="item" type="text" placeholder="e.g. banana" />
+          </label>
+          <button class="btn" id="btn-add" type="button">Add to const array</button>
+        </div>
+        <div class="array-view" id="view-build"></div>
+        <pre class="output" id="out-build">Your array is empty.</pre>
+      </section>
+    </div>
+
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

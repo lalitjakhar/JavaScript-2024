@@ -3,9 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>let vs var — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./letVariables.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../index.html">← Variables</a>
+        <a href="../naming-var/index.html">Next: Naming variables →</a>
+      </nav>
+      <p class="lesson-brand">Basics · let keyword</p>
+      <h1>let — modern variable declaration</h1>
+      <p class="lesson-lead">
+        Use <code>let</code> to declare a variable that can change. It's the modern, safer way compared to the old <code>var</code> keyword.
+      </p>
+      <div class="why"><strong>Why learn this?</strong> <code>let</code> has block scope, which prevents many common bugs. It's the standard in modern JavaScript.</div>
+      <section class="step">
+        <h2>1. Declare with let</h2>
+        <p class="example-label">Example code</p>
+        <div class="code-block">let firstName = "Jakhar";
+console.log(firstName);</div>
+        <div class="btn-row"><button class="btn" id="btn-let" type="button">Run</button></div>
+        <pre class="output" id="out-let">Result…</pre>
+        <p class="tip">The keyword <code>let</code> tells JavaScript "create a new variable here."</p>
+      </section>
+      <section class="step">
+        <h2>2. let vs var — block scope</h2>
+        <p>
+          <code>let</code> is <strong>block-scoped</strong> — it only exists inside <code>{ }</code> braces. <code>var</code> ignores blocks, causing confusion.
+        </p>
+        <div class="code-block">if (true) {
+  let x = 10;
+  var y = 20;
+}
+// x is not available here (good!)
+// y is still available (confusing!)</div>
+        <div class="btn-row"><button class="btn" id="btn-scope" type="button">Test scope</button></div>
+        <pre class="output" id="out-scope">Result…</pre>
+      </section>
+      <section class="step">
+        <h2>3. Best practice</h2>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Use it?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>let</code></td>
+              <td>✅ Yes — default for variables that change</td>
+            </tr>
+            <tr>
+              <td><code>var</code></td>
+              <td>❌ Avoid — old style with quirks</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="tip">Modern code uses <code>let</code> and <code>const</code>, almost never <code>var</code>.</p>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

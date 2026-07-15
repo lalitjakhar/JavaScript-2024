@@ -3,9 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Rest Parameters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Rest.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../default-parameters/index.html">← Default parameters</a>
+        <a href="../../param-destructuring/index.html">Next: Param destructuring →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 4 · Functions</p>
+      <h1>Rest Parameters</h1>
+      <p class="lesson-lead">
+        Collect <strong>all remaining arguments</strong> into an array:
+        <code>function sum(...numbers) { }</code> — unlimited parameters!
+      </p>
+
+      <div class="why">
+        <strong>Why rest?</strong> Handle unknown number of arguments.
+        Perfect for sum, join, or list operations.
+      </div>
+
+      <section class="step">
+        <h2>1. Basic rest parameter</h2>
+        <div class="code-block">function myFunc(a, b, ...rest) {
+  console.log("a:", a);
+  console.log("b:", b);
+  console.log("rest:", rest); // array of remaining
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-basic" type="button">Call with 6 args</button>
+        </div>
+        <pre class="output" id="out-basic">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Sum all numbers</h2>
+        <div class="code-block">function addAll(...numbers) {
+  let total = 0;
+  for (let n of numbers) {
+    total += n;
+  }
+  return total;
+}</div>
+        <div class="field-row">
+          <label>
+            Numbers (comma-separated)
+            <input id="nums-input" type="text" value="1,2,3,4,5" />
+          </label>
+          <button class="btn" id="btn-sum" type="button">Sum all</button>
+        </div>
+        <pre class="output" id="out-sum">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Rest must be last</h2>
+        <p>You can only have one rest parameter, and it must come last.</p>
+        <div class="code-block">// ✅ Valid
+function fn(a, b, ...rest) { }
+
+// ❌ Invalid
+function fn(...rest, a, b) { }</div>
+        <p class="tip">
+          Rest parameter is always an <strong>array</strong>, even if empty.
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>4. Combine with regular params</h2>
+        <div class="code-block">function greet(greeting, ...names) {
+  return names.map(n => `${greeting}, ${n}!`);
+}</div>
+        <div class="field-row">
+          <label>
+            Greeting
+            <input id="greeting" type="text" value="Hello" />
+          </label>
+          <label>
+            Names (comma-separated)
+            <input id="names-input" type="text" value="Alice,Bob,Charlie" />
+          </label>
+          <button class="btn" id="btn-greet" type="button">Greet all</button>
+        </div>
+        <pre class="output" id="out-greet">Result…</pre>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

@@ -3,9 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document File </title>
+    <title>Computed Properties</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./ComputedProperties.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../iterate/index.html">← Iterate objects</a>
+        <a href="../spread-operator/index.html">Next: Object spread →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 3 · Objects</p>
+      <h1>Computed Properties</h1>
+      <p class="lesson-lead">
+        Use <strong>variables as keys</strong> when creating an object.
+        Wrap the variable in brackets: <code>{ [keyVar]: value }</code>.
+      </p>
+
+      <div class="why">
+        <strong>Why computed?</strong> Build objects dynamically from
+        user input, API responses, or any runtime data.
+      </div>
+
+      <section class="step">
+        <h2>1. Static vs Computed</h2>
+        <div class="compare">
+          <div>
+            <h3>Static key</h3>
+            <div class="code-block">const obj = {
+  name: "Jakhar"
+};</div>
+          </div>
+          <div>
+            <h3>Computed key</h3>
+            <div class="code-block">const key = "name";
+const obj = {
+  [key]: "Jakhar"
+};</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="step">
+        <h2>2. Build with computed keys</h2>
+        <div class="code-block">const key1 = "firstName";
+const key2 = "lastName";
+const obj = {
+  [key1]: "Lalit",
+  [key2]: "Jakhar"
+};</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-build" type="button">Build object</button>
+        </div>
+        <div class="array-view" id="view-obj"></div>
+        <pre class="output" id="out-build">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Dynamic key builder</h2>
+        <p>Create an object with custom key-value pairs.</p>
+        <div class="field-row">
+          <label>
+            Key
+            <input id="key-input" type="text" value="hobby" />
+          </label>
+          <label>
+            Value
+            <input id="value-input" type="text" value="coding" />
+          </label>
+          <button class="btn" id="btn-dynamic" type="button">Add to object</button>
+        </div>
+        <div class="array-view" id="view-dynamic"></div>
+        <pre class="output" id="out-dynamic">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Without computed properties</h2>
+        <p>The old way — assign after creation:</p>
+        <div class="code-block">const obj = {};
+obj[key1] = value1;
+obj[key2] = value2;</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-old" type="button">Old way</button>
+        </div>
+        <pre class="output" id="out-old">Result…</pre>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

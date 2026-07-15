@@ -3,9 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>break & continue — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./BreakContinue.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../loop/for-loop/index.html">← for loop</a>
+        <a href="../../arrays/intro/index.html">Next: Arrays intro →</a>
+      </nav>
+      <p class="lesson-brand">Basics · loop control</p>
+      <h1>break & continue — control loops</h1>
+      <p class="lesson-lead">
+        <code>break</code> exits the loop immediately. <code>continue</code> skips to the next iteration.
+      </p>
+      <div class="why"><strong>Why learn this?</strong> Stop searching when found, skip invalid items, exit early to save time.</div>
+      <section class="step">
+        <h2>1. break — exit loop</h2>
+        <p class="example-label">Example code</p>
+        <div class="code-block">for (let i = 1; i <= 10; i++) {
+  if (i === 4) {
+    break; // stop loop here!
+  }
+  console.log(i);
+}
+// Output: 1 2 3</div>
+        <div class="btn-row"><button class="btn" id="btn-break" type="button">Test break</button></div>
+        <pre class="output" id="out-break">Result…</pre>
+        <p class="tip"><code>break</code> stops the entire loop. Use it when you found what you're looking for.</p>
+      </section>
+      <section class="step">
+        <h2>2. continue — skip one iteration</h2>
+        <p>
+          <code>continue</code> jumps to the next loop iteration, skipping remaining code.
+        </p>
+        <div class="code-block">for (let i = 1; i <= 10; i++) {
+  if (i === 4) {
+    continue; // skip 4!
+  }
+  console.log(i);
+}
+// Output: 1 2 3 5 6 7 8 9 10</div>
+        <div class="btn-row"><button class="btn" id="btn-continue" type="button">Test continue</button></div>
+        <pre class="output" id="out-continue">Result…</pre>
+        <p class="tip"><code>continue</code> skips the current item but keeps looping. Use for filtering.</p>
+      </section>
+      <section class="step">
+        <h2>3. Quick comparison</h2>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Keyword</th>
+              <th>Effect</th>
+              <th>Example use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>break</code></td>
+              <td>Exit loop entirely</td>
+              <td>Found search result, stop</td>
+            </tr>
+            <tr>
+              <td><code>continue</code></td>
+              <td>Skip to next iteration</td>
+              <td>Skip invalid/empty items</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="tip">Both work in <code>for</code>, <code>while</code>, and <code>do-while</code> loops.</p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

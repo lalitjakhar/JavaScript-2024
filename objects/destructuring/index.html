@@ -3,9 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Object Destructuring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./DestructuringObject.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../spread-operator/index.html">← Object spread</a>
+        <a href="../nested-destructuring/index.html">Next: Nested destructuring →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 3 · Objects</p>
+      <h1>Object Destructuring</h1>
+      <p class="lesson-lead">
+        <strong>Extract properties</strong> into variables quickly:
+        <code>const { name, age } = person;</code> instead of dot notation.
+      </p>
+
+      <div class="why">
+        <strong>Why destructure?</strong> Less typing, cleaner code.
+        Pull out exactly the fields you need.
+      </div>
+
+      <section class="step">
+        <h2>1. Basic destructuring</h2>
+        <div class="code-block">const band = {
+  bandName: "led zeppelin",
+  famousSong: "stairway to heaven"
+};
+const { bandName, famousSong } = band;</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-basic" type="button">Run destructuring</button>
+        </div>
+        <pre class="output" id="out-basic">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Rename variables</h2>
+        <p>Use <code>oldName: newName</code> syntax.</p>
+        <div class="code-block">const { bandName: name } = band;
+console.log(name); // "led zeppelin"</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-rename" type="button">Run rename</button>
+        </div>
+        <pre class="output" id="out-rename">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Rest operator (...)</h2>
+        <p>Collect remaining properties into a new object.</p>
+        <div class="code-block">const { bandName, ...restProps } = band;
+console.log(restProps);</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-rest" type="button">Run rest</button>
+        </div>
+        <div class="array-view" id="view-rest"></div>
+        <pre class="output" id="out-rest">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Default values</h2>
+        <p>Provide fallback if key doesn't exist.</p>
+        <div class="code-block">const user = { name: "Jakhar" };
+const { name, age = 18 } = user;</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-default" type="button">Run with default</button>
+        </div>
+        <pre class="output" id="out-default">Result…</pre>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

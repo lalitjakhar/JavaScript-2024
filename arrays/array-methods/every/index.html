@@ -3,12 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>every() — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <div>
-      <h1>jAKHARRRRRRR</h1>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../some/index.html">← some</a>
+        <a href="../sort/index.html">Next: sort →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · every</p>
+      <h1>every() — test if all items match</h1>
+      <p class="lesson-lead">
+        <code>every</code> returns <code>true</code> only if
+        <strong>every</strong> item passes the test. One failure → <code>false</code>.
+      </p>
+
+      <div class="why">
+        <strong>Best mental model:</strong> "Are all numbers even?" / "Is every
+        product in stock?" / "Did everyone pass the exam?"
+      </div>
+
+      <section class="step">
+        <h2>1. Basic example: all even?</h2>
+        <p>Check if every number in the array is even.</p>
+        <p class="example-label">Code</p>
+        <div class="code-block">const numbers = [2, 4, 6, 8, 10];
+
+const allEven = numbers.every((number) => number % 2 === 0);
+// → true (all are even)</div>
+        <div class="array-view" id="view-nums"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-even" type="button">Check if all even</button>
+        </div>
+        <pre class="output" id="out-even">Click to test…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Real-world: validate cart</h2>
+        <p>
+          "Are all items in my cart under $30,000?" Useful for validation rules.
+        </p>
+        <div class="code-block">const userCart = [
+  { productId: 1, productName: "mobile", price: 33000 },
+  { productId: 2, productName: "laptop", price: 122000 },
+  { productId: 3, productName: "tv", price: 18000 },
+  { productId: 4, productName: "refrigerator", price: 12000 },
+];
+
+const allAffordable = userCart.every((item) => item.price < 30000);
+// → false (mobile and laptop exceed 30k)</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-cart" type="button">Check all prices</button>
+        </div>
+        <pre class="output" id="out-cart">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Fails on first mismatch</h2>
+        <p>
+          <code>every</code> stops checking as soon as one item fails the test
+          (efficient).
+        </p>
+        <div class="code-block">const mixed = [2, 4, 5, 8];
+const allEven = mixed.every((n) => n % 2 === 0);
+// → false (stops at 5)</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-mixed" type="button">Test mixed array</button>
+        </div>
+        <pre class="output" id="out-mixed">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. some vs every summary</h2>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Meaning</th>
+              <th>Returns true if…</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>some</code></td>
+              <td>"At least one"</td>
+              <td>Any item passes</td>
+            </tr>
+            <tr>
+              <td><code>every</code></td>
+              <td>"All of them"</td>
+              <td>Every item passes</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="tip">
+          Both return booleans. Use them for validation, filtering logic, or
+          conditional rendering.
+        </p>
+      </section>
     </div>
-    <script src="./Every.js"></script>
+
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

@@ -3,9 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Arrow Functions and this</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./ArrowFunc.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../methods/bind-method/index.html">← bind()</a>
+        <a href="../prototype/index.html">Next: Prototype →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 7 · OOP</p>
+      <h1>Arrow Functions — lexical this</h1>
+      <p class="lesson-lead">
+        Arrow functions <code>() => {}</code> don't have their own
+        <code>this</code>. They inherit <code>this</code> from the surrounding
+        scope.
+      </p>
+
+      <div class="why">
+        <strong>Rule:</strong> Arrow functions capture <code>this</code> from
+        where they're <em>defined</em>, not where they're called. Great for
+        callbacks, but don't use them as object methods.
+      </div>
+
+      <section class="step">
+        <h2>Arrow function as method (problem)</h2>
+        <div class="code-block">const user1 = {
+  firstName: "Lalit",
+  age: 18,
+  about: () => {
+    // Arrow takes `this` from outer scope (window)
+    return `${this.firstName}, age ${this.age}`;
+  }
+};
+
+user1.about(); // undefined, undefined</div>
+        <button class="btn" id="btn-arrow" type="button">Run</button>
+        <pre class="output" id="out-arrow">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>When to use arrow functions</h2>
+        <p>
+          <strong>Good:</strong> Callbacks, timers, array methods. They keep
+          the outer <code>this</code>.
+        </p>
+        <div class="code-block">const counter = {
+  count: 0,
+  start() {
+    setInterval(() => {
+      this.count++; // Arrow keeps counter's `this`
+      console.log(this.count);
+    }, 1000);
+  }
+};</div>
+        <button class="btn" id="btn-use" type="button">Run</button>
+        <pre class="output" id="out-use">Output…</pre>
+        <p class="tip">
+          <strong>Avoid:</strong> Arrow functions as object methods. Use
+          regular functions or shorthand methods instead.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

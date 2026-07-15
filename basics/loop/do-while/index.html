@@ -3,9 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>do-while loop — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./DoWhileLoop.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../while-loop/index.html">← while loop</a>
+        <a href="../for-loop/index.html">Next: for loop →</a>
+      </nav>
+      <p class="lesson-brand">Basics · loops</p>
+      <h1>do-while — run at least once</h1>
+      <p class="lesson-lead">
+        <code>do-while</code> is like <code>while</code>, but it checks the condition <strong>after</strong> running the code. Guarantees at least one execution.
+      </p>
+      <div class="why"><strong>Why learn this?</strong> "Show menu, then check if user wants to continue" — action first, then decision.</div>
+      <section class="step">
+        <h2>1. Key difference</h2>
+        <p class="example-label">while (checks first)</p>
+        <div class="code-block">let i = 10;
+while (i <= 9) {
+  console.log(i); // never runs!
+  i++;
+}</div>
+        <p class="example-label">do-while (checks after)</p>
+        <div class="code-block">let i = 10;
+do {
+  console.log(i); // runs once!
+  i++;
+} while (i <= 9);</div>
+        <div class="btn-row"><button class="btn" id="btn-diff" type="button">Compare both</button></div>
+        <pre class="output" id="out-diff">Result…</pre>
+        <p class="tip"><code>do-while</code> always runs the body <strong>at least once</strong>, even if condition is false.</p>
+      </section>
+      <section class="step">
+        <h2>2. Count 0 to 9</h2>
+        <p>
+          Normal use case where condition is true at start.
+        </p>
+        <div class="code-block">let i = 0;
+
+do {
+  console.log(i);
+  i++;
+} while (i <= 9);</div>
+        <div class="btn-row"><button class="btn" id="btn-count" type="button">Run loop</button></div>
+        <pre class="output" id="out-count">Result…</pre>
+      </section>
+      <section class="step">
+        <h2>3. When to use</h2>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Use</th>
+              <th>When</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>while</code></td>
+              <td>May not run at all (check first)</td>
+            </tr>
+            <tr>
+              <td><code>do-while</code></td>
+              <td>Must run at least once</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="tip">Common for menu loops, input validation, game loops.</p>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

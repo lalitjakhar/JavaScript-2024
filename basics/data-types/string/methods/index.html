@@ -3,9 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>String Methods — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./methodsString.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../tempelate/index.html">← Template strings</a>
+        <a href="../../../operators/and-or-operator/index.html">Next: AND & OR →</a>
+      </nav>
+      <p class="lesson-brand">Basics · strings</p>
+      <h1>String Methods — transform text</h1>
+      <p class="lesson-lead">
+        Strings have built-in functions (methods) to clean, change case, and extract parts.
+      </p>
+      <div class="why"><strong>Why learn this?</strong> Clean user input, format names, validate emails, search text.</div>
+      <section class="step">
+        <h2>1. trim() — remove spaces</h2>
+        <p class="example-label">Example code</p>
+        <div class="code-block">let firstName = "   Jakhar      ";
+console.log(firstName.length);    // 17
+firstName = firstName.trim();
+console.log(firstName.length);    // 6</div>
+        <div class="btn-row"><button class="btn" id="btn-trim" type="button">Run</button></div>
+        <pre class="output" id="out-trim">Result…</pre>
+        <p class="tip">Always <code>trim()</code> user input to remove accidental spaces.</p>
+      </section>
+      <section class="step">
+        <h2>2. toUpperCase() / toLowerCase()</h2>
+        <p>
+          Change case for comparisons, formatting, or shouting.
+        </p>
+        <div class="code-block">let firstName = "Jakhar";
+console.log(firstName.toUpperCase()); // "JAKHAR"
+console.log(firstName.toLowerCase()); // "jakhar"</div>
+        <div class="btn-row"><button class="btn" id="btn-case" type="button">Change case</button></div>
+        <pre class="output" id="out-case">Result…</pre>
+      </section>
+      <section class="step">
+        <h2>3. slice() — extract part</h2>
+        <p>
+          Extract a substring using start and end index.
+        </p>
+        <div class="code-block">let firstName = "Jakhar";
+//  J a k h a r
+//  0 1 2 3 4 5
+
+let part = firstName.slice(0, 3); // "Jak"
+let part2 = firstName.slice(2, 5); // "kha"
+console.log(part, part2);</div>
+        <div class="btn-row"><button class="btn" id="btn-slice" type="button">Extract parts</button></div>
+        <pre class="output" id="out-slice">Result…</pre>
+        <p class="tip"><code>slice(start, end)</code> — end is <strong>not included</strong>. <code>slice(0, 3)</code> gets indices 0, 1, 2.</p>
+      </section>
+    </div>
+    <script src="../../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

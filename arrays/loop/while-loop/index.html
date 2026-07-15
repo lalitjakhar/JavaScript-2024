@@ -3,9 +3,114 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>while loop with Arrays — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./WhileLoop.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../for-loop/index.html">← for on arrays</a>
+        <a href="../for-of-in-loop/index.html">Next: for…of & for…in →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · loops</p>
+      <h1>while loop — condition-based iteration</h1>
+      <p class="lesson-lead">
+        <code>while</code> keeps running as long as a condition is true. You
+        control the index manually.
+      </p>
+
+      <div class="why">
+        <strong>When to use?</strong> Less common for arrays.
+        <code>for</code> or <code>forEach</code> are usually clearer.
+      </div>
+
+      <section class="step">
+        <h2>1. Basic while loop over an array</h2>
+        <p>Initialize <code>i</code> before the loop. Increment inside.</p>
+        <p class="example-label">Code</p>
+        <div class="code-block">const fruits = ["apple", "mango", "grapes"];
+const fruits2 = [];
+
+let i = 0;
+while (i < fruits.length) {
+  fruits2.push(fruits[i].toUpperCase());
+  i++;
+}</div>
+        <p>Before</p>
+        <div class="array-view" id="view-before"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-while" type="button">Run while loop</button>
+        </div>
+        <p>After</p>
+        <div class="array-view" id="view-after"></div>
+        <pre class="output" id="out-while">Click to loop…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Comparison: for vs while</h2>
+        <p>They do the same thing, but <code>for</code> keeps everything in one line.</p>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Loop type</th>
+              <th>When to use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>for</code></td>
+              <td>Known number of iterations (e.g. array.length)</td>
+            </tr>
+            <tr>
+              <td><code>while</code></td>
+              <td>Condition-based (e.g. "until user quits")</td>
+            </tr>
+            <tr>
+              <td><code>forEach</code></td>
+              <td>Clean syntax, no index needed</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-row">
+          <button class="btn" id="btn-compare" type="button">Show both loops</button>
+        </div>
+        <pre class="output" id="out-compare">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Common mistake: infinite loop</h2>
+        <p>
+          Forgetting to increment <code>i</code> causes an infinite loop (browser
+          freeze). Always ensure <code>i++</code> is inside!
+        </p>
+        <div class="code-block">// ❌ DANGER: infinite loop
+let i = 0;
+while (i < fruits.length) {
+  console.log(fruits[i]);
+  // forgot i++
+}
+
+// ✓ Correct
+let i = 0;
+while (i < fruits.length) {
+  console.log(fruits[i]);
+  i++;  // don't forget this!
+}</div>
+        <p class="tip">
+          For arrays, prefer <code>for</code>, <code>forEach</code>, or
+          <code>for...of</code> — they handle the index automatically.
+        </p>
+      </section>
+    </div>
+
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

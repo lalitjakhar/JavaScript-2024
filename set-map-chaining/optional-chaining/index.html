@@ -3,9 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Optional Chaining</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./OptionalChaining.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../maps/index.html">← Map</a>
+        <a href="../../oop/window/index.html">Next: window object →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 6 · Safe Access</p>
+      <h1>Optional Chaining — safely read nested data</h1>
+      <p class="lesson-lead">
+        Use <code>?.</code> to read properties that might not exist. If any
+        part is <code>undefined</code> or <code>null</code>, you get
+        <code>undefined</code> instead of an error.
+      </p>
+
+      <div class="why">
+        <strong>Without optional chaining:</strong>
+        <code>user.address.street</code> throws an error if
+        <code>address</code> is missing. <strong>With it:</strong>
+        <code>user?.address?.street</code> returns <code>undefined</code>
+        safely.
+      </div>
+
+      <section class="step">
+        <h2>Safe property access</h2>
+        <div class="code-block">const user = {
+  firstName: "harshit"
+  // address is missing
+};
+
+console.log(user?.firstName);           // "harshit"
+console.log(user?.address?.houseNumber); // undefined (no error)</div>
+        <button class="btn" id="btn-chain" type="button">Run</button>
+        <pre class="output" id="out-chain">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>Compare: with vs without</h2>
+        <div class="code-block">const userWithAddress = {
+  firstName: "John",
+  address: { houseNumber: "1234" }
+};
+
+const userNoAddress = {
+  firstName: "Jane"
+};
+
+console.log(userWithAddress?.address?.houseNumber);
+console.log(userNoAddress?.address?.houseNumber);</div>
+        <button class="btn" id="btn-compare" type="button">Run</button>
+        <pre class="output" id="out-compare">Output…</pre>
+        <p class="tip">
+          Also works for method calls: <code>obj.method?.()</code> calls the
+          method only if it exists. Great for optional callbacks.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

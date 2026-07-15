@@ -3,9 +3,100 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>sort() — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Sort.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../every/index.html">← every</a>
+        <a href="../splice-method/index.html">Next: splice →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · sort</p>
+      <h1>sort() — arrange items in order</h1>
+      <p class="lesson-lead">
+        <code>sort</code> reorders the array. For numbers, you must provide a
+        <strong>compare function</strong> or it treats them as strings.
+      </p>
+
+      <div class="why">
+        <strong>Watch out:</strong> <code>sort</code> mutates the original array
+        by default. Clone first if you need the original.
+      </div>
+
+      <section class="step">
+        <h2>1. Sort numbers (low to high)</h2>
+        <p>Use a compare function: <code>(a, b) => a - b</code>.</p>
+        <p class="example-label">Code</p>
+        <div class="code-block">const nums = [40, 5, 100, 1, 25];
+
+// Sort ascending
+const sorted = nums.slice(0).sort((a, b) => a - b);
+// → [1, 5, 25, 40, 100]</div>
+        <p>Original</p>
+        <div class="array-view" id="view-original"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-asc" type="button">Sort ascending</button>
+          <button class="btn ghost" id="btn-desc" type="button">Sort descending</button>
+        </div>
+        <p>Sorted result</p>
+        <div class="array-view" id="view-sorted"></div>
+        <pre class="output" id="out-sort">Click to sort…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Real-world: sort objects by price</h2>
+        <p>Access the property in the compare function.</p>
+        <div class="code-block">const products = [
+  { productId: 1, productName: "mobile", price: 33000 },
+  { productId: 2, productName: "laptop", price: 122000 },
+  { productId: 3, productName: "tv", price: 18000 },
+  { productId: 4, productName: "refrigerator", price: 12000 },
+];
+
+// Low to high
+const lowToHigh = products.slice(0).sort((a, b) => a.price - b.price);
+
+// High to low
+const highToLow = products.slice(0).sort((a, b) => b.price - a.price);</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-price-low" type="button">Sort by price (low to high)</button>
+          <button class="btn ghost" id="btn-price-high" type="button">Sort by price (high to low)</button>
+        </div>
+        <pre class="output" id="out-price">Click to sort products…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Why clone first?</h2>
+        <p>
+          <code>sort</code> mutates the original array. Use
+          <code>slice(0)</code> or <code>[...array]</code> to avoid side effects.
+        </p>
+        <div class="code-block">const original = [5, 2, 8, 1];
+
+// Mutates original
+original.sort((a, b) => a - b);
+// original is now [1, 2, 5, 8]
+
+// Safe: clone first
+const sorted = [...original].sort((a, b) => a - b);</div>
+        <p class="tip">
+          Compare function rules:<br />
+          • Return negative → a comes before b<br />
+          • Return positive → b comes before a<br />
+          • Return 0 → order unchanged
+        </p>
+      </section>
+    </div>
+
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

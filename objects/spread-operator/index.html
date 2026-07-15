@@ -3,9 +3,92 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Spread Operator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./SpreadOperator.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../computed-properties/index.html">← Computed properties</a>
+        <a href="../destructuring/index.html">Next: Object destructuring →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 3 · Objects</p>
+      <h1>Spread Operator</h1>
+      <p class="lesson-lead">
+        <strong>Copy and merge</strong> objects quickly with <code>...</code> syntax.
+        <code>{ ...obj1, ...obj2 }</code> combines all properties.
+      </p>
+
+      <div class="why">
+        <strong>Why spread?</strong> Create new objects without mutating
+        originals — perfect for immutable updates (like React state).
+      </div>
+
+      <section class="step">
+        <h2>1. Copy an object</h2>
+        <div class="code-block">const original = { name: "Jakhar", age: 18 };
+const copy = { ...original };</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-copy" type="button">Copy object</button>
+        </div>
+        <pre class="output" id="out-copy">Result…</pre>
+        <p class="tip">
+          The copy is a <strong>new object</strong>, not a reference.
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>2. Merge two objects</h2>
+        <div class="code-block">const obj1 = { key1: "value1", key2: "value2" };
+const obj2 = { key3: "value3", key4: "value4" };
+const merged = { ...obj1, ...obj2 };</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-merge" type="button">Merge objects</button>
+        </div>
+        <div class="array-view" id="view-merged"></div>
+        <pre class="output" id="out-merge">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Override properties</h2>
+        <p>Later properties override earlier ones.</p>
+        <div class="code-block">const obj1 = { key1: "value1", key2: "value2" };
+const obj2 = { key1: "OVERRIDE", key3: "value3" };
+const result = { ...obj1, ...obj2 };</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-override" type="button">Show override</button>
+        </div>
+        <div class="array-view" id="view-override"></div>
+        <pre class="output" id="out-override">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Add new properties</h2>
+        <div class="code-block">const user = { name: "Jakhar" };
+const updated = { ...user, age: 18, country: "India" };</div>
+        <div class="field-row">
+          <label>
+            New key
+            <input id="add-key" type="text" value="hobby" />
+          </label>
+          <label>
+            New value
+            <input id="add-value" type="text" value="coding" />
+          </label>
+          <button class="btn" id="btn-add" type="button">Add & spread</button>
+        </div>
+        <div class="array-view" id="view-add"></div>
+        <pre class="output" id="out-add">Result…</pre>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

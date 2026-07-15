@@ -3,9 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Iterate Objects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./IterateObjects.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../dot&bracket-notation/index.html">← Dot & bracket notation</a>
+        <a href="../computed-properties/index.html">Next: Computed properties →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 3 · Objects</p>
+      <h1>Iterate Objects</h1>
+      <p class="lesson-lead">
+        Loop over <strong>all keys and values</strong> in an object using
+        <code>for...in</code>, <code>Object.keys()</code>, or <code>Object.entries()</code>.
+      </p>
+
+      <div class="why">
+        <strong>Why iterate?</strong> When you need to process every property
+        in an object dynamically — like displaying a form or filtering data.
+      </div>
+
+      <section class="step">
+        <h2>1. for...in loop</h2>
+        <p>Loops over all keys in an object.</p>
+        <div class="code-block">for (let key in person) {
+  console.log(key, ":", person[key]);
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-forin" type="button">Run for...in</button>
+        </div>
+        <pre class="output" id="out-forin">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Object.keys()</h2>
+        <p>Returns an <strong>array</strong> of all keys.</p>
+        <div class="code-block">const keys = Object.keys(person);
+// → ["name", "age", "person hobbies"]</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-keys" type="button">Get keys</button>
+        </div>
+        <pre class="output" id="out-keys">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. for...of with Object.keys()</h2>
+        <p>Combine <code>Object.keys()</code> with <code>for...of</code> to loop over values.</p>
+        <div class="code-block">for (let key of Object.keys(person)) {
+  console.log(person[key]);
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-forof" type="button">Run for...of</button>
+        </div>
+        <pre class="output" id="out-forof">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Object.entries()</h2>
+        <p>Returns an array of <code>[key, value]</code> pairs.</p>
+        <div class="code-block">for (const [key, value] of Object.entries(person)) {
+  console.log(`${key} =>`, value);
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-entries" type="button">Run entries</button>
+        </div>
+        <pre class="output" id="out-entries">Result…</pre>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

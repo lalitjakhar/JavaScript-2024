@@ -3,10 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>this keyword — OOP</title>
+    <title>The this Keyword</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <p>Open the browser console to see <code>this</code> examples.</p>
-    <script src="./This.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../index.html">← Methods</a>
+        <a href="../call-method/index.html">Next: call() →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 7 · OOP</p>
+      <h1>this — dynamic context</h1>
+      <p class="lesson-lead">
+        <code>this</code> refers to the object that called the method. It's
+        determined at <strong>call time</strong>, not when the function is
+        defined.
+      </p>
+
+      <div class="why">
+        <strong>Rule:</strong> <code>obj.method()</code> → inside
+        <code>method</code>, <code>this</code> is <code>obj</code>. If you call
+        a function without an object, <code>this</code> is <code>undefined</code>
+        (strict mode) or <code>window</code> (non-strict).
+      </div>
+
+      <section class="step">
+        <h2>this in action</h2>
+        <div class="code-block">function personInfo() {
+  return `${this.firstName} is ${this.age} years old`;
+}
+
+const person1 = {
+  firstName: "harsh",
+  age: 8,
+  about: personInfo
+};
+
+const person2 = {
+  firstName: "nitish",
+  age: 17,
+  about: personInfo
+};
+
+person1.about(); // this = person1
+person2.about(); // this = person2</div>
+        <button class="btn" id="btn-this" type="button">Run</button>
+        <pre class="output" id="out-this">Output…</pre>
+        <p class="tip">
+          Losing context? Arrow functions, <code>.bind()</code>,
+          <code>.call()</code>, and <code>.apply()</code> help control
+          <code>this</code>.
+        </p>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

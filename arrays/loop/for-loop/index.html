@@ -3,9 +3,89 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>for loop with Arrays — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./ForLoop.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../methods/destructuring-array/index.html">← Array destructuring</a>
+        <a href="../while-loop/index.html">Next: while on arrays →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · loops</p>
+      <h1>for loop — iterate with index</h1>
+      <p class="lesson-lead">
+        Visit every array item using <code>for (let i = 0; i &lt; arr.length; i++)</code>.
+        Classic loop with full control.
+      </p>
+
+      <div class="why">
+        <strong>When to use?</strong> When you need the <em>index</em>, or want
+        to loop backwards, or skip items by step.
+      </div>
+
+      <section class="step">
+        <h2>1. Basic for loop over an array</h2>
+        <p>Start at 0, end before length, increment by 1.</p>
+        <p class="example-label">Code</p>
+        <div class="code-block">const fruits = ["apple", "mango", "grapes", "banana"];
+
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}</div>
+        <div class="array-view" id="view-fruits"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-basic" type="button">Run loop</button>
+        </div>
+        <pre class="output" id="out-basic">Click to loop…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Transform while looping</h2>
+        <p>Build a new array by processing each item.</p>
+        <div class="code-block">const fruits = ["apple", "mango", "grapes", "banana"];
+const upperFruits = [];
+
+for (let i = 0; i < fruits.length; i++) {
+  upperFruits.push(fruits[i].toUpperCase());
+}
+// → ["APPLE", "MANGO", "GRAPES", "BANANA"]</div>
+        <p>Before</p>
+        <div class="array-view" id="view-before"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-transform" type="button">Transform to uppercase</button>
+        </div>
+        <p>After</p>
+        <div class="array-view" id="view-after"></div>
+        <pre class="output" id="out-transform">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Loop backwards</h2>
+        <p>Start at the last index, decrement until 0.</p>
+        <div class="code-block">for (let i = fruits.length - 1; i >= 0; i--) {
+  console.log(fruits[i]);
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-reverse" type="button">Loop backwards</button>
+        </div>
+        <pre class="output" id="out-reverse">Click to reverse…</pre>
+        <p class="tip">
+          Modern alternatives: <code>forEach</code>, <code>for...of</code>, and
+          <code>map</code> are often cleaner. But <code>for</code> is best when
+          you need the index or fine control.
+        </p>
+      </section>
+    </div>
+
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

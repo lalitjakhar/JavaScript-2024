@@ -3,9 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Maps in JavaScript</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Maps.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../sets/index.html">← Set</a>
+        <a href="../optional-chaining/index.html">Next: Optional chaining →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 6 · Collections</p>
+      <h1>Maps — key-value pairs with any key type</h1>
+      <p class="lesson-lead">
+        Like objects, but keys can be anything (numbers, arrays, objects).
+        Insertion order is preserved.
+      </p>
+
+      <div class="why">
+        <strong>Map vs Object:</strong> Objects only allow strings/symbols as
+        keys. Maps accept any type and remember insertion order.
+      </div>
+
+      <section class="step">
+        <h2>Creating and using Maps</h2>
+        <div class="code-block">const person = new Map();
+person.set('firstName', 'Harshit');
+person.set('age', 7);
+person.set(1, 'one');
+console.log(person.get('firstName')); // "Harshit"
+console.log(person.get(1)); // "one"</div>
+        <button class="btn" id="btn-basic" type="button">Run</button>
+        <pre class="output" id="out-basic">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>Using objects as keys</h2>
+        <p>
+          Maps can use <strong>objects as keys</strong>, perfect for storing
+          metadata about existing objects.
+        </p>
+        <div class="code-block">const person1 = { id: 1, firstName: "harshit" };
+const person2 = { id: 2, firstName: "harshta" };
+
+const extraInfo = new Map();
+extraInfo.set(person1, { age: 8, gender: "male" });
+extraInfo.set(person2, { age: 9, gender: "female" });
+
+console.log(extraInfo.get(person1).gender); // "male"</div>
+        <button class="btn" id="btn-objects" type="button">Run</button>
+        <pre class="output" id="out-objects">Output…</pre>
+        <p class="tip">
+          Iterate with <code>for (let [key, value] of map)</code> or use
+          <code>.keys()</code>, <code>.values()</code>, <code>.entries()</code>.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

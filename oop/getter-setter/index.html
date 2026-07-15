@@ -3,9 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Getters and Setters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./GetSet.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../proto-prototype-class/index.html">← proto · prototype · class</a>
+        <a href="../../error-handling/index.html">Next: Error handling →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 7 · OOP</p>
+      <h1>Getters & Setters — computed properties</h1>
+      <p class="lesson-lead">
+        <code>get</code> defines a property you <em>read</em> like a property
+        (no parentheses). <code>set</code> lets you <em>write</em> to it like a
+        property. Both run code behind the scenes.
+      </p>
+
+      <div class="why">
+        <strong>Why?</strong> Combine or transform data on the fly. E.g.
+        <code>fullName</code> computed from <code>firstName</code> +
+        <code>lastName</code>.
+      </div>
+
+      <section class="step">
+        <h2>Getter: read computed value</h2>
+        <div class="code-block">class Person {
+  constructor(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
+
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+const person = new Person("lalit", "jakhar", 18);
+console.log(person.fullName); // "lalit jakhar" (no parentheses)</div>
+        <button class="btn" id="btn-get" type="button">Run</button>
+        <pre class="output" id="out-get">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>Setter: write to split data</h2>
+        <div class="code-block">class Person {
+  constructor(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
+
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+
+  set fullName(fullName) {
+    const [firstName, lastName] = fullName.split(" ");
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+}
+
+const person = new Person("lalit", "jakhar", 18);
+person.fullName = "aman sharma"; // setter
+console.log(person.fullName); // "aman sharma"</div>
+        <button class="btn" id="btn-set" type="button">Run</button>
+        <pre class="output" id="out-set">Output…</pre>
+        <p class="tip">
+          Use getters/setters for validation, logging, or computed properties.
+          Keep them lightweight.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

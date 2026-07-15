@@ -3,29 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DOM — Events</title>
-    <style>
-      body {
-        font-family: sans-serif;
-        max-width: 420px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-      }
-      button {
-        margin-right: 0.5rem;
-        margin-top: 0.75rem;
-        padding: 0.5rem 0.9rem;
-        cursor: pointer;
-      }
-    </style>
+    <title>DOM Events</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <h1>Events</h1>
-    <p id="count">Clicks: 0</p>
-    <input id="name" type="text" placeholder="Type your name" />
-    <p id="greet">Hello!</p>
-    <button id="btn-click">Click me</button>
-    <button id="btn-reset">Reset</button>
-    <script src="./Events.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../select/index.html">← Select elements</a>
+        <a href="../project/index.html">Next: Todo project →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 10 · DOM</p>
+      <h1>DOM Events — respond to user actions</h1>
+      <p class="lesson-lead">
+        Use <code>addEventListener</code> to react when users click, type,
+        hover, submit forms, etc. Events let you make pages interactive.
+      </p>
+
+      <div class="why">
+        <strong>Pattern:</strong>
+        <code>element.addEventListener(eventType, callback)</code>. Common
+        events: <code>click</code>, <code>input</code>, <code>submit</code>,
+        <code>keydown</code>.
+      </div>
+
+      <section class="step">
+        <h2>Click counter</h2>
+        <p id="count">Clicks: 0</p>
+        <div class="btn-row">
+          <button class="btn" id="btn-click" type="button">Click Me</button>
+          <button class="btn ghost" id="btn-reset" type="button">Reset</button>
+        </div>
+      </section>
+
+      <section class="step">
+        <h2>Input event</h2>
+        <p id="greet">Hello!</p>
+        <div class="field-row">
+          <label>
+            Your name
+            <input id="name-input" type="text" placeholder="Type here…" />
+          </label>
+        </div>
+        <div class="code-block">nameInput.addEventListener("input", (event) => {
+  const name = event.target.value.trim();
+  greetEl.textContent = name ? `Hello, ${name}!` : "Hello!";
+});</div>
+        <p class="tip">
+          The event object (<code>event</code> or <code>e</code>) gives you
+          details: <code>target</code> (which element), <code>key</code>,
+          <code>clientX/Y</code>, etc.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

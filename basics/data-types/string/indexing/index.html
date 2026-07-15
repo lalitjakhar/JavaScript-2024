@@ -3,9 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>String Indexing — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./indexingString.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../undefined-null-bigint/index.html">← undefined · null · BigInt</a>
+        <a href="../concetenation/index.html">Next: String concatenation →</a>
+      </nav>
+      <p class="lesson-brand">Basics · strings</p>
+      <h1>String Indexing — access individual letters</h1>
+      <p class="lesson-lead">
+        Strings are like arrays of characters. Each letter has a position (index) starting at <strong>0</strong>.
+      </p>
+      <div class="why"><strong>Why learn this?</strong> Extract parts of text, check first/last characters, build validators.</div>
+      <section class="step">
+        <h2>1. Access by index</h2>
+        <p class="example-label">Example code</p>
+        <div class="code-block">let firstName = "Jakhar";
+
+//  J a k h a r
+//  0 1 2 3 4 5
+
+console.log(firstName[3]); // "h"</div>
+        <div class="btn-row"><button class="btn" id="btn-index" type="button">Run</button></div>
+        <pre class="output" id="out-index">Result…</pre>
+        <p class="tip">Index starts at 0, not 1. First letter is <code>[0]</code>.</p>
+      </section>
+      <section class="step">
+        <h2>2. String length</h2>
+        <p>
+          Use <code>.length</code> to count characters. Useful for validation (password must be 8+ chars).
+        </p>
+        <div class="code-block">let firstName = "Jakhar";
+console.log(firstName.length); // 6</div>
+        <div class="btn-row"><button class="btn" id="btn-length" type="button">Get length</button></div>
+        <pre class="output" id="out-length">Result…</pre>
+      </section>
+      <section class="step">
+        <h2>3. Last character</h2>
+        <p>
+          Last index is always <code>length - 1</code> (because we start at 0).
+        </p>
+        <div class="code-block">let firstName = "Jakhar";
+let lastIndex = firstName.length - 1;
+console.log(firstName[lastIndex]); // "r"</div>
+        <div class="btn-row"><button class="btn" id="btn-last" type="button">Get last char</button></div>
+        <pre class="output" id="out-last">Result…</pre>
+        <p class="tip">Common pattern: <code>str[str.length - 1]</code> for last character.</p>
+      </section>
+    </div>
+    <script src="../../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

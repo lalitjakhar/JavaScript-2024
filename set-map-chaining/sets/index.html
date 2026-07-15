@@ -3,9 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sets in JavaScript</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Set.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../how-js-works/index.html">← How JS works</a>
+        <a href="../maps/index.html">Next: Map →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 6 · Collections</p>
+      <h1>Sets — unique items only</h1>
+      <p class="lesson-lead">
+        A Set is like an array but automatically removes duplicates. Perfect
+        for tracking unique values.
+      </p>
+
+      <div class="why">
+        <strong>Key features:</strong> iterable, no index access, no
+        duplicates, insertion order is preserved.
+      </div>
+
+      <section class="step">
+        <h2>Creating and adding to a Set</h2>
+        <div class="code-block">const numbers = new Set([1, 2, 3]);
+numbers.add(4);
+numbers.add(2); // ignored (already exists)
+console.log(numbers); // Set {1, 2, 3, 4}</div>
+        <button class="btn" id="btn-create" type="button">Run</button>
+        <pre class="output" id="out-create">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>Removing duplicates from an array</h2>
+        <div class="code-block">const myArray = [1, 2, 3, 3, 4, 4, 5, 5, 6, 7, 8, 8];
+const uniqueElements = new Set(myArray);
+console.log([...uniqueElements]); // [1,2,3,4,5,6,7,8]</div>
+        <button class="btn" id="btn-unique" type="button">Run</button>
+        <pre class="output" id="out-unique">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>Check if item exists</h2>
+        <div class="code-block">const alphabets = new Set("abcdefghi");
+console.log(alphabets.has('c')); // true
+console.log(alphabets.has('z')); // false</div>
+        <button class="btn" id="btn-has" type="button">Run</button>
+        <pre class="output" id="out-has">Output…</pre>
+        <p class="tip">
+          Use <code>.has()</code> for fast lookups, <code>.add()</code> to
+          insert, <code>.delete()</code> to remove, and <code>.clear()</code>
+          to empty the set.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

@@ -3,9 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>undefined, null, BigInt — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./UndNullBig.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../boolean/index.html">← Booleans</a>
+        <a href="../string/indexing/index.html">Next: String indexing →</a>
+      </nav>
+      <p class="lesson-brand">Basics · special types</p>
+      <h1>undefined, null, BigInt</h1>
+      <p class="lesson-lead">
+        Three special types: <code>undefined</code> (not assigned), <code>null</code> (intentionally empty), and <code>BigInt</code> (very large numbers).
+      </p>
+      <div class="why"><strong>Why learn this?</strong> You'll see these in real code. Know the difference to avoid bugs.</div>
+      <section class="step">
+        <h2>1. undefined</h2>
+        <p>A variable declared but never assigned a value is <code>undefined</code>.</p>
+        <div class="code-block">let firstName;
+console.log(firstName); // undefined</div>
+        <div class="btn-row"><button class="btn" id="btn-undefined" type="button">Run</button></div>
+        <pre class="output" id="out-undefined">Result…</pre>
+        <p class="tip"><code>undefined</code> means "no value was set."</p>
+      </section>
+      <section class="step">
+        <h2>2. null</h2>
+        <p>
+          <code>null</code> means "intentionally empty" — you set it on purpose.
+        </p>
+        <div class="code-block">let firstName = null;
+console.log(typeof firstName, firstName);
+// "object" null (typeof null is a JS quirk!)</div>
+        <div class="btn-row"><button class="btn" id="btn-null" type="button">Run</button></div>
+        <pre class="output" id="out-null">Result…</pre>
+        <p class="tip"><code>typeof null</code> returns <code>"object"</code> — a famous JavaScript bug that's now permanent.</p>
+      </section>
+      <section class="step">
+        <h2>3. BigInt</h2>
+        <p>
+          For numbers larger than <code>Number.MAX_SAFE_INTEGER</code> (9 quadrillion). Add <code>n</code> suffix.
+        </p>
+        <div class="code-block">let myNumber = BigInt(12);
+let sameMyNumber = 12n;
+
+console.log(myNumber + sameMyNumber); // 24n</div>
+        <div class="btn-row"><button class="btn" id="btn-bigint" type="button">Run</button></div>
+        <pre class="output" id="out-bigint">Result…</pre>
+        <p class="tip">BigInt is for crypto, timestamps, large IDs. Regular numbers work for most cases.</p>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

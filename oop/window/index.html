@@ -3,9 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Window Object</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Window.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../set-map-chaining/optional-chaining/index.html">← Optional chaining</a>
+        <a href="../methods/index.html">Next: Methods →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 7 · OOP Basics</p>
+      <h1>Window — the global object</h1>
+      <p class="lesson-lead">
+        In browsers, <code>window</code> is the top-level object. Global
+        variables and functions live on it. <code>this</code> at the top level
+        equals <code>window</code>.
+      </p>
+
+      <div class="why">
+        <strong>Strict mode:</strong> When you add <code>"use strict";</code>,
+        <code>this</code> inside a plain function becomes
+        <code>undefined</code> instead of <code>window</code>.
+      </div>
+
+      <section class="step">
+        <h2>Checking window and this</h2>
+        <div class="code-block">console.log("window object:", window);
+console.log("this === window?", this === window);</div>
+        <button class="btn" id="btn-window" type="button">Run</button>
+        <pre class="output" id="out-window">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>this in strict mode</h2>
+        <div class="code-block">"use strict";
+
+function myFunc() {
+  console.log("this inside function:", this);
+}
+
+myFunc(); // undefined (strict mode)</div>
+        <button class="btn" id="btn-strict" type="button">Run</button>
+        <pre class="output" id="out-strict">Output…</pre>
+        <p class="tip">
+          Always use <code>"use strict";</code> at the top of your files. It
+          prevents accidental globals and makes <code>this</code> behavior more
+          predictable.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

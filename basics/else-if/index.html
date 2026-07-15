@@ -3,9 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>else if — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./ElseIf.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../if-else/index.html">← if / else</a>
+        <a href="../nested-if-else/index.html">Next: Nested if / else →</a>
+      </nav>
+      <p class="lesson-brand">Basics · conditionals</p>
+      <h1>else if — multiple paths</h1>
+      <p class="lesson-lead">
+        When you have more than two choices, use <code>else if</code>. Check conditions one by one until one matches.
+      </p>
+      <div class="why"><strong>Why learn this?</strong> Grades (A/B/C/D/F), weather descriptions, pricing tiers — all need multiple branches.</div>
+      <section class="step">
+        <h2>1. Temperature checker</h2>
+        <p class="example-label">Example code</p>
+        <div class="code-block">let tempInDegree = 15;
+
+if (tempInDegree < 0) {
+  console.log("extremely cold outside");
+} else if (tempInDegree < 16) {
+  console.log("It is cold outside");
+} else if (tempInDegree < 25) {
+  console.log("Weather is Okay");
+} else if (tempInDegree < 35) {
+  console.log("lets go for swim");
+} else if (tempInDegree < 45) {
+  console.log("Ac");
+} else {
+  console.log("Too hot !!");
+}</div>
+        <div class="field-row">
+          <label>
+            Temperature (°C)
+            <input id="temp" type="number" value="15" min="-20" max="60" />
+          </label>
+          <button class="btn" id="btn-temp" type="button">Check weather</button>
+        </div>
+        <pre class="output" id="out-temp">Result…</pre>
+        <p class="tip">Only the <strong>first matching</strong> condition runs. Order matters!</p>
+      </section>
+      <section class="step">
+        <h2>2. Flow chart</h2>
+        <div class="code-block">if (condition1) {
+  // runs if condition1 is true
+} else if (condition2) {
+  // runs if condition1 false, condition2 true
+} else if (condition3) {
+  // runs if both above false, condition3 true
+} else {
+  // runs if all above are false
+}</div>
+        <p class="tip">You can have as many <code>else if</code> blocks as you need. The <code>else</code> at the end is optional.</p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

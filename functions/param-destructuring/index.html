@@ -3,9 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Parameter Destructuring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./ParamDestructuring.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../parameters/rest-parameters/index.html">← Rest parameters</a>
+        <a href="../callback-function/index.html">Next: Callbacks →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 4 · Functions</p>
+      <h1>Parameter Destructuring</h1>
+      <p class="lesson-lead">
+        <strong>Extract object properties</strong> directly in function parameters:
+        <code>function greet({ name, age }) { }</code> — super clean in React!
+      </p>
+
+      <div class="why">
+        <strong>Why destructure params?</strong> No need to write <code>obj.name</code>
+        repeatedly. Very common in React components: <code>({ props })</code>.
+      </div>
+
+      <section class="step">
+        <h2>1. Without destructuring</h2>
+        <div class="code-block">function printDetails(person) {
+  console.log(person.firstName);
+  console.log(person.gender);
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-no-dest" type="button">Call without</button>
+        </div>
+        <pre class="output" id="out-no-dest">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. With destructuring</h2>
+        <div class="code-block">function printDetails({ firstName, gender }) {
+  console.log(firstName);
+  console.log(gender);
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-dest" type="button">Call with destructuring</button>
+        </div>
+        <pre class="output" id="out-dest">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Custom input</h2>
+        <div class="field-row">
+          <label>
+            Name
+            <input id="name-input" type="text" value="Jakhar" />
+          </label>
+          <label>
+            Age
+            <input id="age-input" type="number" value="18" />
+          </label>
+          <label>
+            Gender
+            <input id="gender-input" type="text" value="male" />
+          </label>
+          <button class="btn" id="btn-custom" type="button">Print details</button>
+        </div>
+        <pre class="output" id="out-custom">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Default values in destructuring</h2>
+        <div class="code-block">function greet({ name = "Guest", age = 0 }) {
+  return `${name} is ${age} years old`;
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-defaults" type="button">With defaults</button>
+        </div>
+        <pre class="output" id="out-defaults">Result…</pre>
+        <p class="tip">
+          Combine destructuring + defaults for powerful, flexible functions!
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

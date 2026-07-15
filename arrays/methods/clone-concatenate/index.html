@@ -3,9 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Clone & Concatenate Arrays — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./CloneConcatenate.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../shift-unshift/index.html">← shift & unshift</a>
+        <a href="../array-using-const/index.html">Next: Arrays with const →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · methods</p>
+      <h1>Clone &amp; concatenate arrays</h1>
+      <p class="lesson-lead">
+        Create <strong>true copies</strong> or <strong>merge</strong> arrays
+        without changing the originals.
+      </p>
+
+      <div class="why">
+        <strong>Why?</strong> Avoid accidental mutations. Keep original data safe
+        while building new arrays.
+      </div>
+
+      <section class="step">
+        <h2>1. Four ways to clone an array</h2>
+        <p>All four methods create a new array in memory.</p>
+        <div class="code-block">const array1 = ["item1", "item2"];
+
+// 1. Spread operator (modern, recommended)
+const array2 = [...array1];
+
+// 2. slice() method
+const array3 = array1.slice(0);
+
+// 3. concat() with empty array
+const array4 = [].concat(array1);
+
+// 4. Manual copy (not recommended)
+const array5 = ["item1", "item2"];</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-clone" type="button">Test all methods</button>
+        </div>
+        <pre class="output" id="out-clone">Click to see results…</pre>
+        <p class="tip">
+          Best practice: use <code>[...array]</code> — it's short and clear.
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>2. Concatenate (join) two arrays</h2>
+        <p>Merge multiple arrays into one new array.</p>
+        <div class="code-block">const fruits = ["apple", "banana"];
+const veggies = ["carrot", "potato"];
+
+// Modern way: spread
+const food = [...fruits, ...veggies];
+// → ["apple", "banana", "carrot", "potato"]
+
+// Old way: concat
+const food2 = fruits.concat(veggies);</div>
+        <p>Array 1</p>
+        <div class="array-view" id="view-arr1"></div>
+        <p>Array 2</p>
+        <div class="array-view" id="view-arr2"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-concat" type="button">Concatenate</button>
+        </div>
+        <p>Result (new array)</p>
+        <div class="array-view" id="view-result"></div>
+        <pre class="output" id="out-concat">Click to merge…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Clone + add more items</h2>
+        <p>You can clone and add new items in one step.</p>
+        <div class="code-block">const original = ["item1", "item2"];
+const expanded = [...original, "item3", "item4"];
+// → ["item1", "item2", "item3", "item4"]</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-expand" type="button">Clone + expand</button>
+        </div>
+        <pre class="output" id="out-expand">Result…</pre>
+      </section>
+    </div>
+
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

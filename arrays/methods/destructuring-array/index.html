@@ -3,9 +3,107 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Array Destructuring — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Destructuring.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../array-using-const/index.html">← Arrays with const</a>
+        <a href="../../loop/for-loop/index.html">Next: for on arrays →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · destructuring</p>
+      <h1>Array destructuring</h1>
+      <p class="lesson-lead">
+        Pull out array items into separate variables in <strong>one line</strong>
+        instead of multiple assignments.
+      </p>
+
+      <div class="why">
+        <strong>Why?</strong> Less typing. Cleaner code. Especially helpful when
+        functions return arrays.
+      </div>
+
+      <section class="step">
+        <h2>1. Old way vs destructuring</h2>
+        <p>Compare the old approach with the modern shortcut.</p>
+        <div class="code-block">const myArray = ["value1", "value2", "value3"];
+
+// Old way
+const myvar1 = myArray[0];
+const myvar2 = myArray[1];
+
+// New way (destructuring)
+const [myvar1, myvar2] = myArray;</div>
+        <div class="array-view" id="view-array"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-demo" type="button">Run destructuring</button>
+        </div>
+        <pre class="output" id="out-demo">Click to see…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Skip items with commas</h2>
+        <p>Leave blank spots to skip array elements.</p>
+        <div class="code-block">const colors = ["red", "green", "blue", "yellow"];
+
+const [first, , third] = colors;
+// first = "red", third = "blue"
+// (skipped "green")</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-skip" type="button">Skip demo</button>
+        </div>
+        <pre class="output" id="out-skip">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Rest operator (...)</h2>
+        <p>Collect remaining items into a new array.</p>
+        <div class="code-block">const nums = [1, 2, 3, 4, 5, 6];
+
+const [first, second, ...rest] = nums;
+// first = 1, second = 2
+// rest = [3, 4, 5, 6]</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-rest" type="button">Rest operator demo</button>
+        </div>
+        <pre class="output" id="out-rest">Result…</pre>
+        <p class="tip">
+          Destructuring works with function returns too:
+          <code>const [x, y] = getCoordinates();</code>
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>4. Try it yourself</h2>
+        <p>Enter values, then destructure them into variables.</p>
+        <div class="field-row">
+          <label>
+            Item 0
+            <input id="item0" type="text" value="apple" />
+          </label>
+          <label>
+            Item 1
+            <input id="item1" type="text" value="banana" />
+          </label>
+          <label>
+            Item 2
+            <input id="item2" type="text" value="cherry" />
+          </label>
+          <button class="btn" id="btn-custom" type="button">Destructure</button>
+        </div>
+        <pre class="output" id="out-custom">Enter values above…</pre>
+      </section>
+    </div>
+
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

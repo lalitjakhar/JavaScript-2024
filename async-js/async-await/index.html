@@ -3,10 +3,78 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Async/Await — Async JS</title>
+    <title>async / await</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <p>Open the browser console to see async/await output.</p>
-    <script src="./AsyncAwait.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../promises/index.html">← Promises</a>
+        <a href="../fetch/index.html">Next: fetch →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 9 · Async</p>
+      <h1>async / await — cleaner way to wait for promises</h1>
+      <p class="lesson-lead">
+        Write asynchronous code that reads top to bottom like normal code.
+        <code>await</code> pauses until the promise resolves.
+      </p>
+
+      <div class="why">
+        <strong>async function:</strong> always returns a Promise.
+        <strong>await:</strong> only works inside async functions. Much cleaner
+        than chaining <code>.then()</code>.
+      </div>
+
+      <section class="step">
+        <h2>Sequential: one after another</h2>
+        <div class="code-block">async function showUserPosts() {
+  try {
+    const user = await getUser(1);
+    console.log("User:", user);
+
+    const posts = await getPosts(user.id);
+    console.log("Posts:", posts);
+  } catch (error) {
+    console.log("Error:", error.message);
+  }
+}
+
+showUserPosts();</div>
+        <button class="btn" id="btn-seq" type="button">Run</button>
+        <pre class="output" id="out-seq">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>Parallel: Promise.all</h2>
+        <p>
+          When tasks don't depend on each other, run them at the same time with
+          <code>Promise.all</code>.
+        </p>
+        <div class="code-block">async function loadTogether() {
+  const [user, posts] = await Promise.all([
+    getUser(2),
+    getPosts(2)
+  ]);
+  console.log("Loaded together:", user.name, posts.length, "posts");
+}
+
+loadTogether();</div>
+        <button class="btn" id="btn-parallel" type="button">Run</button>
+        <pre class="output" id="out-parallel">Output…</pre>
+        <p class="tip">
+          Always wrap <code>await</code> in <code>try/catch</code> to handle
+          errors. Without it, unhandled rejections crash your app.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

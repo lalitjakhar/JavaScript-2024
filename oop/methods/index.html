@@ -3,9 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Methods and this</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Method.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../window/index.html">← window object</a>
+        <a href="./this/index.html">Next: this keyword →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 7 · OOP</p>
+      <h1>Methods — functions inside objects</h1>
+      <p class="lesson-lead">
+        A method is a function stored as a property. Inside a method,
+        <code>this</code> refers to the object that called it.
+      </p>
+
+      <div class="why">
+        <strong>Reusing functions:</strong> Define a function once, then
+        reference it from multiple objects. Each call uses its own object's
+        data via <code>this</code>.
+      </div>
+
+      <section class="step">
+        <h2>Shared method across objects</h2>
+        <div class="code-block">function personInfo() {
+  return `${this.firstName} is ${this.age} years old`;
+}
+
+const person1 = {
+  firstName: "harsh",
+  age: 8,
+  about: personInfo
+};
+
+const person2 = {
+  firstName: "mohit",
+  age: 18,
+  about: personInfo
+};
+
+console.log(person1.about());
+console.log(person2.about());</div>
+        <button class="btn" id="btn-method" type="button">Run</button>
+        <pre class="output" id="out-method">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>Factory pattern with methods</h2>
+        <div class="code-block">const userMethods = {
+  about() {
+    return `${this.firstName} is ${this.age} years old.`;
+  },
+  is18() {
+    return this.age >= 18;
+  }
+};
+
+function createUser(firstName, age) {
+  const user = { firstName, age };
+  user.about = userMethods.about;
+  user.is18 = userMethods.is18;
+  return user;
+}
+
+const user1 = createUser("lalit", 9);
+const user2 = createUser("Aman", 29);</div>
+        <button class="btn" id="btn-factory" type="button">Run</button>
+        <pre class="output" id="out-factory">Output…</pre>
+        <p class="tip">
+          This pattern saves memory: all objects share the same function
+          reference instead of creating new copies.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

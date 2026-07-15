@@ -2,8 +2,16 @@
  * Shared helpers for visual lessons
  * Lesson.log → shows in .output panel + console
  * Lesson.showArray → draws indexed boxes
+ * Lesson.showObject → key/value boxes
+ * Lesson.bindRun → wire a Run button to a fn
  */
 window.Lesson = {
+  bindRun(btnId, fn) {
+    const btn = document.getElementById(btnId);
+    if (!btn) return;
+    btn.addEventListener("click", fn);
+  },
+
   log(outputId, ...values) {
     const el = document.getElementById(outputId);
     const text = values

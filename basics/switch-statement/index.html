@@ -3,9 +3,89 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>switch statement — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./SwitchStatement.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../nested-if-else/index.html">← Nested if / else</a>
+        <a href="../loop/while-loop/index.html">Next: while loop →</a>
+      </nav>
+      <p class="lesson-brand">Basics · conditionals</p>
+      <h1>switch — cleaner multiple choices</h1>
+      <p class="lesson-lead">
+        When checking one value against <strong>many exact matches</strong>, <code>switch</code> is cleaner than many <code>else if</code> statements.
+      </p>
+      <div class="why"><strong>Why learn this?</strong> Menus, day names, commands — anything with fixed options.</div>
+      <section class="step">
+        <h2>1. Day of the week</h2>
+        <p class="example-label">Example code</p>
+        <div class="code-block">let day = 2;
+
+switch (day) {
+  case 0:
+    console.log("Sunday");
+    break;
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  case 3:
+    console.log("Wednesday");
+    break;
+  case 4:
+    console.log("Thursday");
+    break;
+  case 5:
+    console.log("Friday");
+    break;
+  case 6:
+    console.log("Saturday");
+    break;
+  default:
+    console.log("Invalid day");
+    break;
+}</div>
+        <div class="field-row">
+          <label>
+            Day (0=Sunday...6=Saturday)
+            <input id="day" type="number" value="2" min="0" max="7" />
+          </label>
+          <button class="btn" id="btn-day" type="button">Get day name</button>
+        </div>
+        <pre class="output" id="out-day">Result…</pre>
+        <p class="tip"><code>break</code> stops the switch. Without it, code "falls through" to next case!</p>
+      </section>
+      <section class="step">
+        <h2>2. switch vs else-if</h2>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Use</th>
+              <th>When</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>switch</code></td>
+              <td>Exact matches (===), many cases</td>
+            </tr>
+            <tr>
+              <td><code>else if</code></td>
+              <td>Ranges, complex conditions</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="tip"><code>default</code> is like <code>else</code> — runs if no case matches.</p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

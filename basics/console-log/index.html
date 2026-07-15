@@ -3,9 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Console Log — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./consoleLog.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../index.html">← Home</a>
+        <a href="../variables/index.html">Next: Variables →</a>
+      </nav>
+      <p class="lesson-brand">Basics · console.log</p>
+      <h1>console.log — your first output</h1>
+      <p class="lesson-lead">
+        <code>console.log()</code> is like a print command. It shows values in the browser's console window — your way to see what's happening inside the code.
+      </p>
+      <div class="why"><strong>Why learn this?</strong> Debugging and testing start here. You need to see values to understand if your code works.</div>
+      <section class="step">
+        <h2>1. Print text</h2>
+        <p class="example-label">Example code</p>
+        <div class="code-block">console.log("Hey Jakhar");</div>
+        <div class="btn-row"><button class="btn" id="btn-text" type="button">Run</button></div>
+        <pre class="output" id="out-text">Result…</pre>
+        <p class="tip">Strings (text) must be wrapped in <code>"quotes"</code> or <code>'quotes'</code>.</p>
+      </section>
+      <section class="step">
+        <h2>2. Print numbers</h2>
+        <p>Numbers don't need quotes. You can print calculations directly.</p>
+        <div class="code-block">console.log(42);
+console.log(10 + 5);</div>
+        <div class="btn-row"><button class="btn" id="btn-num" type="button">Run</button></div>
+        <pre class="output" id="out-num">Result…</pre>
+      </section>
+      <section class="step">
+        <h2>3. Print multiple values</h2>
+        <p>Separate values with commas to print them all at once.</p>
+        <div class="code-block">console.log("Age:", 22, "Name:", "Jakhar");</div>
+        <div class="btn-row"><button class="btn" id="btn-multi" type="button">Run</button></div>
+        <pre class="output" id="out-multi">Result…</pre>
+        <p class="tip">Open your browser's <strong>DevTools</strong> (F12) to see the real console output.</p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

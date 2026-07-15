@@ -3,9 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Function Returning Function</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Function.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../fnc-in-fnc/index.html">← Function inside function</a>
+        <a href="../../how-js-works/index.html">Next: How JS works →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 4 · Functions</p>
+      <h1>Function Returning Function</h1>
+      <p class="lesson-lead">
+        A function can <strong>return another function</strong>.
+        Call the outer function to get the inner one, then call that too.
+      </p>
+
+      <div class="why">
+        <strong>Why return functions?</strong> Create factory functions,
+        currying, and closures — powerful patterns in advanced JS.
+      </div>
+
+      <section class="step">
+        <h2>1. Basic example</h2>
+        <div class="code-block">function myFunc() {
+  function hello() {
+    return "Hello World";
+  }
+  return hello; // Return the function itself
+}
+
+const fn = myFunc(); // Get the inner function
+fn(); // Call it</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-basic" type="button">Run</button>
+        </div>
+        <pre class="output" id="out-basic">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Call immediately</h2>
+        <p>You can call both in one line with <code>()()</code>.</p>
+        <div class="code-block">myFunc()(); // First () calls myFunc, second () calls returned function</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-immediate" type="button">Call immediately</button>
+        </div>
+        <pre class="output" id="out-immediate">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Factory function</h2>
+        <p>Create custom functions on the fly.</p>
+        <div class="code-block">function makeGreeter(greeting) {
+  return (name) => `${greeting}, ${name}!`;
+}
+
+const sayHello = makeGreeter("Hello");
+sayHello("Jakhar"); // "Hello, Jakhar!"</div>
+        <div class="field-row">
+          <label>
+            Greeting
+            <input id="greeting-input" type="text" value="Hello" />
+          </label>
+          <button class="btn" id="btn-factory" type="button">Make greeter</button>
+        </div>
+        <div class="field-row">
+          <label>
+            Name
+            <input id="name-input" type="text" value="Jakhar" />
+          </label>
+          <button class="btn" id="btn-greet" type="button">Greet</button>
+        </div>
+        <pre class="output" id="out-factory">Click "Make greeter" first…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Practical: multiplier factory</h2>
+        <div class="code-block">function makeMultiplier(factor) {
+  return (n) => n * factor;
+}
+
+const double = makeMultiplier(2);
+const triple = makeMultiplier(3);
+
+double(5); // 10
+triple(5); // 15</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-multiplier" type="button">Run multiplier</button>
+        </div>
+        <pre class="output" id="out-multiplier">Result…</pre>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

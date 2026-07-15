@@ -3,9 +3,102 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Arrow Functions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./ArrowFunctions.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../expressions/index.html">← Function expressions</a>
+        <a href="../hoisting/index.html">Next: Hoisting →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 4 · Functions</p>
+      <h1>Arrow Functions</h1>
+      <p class="lesson-lead">
+        A <strong>shorter syntax</strong> for function expressions:
+        <code>() => { }</code> — cleaner, modern, and everywhere in React.
+      </p>
+
+      <div class="why">
+        <strong>Why arrows?</strong> Less typing, implicit return for one-liners,
+        and cleaner callbacks (<code>map</code>, <code>filter</code>, etc.).
+      </div>
+
+      <section class="step">
+        <h2>1. Expression vs Arrow</h2>
+        <div class="compare">
+          <div>
+            <h3>Expression</h3>
+            <div class="code-block">const greet = function() {
+  return "Hi!";
+};</div>
+          </div>
+          <div>
+            <h3>Arrow</h3>
+            <div class="code-block">const greet = () => {
+  return "Hi!";
+};</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="step">
+        <h2>2. No parameters</h2>
+        <div class="code-block">const singHappyBirthday = () => {
+  return "Happy Birthday To You...";
+};</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-sing" type="button">Call arrow</button>
+        </div>
+        <pre class="output" id="out-sing">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. With parameters</h2>
+        <div class="code-block">const sumTwoNumbers = (a, b) => {
+  return a + b;
+};</div>
+        <div class="field-row">
+          <label>A <input id="num-a" type="number" value="4" /></label>
+          <label>B <input id="num-b" type="number" value="5" /></label>
+          <button class="btn" id="btn-sum" type="button">Sum</button>
+        </div>
+        <pre class="output" id="out-sum">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Implicit return (one-liner)</h2>
+        <p>Skip braces and <code>return</code> for single expressions.</p>
+        <div class="code-block">const isEven = (n) => n % 2 === 0;</div>
+        <div class="field-row">
+          <label>Number <input id="even-n" type="number" value="7" /></label>
+          <button class="btn" id="btn-even" type="button">Check</button>
+        </div>
+        <pre class="output" id="out-even">Result…</pre>
+        <p class="tip">
+          One parameter? You can skip parentheses: <code>n => n * 2</code>
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>5. Arrow in array methods</h2>
+        <p>Super clean with <code>map</code>, <code>filter</code>, etc.</p>
+        <div class="code-block">const nums = [1, 2, 3, 4, 5];
+const doubled = nums.map(n => n * 2);</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-map" type="button">Map with arrow</button>
+        </div>
+        <pre class="output" id="out-map">Result…</pre>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

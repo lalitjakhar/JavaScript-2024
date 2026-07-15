@@ -2,10 +2,118 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>fill() — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Fill.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../splice-method/index.html">← splice</a>
+        <a href="../../../objects/intro/index.html">Next: Objects intro →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · fill</p>
+      <h1>fill() — set all (or some) items to one value</h1>
+      <p class="lesson-lead">
+        <code>fill(value, start, end)</code> overwrites array items with the same
+        value. Great for initializing arrays.
+      </p>
+
+      <div class="why">
+        <strong>Why?</strong> Quickly create arrays full of zeros, placeholders,
+        or defaults without manual loops.
+      </div>
+
+      <section class="step">
+        <h2>1. Fill entire array</h2>
+        <p>Create an array of fixed size, then fill it.</p>
+        <p class="example-label">Code</p>
+        <div class="code-block">const myArray = new Array(10).fill(-1);
+// → [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1]</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-fill-all" type="button">Create array of 10 with -1</button>
+        </div>
+        <div class="array-view" id="view-fill-all"></div>
+        <pre class="output" id="out-fill-all">Click to create…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Fill part of an array</h2>
+        <p>
+          <code>fill(value, start, end)</code> — replaces items from
+          <code>start</code> to <code>end</code> (exclusive).
+        </p>
+        <div class="code-block">const myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// Fill indexes 2-4 (exclusive of 4) with 0
+myArray.fill(0, 2, 4);
+// → [1, 2, 0, 0, 5, 6, 7, 8, 9]</div>
+        <p>Original</p>
+        <div class="array-view" id="view-before"></div>
+        <div class="field-row">
+          <label>
+            Fill value
+            <input id="fill-value" type="text" value="0" />
+          </label>
+          <label>
+            Start index
+            <input id="fill-start" type="number" value="2" min="0" max="8" />
+          </label>
+          <label>
+            End index
+            <input id="fill-end" type="number" value="4" min="0" max="9" />
+          </label>
+          <button class="btn" id="btn-fill-range" type="button">Fill range</button>
+        </div>
+        <p>After fill</p>
+        <div class="array-view" id="view-after"></div>
+        <pre class="output" id="out-fill-range">Result…</pre>
+        <p class="tip">
+          <code>fill</code> mutates the original array. Clone first if you need
+          to preserve it.
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>3. Common use cases</h2>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Use case</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Initialize with zeros</td>
+              <td><code>new Array(5).fill(0)</code></td>
+            </tr>
+            <tr>
+              <td>Placeholder strings</td>
+              <td><code>new Array(3).fill("empty")</code></td>
+            </tr>
+            <tr>
+              <td>Reset part of array</td>
+              <td><code>arr.fill(null, 2, 5)</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-row">
+          <button class="btn" id="btn-examples" type="button">Show examples</button>
+        </div>
+        <pre class="output" id="out-examples">Result…</pre>
+      </section>
+    </div>
+
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

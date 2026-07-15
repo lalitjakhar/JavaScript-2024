@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JavaScript Learning Journey</title>
+    <meta
+      name="description"
+      content="A complete guide to JavaScript — what it is, how it works, and every core topic from variables to DOM, async, and OOP."
+    />
+    <title>JavaScript — Complete Learning Guide</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,101 +21,520 @@
 
     <header class="hero">
       <div class="hero-inner">
-        <p class="brand">JavaScript Learning Journey</p>
-        <h1>Learn JavaScript simply</h1>
-        <p class="lead">One lesson at a time — clear examples, live results.</p>
+        <p class="brand">JavaScript</p>
+        <h1>Everything you need to know</h1>
+        <p class="lead">
+          What it is, how it works, and a full path through every core topic —
+          with live visual lessons.
+        </p>
         <div class="cta-row">
-          <a class="cta" href="./basics/variables/index.html">Start learning</a>
-          <a class="cta ghost" href="./exercises/index.html">Practice</a>
+          <a class="cta" href="./basics/console-log/index.html">Start learning</a>
+          <a class="cta ghost" href="#what-is-js">What is JavaScript?</a>
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
         <div class="terminal">
           <div class="terminal-bar"><span></span><span></span><span></span></div>
-          <pre class="terminal-body"><span class="c-muted">// lesson 1</span>
-<span class="c-key">const</span> name = <span class="c-str">"Lalit"</span>;
-<span class="c-fn">console</span>.log(<span class="c-str">`Hi, ${name}`</span>);
+          <pre class="terminal-body"><span class="c-muted">// The language of the web</span>
+<span class="c-key">const</span> language = <span class="c-str">"JavaScript"</span>;
+<span class="c-fn">console</span>.log(<span class="c-str">`Learn ${language}`</span>);
 
-<span class="c-out">→ Hi, Lalit</span></pre>
+<span class="c-out">→ Learn JavaScript</span></pre>
         </div>
       </div>
     </header>
 
     <main class="home-main">
-      <section class="section">
-        <h2>Lessons</h2>
-        <p class="section-lead">Follow this order. Each link opens a visual lesson.</p>
+      <!-- What is JavaScript -->
+      <section class="section" id="what-is-js">
+        <h2>What is JavaScript?</h2>
+        <p class="section-lead">
+          JavaScript is a <strong>programming language</strong> that makes web
+          pages interactive. HTML structures a page. CSS styles it. JavaScript
+          makes it <em>do things</em> — respond to clicks, update content,
+          fetch data, and run logic.
+        </p>
 
-        <ol class="lesson-list">
+        <div class="detail-block">
+          <h3>In plain words</h3>
+          <p>
+            You write instructions. The browser (or Node.js) reads them and
+            runs them. Those instructions can store values, make decisions,
+            repeat work, talk to servers, and change what the user sees.
+          </p>
+        </div>
+
+        <div class="detail-grid">
+          <div class="detail-block">
+            <h3>Created for</h3>
+            <p>
+              Browsers — to add behavior to websites. Today it also powers
+              servers (Node.js), mobile apps, desktop apps, and tooling.
+            </p>
+          </div>
+          <div class="detail-block">
+            <h3>How it runs</h3>
+            <p>
+              Line by line (mostly). Modern JS supports modules, async work,
+              and class-based OOP. You do <strong>not</strong> compile it first
+              like C++ — the engine interprets / JIT-compiles it live.
+            </p>
+          </div>
+          <div class="detail-block">
+            <h3>Core idea</h3>
+            <p>
+              Store data → make decisions → reuse code with functions →
+              work with lists &amp; objects → update the page (DOM) → handle
+              waiting (async).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Building blocks -->
+      <section class="section" id="building-blocks">
+        <h2>The building blocks</h2>
+        <p class="section-lead">
+          Every JavaScript program is built from a small set of ideas. Master
+          these and you can read almost any JS code.
+        </p>
+
+        <ol class="concept-list">
           <li>
-            <a href="./basics/variables/index.html">
-              <span class="n">01</span>
-              <span class="t">Variables</span>
-              <span class="d">Store data in named boxes</span>
-            </a>
+            <span class="concept-num">01</span>
+            <div>
+              <h3>Values &amp; types</h3>
+              <p>
+                Numbers, strings, booleans, <code>null</code>,
+                <code>undefined</code>, BigInt, Symbol — plus objects and
+                arrays (reference types).
+              </p>
+            </div>
           </li>
           <li>
-            <a href="./basics/if-else/index.html">
-              <span class="n">02</span>
-              <span class="t">if / else</span>
-              <span class="d">Make decisions in code</span>
-            </a>
+            <span class="concept-num">02</span>
+            <div>
+              <h3>Variables</h3>
+              <p>
+                Named boxes: <code>const</code> (preferred), <code>let</code>
+                (when you must reassign), avoid <code>var</code> unless
+                learning history.
+              </p>
+            </div>
           </li>
           <li>
-            <a href="./basics/loop/for-loop/index.html">
-              <span class="n">03</span>
-              <span class="t">Loops</span>
-              <span class="d">Repeat work easily</span>
-            </a>
+            <span class="concept-num">03</span>
+            <div>
+              <h3>Operators &amp; control flow</h3>
+              <p>
+                Math and comparisons, then <code>if</code> / <code>else</code>,
+                <code>switch</code>, loops, <code>break</code> /
+                <code>continue</code>.
+              </p>
+            </div>
           </li>
           <li>
-            <a href="./arrays/intro/index.html">
-              <span class="n">04</span>
-              <span class="t">Arrays</span>
-              <span class="d">Lists of values</span>
-            </a>
+            <span class="concept-num">04</span>
+            <div>
+              <h3>Functions</h3>
+              <p>
+                Reusable recipes — declarations, expressions, arrows,
+                callbacks, scope, and hoisting.
+              </p>
+            </div>
           </li>
           <li>
-            <a href="./arrays/array-methods/map-method/index.html">
-              <span class="n">05</span>
-              <span class="t">map · filter · reduce</span>
-              <span class="d">Transform lists</span>
-            </a>
+            <span class="concept-num">05</span>
+            <div>
+              <h3>Objects &amp; arrays</h3>
+              <p>
+                Structured data. Objects hold named properties. Arrays hold
+                ordered lists. Methods like <code>map</code>,
+                <code>filter</code>, <code>reduce</code> transform them.
+              </p>
+            </div>
           </li>
           <li>
-            <a href="./objects/intro/index.html">
-              <span class="n">06</span>
-              <span class="t">Objects</span>
-              <span class="d">Named details together</span>
-            </a>
-          </li>
-          <li>
-            <a href="./functions/intro/index.html">
-              <span class="n">07</span>
-              <span class="t">Functions</span>
-              <span class="d">Reusable recipes</span>
-            </a>
-          </li>
-          <li>
-            <a href="./async-js/promises/index.html">
-              <span class="n">08</span>
-              <span class="t">Async &amp; fetch</span>
-              <span class="d">Wait for data</span>
-            </a>
-          </li>
-          <li>
-            <a href="./dom/project/index.html">
-              <span class="n">09</span>
-              <span class="t">DOM project</span>
-              <span class="d">Build a todo app</span>
-            </a>
+            <span class="concept-num">06</span>
+            <div>
+              <h3>Async &amp; the DOM</h3>
+              <p>
+                Promises and <code>async/await</code> wait for data. The DOM
+                API lets you select elements, listen to events, and build UIs.
+              </p>
+            </div>
           </li>
         </ol>
+      </section>
+
+      <!-- Quick facts -->
+      <section class="section" id="facts">
+        <h2>Key facts to remember</h2>
+        <dl class="fact-list">
+          <div>
+            <dt>Case-sensitive</dt>
+            <dd><code>Name</code> and <code>name</code> are different.</dd>
+          </div>
+          <div>
+            <dt>Semicolons</dt>
+            <dd>
+              Optional in many places (ASI), but clear statements help. Prefer
+              consistency.
+            </dd>
+          </div>
+          <div>
+            <dt>=== not ==</dt>
+            <dd>
+              Use strict equality so types are not silently converted.
+            </dd>
+          </div>
+          <div>
+            <dt>Mutable vs reassign</dt>
+            <dd>
+              <code>const</code> blocks reassignment, not mutation of objects
+              / arrays inside.
+            </dd>
+          </div>
+          <div>
+            <dt>Everything is an object? Almost</dt>
+            <dd>
+              Primitives are not objects, but they can behave like they have
+              methods via temporary wrappers.
+            </dd>
+          </div>
+          <div>
+            <dt>Single-threaded + event loop</dt>
+            <dd>
+              One main call stack. Async work is scheduled; the event loop
+              picks up callbacks when the stack is free.
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- Full curriculum -->
+      <section class="section" id="curriculum">
+        <h2>Complete learning path</h2>
+        <p class="section-lead">
+          Follow this order. Each link is a visual lesson with examples and
+          live demos. About 80 lessons covering the language end to end.
+        </p>
+
+        <!-- 01 Basics -->
+        <details class="path-item" open>
+          <summary>
+            <span class="step-num">01</span>
+            <span class="step-title">Basics</span>
+            <span class="step-hint">Variables, types, conditions, loops</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              Start here. Learn how to store data, print output, compare
+              values, and repeat work.
+            </p>
+            <div class="links">
+              <a href="./basics/console-log/index.html">console.log ★ start</a>
+              <a href="./basics/variables/index.html">variables</a>
+              <a href="./basics/variables/let-var/index.html">let &amp; var</a>
+              <a href="./basics/variables/naming-var/index.html">naming rules</a>
+              <a href="./basics/const/index.html">const</a>
+              <a href="./basics/data-types/typeof/index.html">typeof</a>
+              <a href="./basics/data-types/boolean/index.html">boolean</a>
+              <a href="./basics/data-types/undefined-null-bigint/index.html">undefined · null · bigint</a>
+              <a href="./basics/data-types/string/indexing/index.html">string indexing</a>
+              <a href="./basics/data-types/string/concetenation/index.html">concatenation</a>
+              <a href="./basics/data-types/string/tempelate/index.html">template strings</a>
+              <a href="./basics/data-types/string/methods/index.html">string methods</a>
+              <a href="./basics/operators/and-or-operator/index.html">AND / OR</a>
+              <a href="./basics/operators/ternary-operator/index.html">ternary</a>
+              <a href="./basics/if-else/index.html">if / else</a>
+              <a href="./basics/else-if/index.html">else if</a>
+              <a href="./basics/nested-if-else/index.html">nested if</a>
+              <a href="./basics/switch-statement/index.html">switch</a>
+              <a href="./basics/loop/while-loop/index.html">while</a>
+              <a href="./basics/loop/do-while/index.html">do…while</a>
+              <a href="./basics/loop/for-loop/index.html">for</a>
+              <a href="./basics/break-continue/index.html">break / continue</a>
+            </div>
+          </div>
+        </details>
+
+        <!-- 02 Arrays -->
+        <details class="path-item">
+          <summary>
+            <span class="step-num">02</span>
+            <span class="step-title">Arrays</span>
+            <span class="step-hint">Lists, mutate, map / filter / reduce</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              Ordered lists of values. Learn indexing, mutating the ends, and
+              transforming data with modern methods.
+            </p>
+            <div class="links">
+              <a href="./arrays/intro/index.html">intro</a>
+              <a href="./arrays/data-types/index.html">primitive vs reference</a>
+              <a href="./arrays/methods/push-pop/index.html">push / pop</a>
+              <a href="./arrays/methods/shift-unshift/index.html">shift / unshift</a>
+              <a href="./arrays/methods/clone-concatenate/index.html">clone &amp; concatenate</a>
+              <a href="./arrays/methods/array-using-const/index.html">arrays with const</a>
+              <a href="./arrays/methods/destructuring-array/index.html">destructuring</a>
+              <a href="./arrays/loop/for-loop/index.html">for loop on arrays</a>
+              <a href="./arrays/loop/while-loop/index.html">while on arrays</a>
+              <a href="./arrays/loop/for-of-in-loop/index.html">for…of / for…in</a>
+              <a href="./arrays/array-methods/for-each/index.html">forEach</a>
+              <a href="./arrays/array-methods/map-method/index.html">map</a>
+              <a href="./arrays/array-methods/filter/index.html">filter</a>
+              <a href="./arrays/array-methods/reduce/index.html">reduce</a>
+              <a href="./arrays/array-methods/find/index.html">find</a>
+              <a href="./arrays/array-methods/some/index.html">some</a>
+              <a href="./arrays/array-methods/every/index.html">every</a>
+              <a href="./arrays/array-methods/sort/index.html">sort</a>
+              <a href="./arrays/array-methods/splice-method/index.html">splice</a>
+              <a href="./arrays/array-methods/fill-method/index.html">fill</a>
+            </div>
+          </div>
+        </details>
+
+        <!-- 03 Objects -->
+        <details class="path-item">
+          <summary>
+            <span class="step-num">03</span>
+            <span class="step-title">Objects</span>
+            <span class="step-hint">Properties, iterate, destructure, spread</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              Group related data under keys. Used everywhere — configs, user
+              profiles, API responses.
+            </p>
+            <div class="links">
+              <a href="./objects/intro/index.html">intro</a>
+              <a href="./objects/dot&amp;bracket-notation/index.html">dot &amp; bracket</a>
+              <a href="./objects/iterate/index.html">iterate</a>
+              <a href="./objects/computed-properties/index.html">computed properties</a>
+              <a href="./objects/spread-operator/index.html">spread</a>
+              <a href="./objects/destructuring/index.html">destructuring</a>
+              <a href="./objects/nested-destructuring/index.html">nested destructuring</a>
+              <a href="./objects/object-in-array/index.html">objects in arrays</a>
+            </div>
+          </div>
+        </details>
+
+        <!-- 04 Functions -->
+        <details class="path-item">
+          <summary>
+            <span class="step-num">04</span>
+            <span class="step-title">Functions</span>
+            <span class="step-hint">Reuse, scope, callbacks, parameters</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              Bundle logic you can call again. Understand scope, hoisting, and
+              how functions take and return values (including other functions).
+            </p>
+            <div class="links">
+              <a href="./functions/intro/index.html">intro</a>
+              <a href="./functions/expressions/index.html">expressions</a>
+              <a href="./functions/arrow-functions/index.html">arrow functions</a>
+              <a href="./functions/hoisting/index.html">hoisting</a>
+              <a href="./functions/block-function-scope/index.html">block &amp; function scope</a>
+              <a href="./functions/lexical-scope/index.html">lexical scope</a>
+              <a href="./functions/parameters/default-parameters/index.html">default parameters</a>
+              <a href="./functions/parameters/rest-parameters/index.html">rest parameters</a>
+              <a href="./functions/param-destructuring/index.html">param destructuring</a>
+              <a href="./functions/callback-function/index.html">callbacks</a>
+              <a href="./functions/fnc-in-fnc/index.html">function in function</a>
+              <a href="./functions/fnc-returning-fnc/index.html">returning a function</a>
+            </div>
+          </div>
+        </details>
+
+        <!-- 05 How JS works -->
+        <details class="path-item">
+          <summary>
+            <span class="step-num">05</span>
+            <span class="step-title">How JavaScript works</span>
+            <span class="step-hint">Execution context &amp; the engine</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              Peek under the hood: how code is executed, what “hoisting”
+              really means, and why order of execution matters.
+            </p>
+            <div class="links">
+              <a href="./how-js-works/index.html">how JS works</a>
+            </div>
+          </div>
+        </details>
+
+        <!-- 06 Set Map -->
+        <details class="path-item">
+          <summary>
+            <span class="step-num">06</span>
+            <span class="step-title">Set · Map · optional chaining</span>
+            <span class="step-hint">Unique values, key-value maps, ?.</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              Built-in collections beyond arrays/objects, plus safe property
+              access with <code>?.</code>
+            </p>
+            <div class="links">
+              <a href="./set-map-chaining/sets/index.html">Set</a>
+              <a href="./set-map-chaining/maps/index.html">Map</a>
+              <a href="./set-map-chaining/optional-chaining/index.html">optional chaining</a>
+            </div>
+          </div>
+        </details>
+
+        <!-- 07 OOP -->
+        <details class="path-item">
+          <summary>
+            <span class="step-num">07</span>
+            <span class="step-title">OOP &amp; <code>this</code></span>
+            <span class="step-hint">Methods, prototypes, classes, bind</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              Objects that own behavior. Understand <code>this</code>,
+              prototypes, and how class syntax relates to the prototype chain.
+            </p>
+            <div class="links">
+              <a href="./oop/window/index.html">window object</a>
+              <a href="./oop/methods/index.html">methods</a>
+              <a href="./oop/methods/this/index.html">this</a>
+              <a href="./oop/methods/call-method/index.html">call</a>
+              <a href="./oop/methods/apply-method/index.html">apply</a>
+              <a href="./oop/methods/bind-method/index.html">bind</a>
+              <a href="./oop/arrow-functions/index.html">arrows &amp; this</a>
+              <a href="./oop/prototype/index.html">prototype</a>
+              <a href="./oop/proto-prototype-class/index.html">proto · prototype · class</a>
+              <a href="./oop/getter-setter/index.html">getters &amp; setters</a>
+            </div>
+          </div>
+        </details>
+
+        <!-- 08 Errors -->
+        <details class="path-item">
+          <summary>
+            <span class="step-num">08</span>
+            <span class="step-title">Error handling</span>
+            <span class="step-hint">try / catch / throw</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              Catch failures gracefully instead of crashing the whole program.
+            </p>
+            <div class="links">
+              <a href="./error-handling/index.html">try / catch</a>
+            </div>
+          </div>
+        </details>
+
+        <!-- 09 Async -->
+        <details class="path-item">
+          <summary>
+            <span class="step-num">09</span>
+            <span class="step-title">Async JavaScript</span>
+            <span class="step-hint">Promises, async/await, fetch</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              Wait for timers, network requests, and other delayed work without
+              freezing the page.
+            </p>
+            <div class="links">
+              <a href="./async-js/promises/index.html">promises</a>
+              <a href="./async-js/async-await/index.html">async / await</a>
+              <a href="./async-js/fetch/index.html">fetch API</a>
+            </div>
+          </div>
+        </details>
+
+        <!-- 10 DOM -->
+        <details class="path-item">
+          <summary>
+            <span class="step-num">10</span>
+            <span class="step-title">DOM &amp; the browser</span>
+            <span class="step-hint">Select, events, build a real app</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              Connect JavaScript to HTML — select nodes, listen for user
+              actions, then build a working todo + signup project.
+            </p>
+            <div class="links">
+              <a href="./dom/select/index.html">select elements</a>
+              <a href="./dom/events/index.html">events</a>
+              <a href="./dom/project/index.html">todo + signup project</a>
+            </div>
+          </div>
+        </details>
+
+        <!-- Practice -->
+        <details class="path-item">
+          <summary>
+            <span class="step-num">★</span>
+            <span class="step-title">Practice challenges</span>
+            <span class="step-hint">Solve, then check solutions</span>
+          </summary>
+          <div class="path-body">
+            <p>
+              Apply what you learned. Try each challenge before opening the
+              solution.
+            </p>
+            <div class="links">
+              <a href="./exercises/index.html">all challenges</a>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <!-- How to study -->
+      <section class="section" id="how-to-study">
+        <h2>How to study this site</h2>
+        <ol class="study-steps">
+          <li>
+            <strong>Read</strong> the “Why” on each lesson — know the purpose
+            before the syntax.
+          </li>
+          <li>
+            <strong>Run</strong> the live examples. Change inputs and watch
+            output update.
+          </li>
+          <li>
+            <strong>Type</strong> small bits yourself (or run the
+            <code>.js</code> files with Node).
+          </li>
+          <li>
+            <strong>Practice</strong> in the challenges — struggle 10 minutes
+            before peeking at a solution.
+          </li>
+        </ol>
+        <p class="run-hint">
+          Local server: <code>npm start</code> → open
+          <code>http://localhost:3000</code>
+        </p>
       </section>
     </main>
 
     <footer class="site-footer">
-      <a href="https://javascript.info/" target="_blank" rel="noreferrer">javascript.info</a>
+      <p>
+        Deeper reference:
+        <a href="https://javascript.info/" target="_blank" rel="noreferrer"
+          >javascript.info</a
+        >
+        ·
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+          target="_blank"
+          rel="noreferrer"
+          >MDN JavaScript</a
+        >
+      </p>
     </footer>
+
+    <script src="./hub.js"></script>
   </body>
 </html>

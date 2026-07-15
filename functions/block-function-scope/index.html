@@ -3,9 +3,94 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Block & Function Scope</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./BlockFunctionScope.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../hoisting/index.html">← Hoisting</a>
+        <a href="../lexical-scope/index.html">Next: Lexical scope →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 4 · Functions</p>
+      <h1>Block & Function Scope</h1>
+      <p class="lesson-lead">
+        <code>let</code> and <code>const</code> are <strong>block-scoped</strong>
+        ({ }). <code>var</code> is <strong>function-scoped</strong> — visible everywhere in the function.
+      </p>
+
+      <div class="why">
+        <strong>Why scope matters?</strong> Prevents variable collisions
+        and keeps data safe. Block scope is modern and safer.
+      </div>
+
+      <section class="step">
+        <h2>1. Block scope (let/const)</h2>
+        <p>Variables inside <code>{ }</code> don't leak out.</p>
+        <div class="code-block">{
+  let name = "Jakhar";
+  console.log(name); // "Jakhar"
+}
+console.log(name); // ❌ ReferenceError</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-block" type="button">Test block scope</button>
+        </div>
+        <pre class="output" id="out-block">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Function scope (var)</h2>
+        <p><code>var</code> ignores blocks, only respects functions.</p>
+        <div class="code-block">if (true) {
+  var name = "Jakhar";
+}
+console.log(name); // "Jakhar" — leaks out!</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-var" type="button">Test var scope</button>
+        </div>
+        <pre class="output" id="out-var">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. var inside function</h2>
+        <p><code>var</code> stays inside the function, visible to all blocks.</p>
+        <div class="code-block">function myApp() {
+  if (true) {
+    var firstName = "jakhar";
+  }
+  console.log(firstName); // Works! var is function-scoped
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-func" type="button">Run function scope</button>
+        </div>
+        <pre class="output" id="out-func">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Best practice: use let/const</h2>
+        <p>
+          <code>let</code> and <code>const</code> prevent bugs by keeping
+          variables in tight scopes. Avoid <code>var</code> in modern JS.
+        </p>
+        <div class="code-block">// Modern JS
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}
+// i is not available here ✅</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-loop" type="button">Loop with let</button>
+        </div>
+        <pre class="output" id="out-loop">Result…</pre>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

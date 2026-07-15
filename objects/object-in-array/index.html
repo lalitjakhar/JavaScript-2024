@@ -3,9 +3,101 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Objects in Arrays</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./ObjectInArray.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../nested-destructuring/index.html">← Nested destructuring</a>
+        <a href="../../functions/intro/index.html">Next: Functions intro →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 3 · Objects</p>
+      <h1>Objects in Arrays</h1>
+      <p class="lesson-lead">
+        Store a <strong>list of related objects</strong> — like users, products,
+        or posts. Each item is an object with the same keys.
+      </p>
+
+      <div class="why">
+        <strong>Why arrays of objects?</strong> Most real-world data looks like this:
+        user lists, API responses, database records.
+      </div>
+
+      <section class="step">
+        <h2>1. Create users array</h2>
+        <div class="code-block">const users = [
+  { user_id: 1, firstName: "Jakhar", gender: "male" },
+  { user_id: 2, firstName: "Lalit", gender: "male" },
+  { user_id: 3, firstName: "Kumar", gender: "male" }
+];</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-show" type="button">Show users</button>
+        </div>
+        <pre class="output" id="out-show">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Loop with for...of</h2>
+        <p>Access each user object one by one.</p>
+        <div class="code-block">for (let user of users) {
+  console.log(user.firstName, user.user_id);
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-loop" type="button">Loop users</button>
+        </div>
+        <pre class="output" id="out-loop">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Find by property</h2>
+        <p>Use <code>.find()</code> to locate one user.</p>
+        <div class="code-block">const found = users.find(u => u.user_id === 2);</div>
+        <div class="field-row">
+          <label>
+            Find user_id
+            <input id="find-id" type="number" value="2" />
+          </label>
+          <button class="btn" id="btn-find" type="button">Find</button>
+        </div>
+        <pre class="output" id="out-find">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Map to extract field</h2>
+        <p>Get an array of just one property.</p>
+        <div class="code-block">const names = users.map(u => u.firstName);
+// → ["Jakhar", "Lalit", "Kumar"]</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-map" type="button">Map names</button>
+        </div>
+        <pre class="output" id="out-map">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>5. Add a new user</h2>
+        <div class="field-row">
+          <label>
+            Name
+            <input id="add-name" type="text" value="Rahul" />
+          </label>
+          <label>
+            Gender
+            <input id="add-gender" type="text" value="male" />
+          </label>
+          <button class="btn" id="btn-add" type="button">Add user</button>
+        </div>
+        <pre class="output" id="out-add">Result…</pre>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

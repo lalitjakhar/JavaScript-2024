@@ -3,12 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fetch — Async JS</title>
+    <title>fetch API</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <h1>Fetch demo</h1>
-    <p id="status">Loading joke...</p>
-    <button id="reload">Get another joke</button>
-    <script src="./Fetch.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../async-await/index.html">← async / await</a>
+        <a href="../../dom/select/index.html">Next: Select elements →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 9 · Async</p>
+      <h1>fetch — get data from the internet</h1>
+      <p class="lesson-lead">
+        <code>fetch(url)</code> returns a Promise. Use
+        <code>await response.json()</code> to extract data. Always check
+        <code>response.ok</code>.
+      </p>
+
+      <div class="why">
+        <strong>Two-step process:</strong> 1) <code>fetch(url)</code> → get
+        Response object. 2) <code>response.json()</code> → parse JSON body.
+        Both are async.
+      </div>
+
+      <section class="step">
+        <h2>Load a joke from an API</h2>
+        <div class="code-block">async function loadJoke() {
+  try {
+    const response = await fetch(
+      "https://official-joke-api.appspot.com/random_joke"
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log(`${data.setup} — ${data.punchline}`);
+  } catch (error) {
+    console.log("Could not load joke:", error.message);
+  }
+}
+
+loadJoke();</div>
+        <button class="btn" id="btn-joke" type="button">Load Joke</button>
+        <pre class="output" id="out-joke">Click Load Joke…</pre>
+        <p class="tip">
+          Always wrap <code>fetch</code> in <code>try/catch</code>. Network
+          errors, timeouts, and bad responses can fail. Check
+          <code>response.ok</code> before parsing.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

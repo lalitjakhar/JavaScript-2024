@@ -3,9 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>AND / OR Operators — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./AndOrOperator.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../data-types/string/methods/index.html">← String methods</a>
+        <a href="../ternary-operator/index.html">Next: Ternary operator →</a>
+      </nav>
+      <p class="lesson-brand">Basics · operators</p>
+      <h1>AND / OR — combine conditions</h1>
+      <p class="lesson-lead">
+        <code>&&</code> (AND) and <code>||</code> (OR) let you check multiple things at once. Essential for complex decisions.
+      </p>
+      <div class="why"><strong>Why learn this?</strong> "User is logged in AND has permission" or "Password is short OR contains no numbers."</div>
+      <section class="step">
+        <h2>1. && (AND) — both must be true</h2>
+        <p class="example-label">Example code</p>
+        <div class="code-block">let firstName = "Jakhar";
+let age = 19;
+
+if (firstName[0] === "J" && age > 18) {
+  console.log("Name starts with J AND above 18");
+} else {
+  console.log("One condition failed");
+}</div>
+        <div class="btn-row"><button class="btn" id="btn-and" type="button">Test AND</button></div>
+        <pre class="output" id="out-and">Result…</pre>
+        <p class="tip"><code>&&</code> requires <strong>both</strong> sides to be true.</p>
+      </section>
+      <section class="step">
+        <h2>2. || (OR) — at least one must be true</h2>
+        <p>
+          If <strong>either</strong> condition is true, the whole thing is true.
+        </p>
+        <div class="code-block">let firstName = "Jakhar";
+let age = 19;
+
+if (firstName[0] === "J" || age > 18) {
+  console.log("At least one is true");
+} else {
+  console.log("Both are false");
+}</div>
+        <div class="btn-row"><button class="btn" id="btn-or" type="button">Test OR</button></div>
+        <pre class="output" id="out-or">Result…</pre>
+      </section>
+      <section class="step">
+        <h2>3. Truth table</h2>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>A</th>
+              <th>B</th>
+              <th>A && B</th>
+              <th>A || B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>true</td>
+              <td>true</td>
+              <td>true</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>true</td>
+              <td>false</td>
+              <td>false</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>false</td>
+              <td>true</td>
+              <td>false</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>false</td>
+              <td>false</td>
+              <td>false</td>
+              <td>false</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="tip">AND is stricter (needs all). OR is lenient (needs any).</p>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

@@ -3,9 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Boolean — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./boolean.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../typeof/index.html">← typeof</a>
+        <a href="../undefined-null-bigint/index.html">Next: undefined · null · BigInt →</a>
+      </nav>
+      <p class="lesson-brand">Basics · boolean</p>
+      <h1>Boolean — true or false</h1>
+      <p class="lesson-lead">
+        A boolean is the simplest type: <code>true</code> or <code>false</code>. Used for yes/no questions and comparisons.
+      </p>
+      <div class="why"><strong>Why learn this?</strong> Every decision in code comes down to true or false. <code>if</code> statements need booleans.</div>
+      <section class="step">
+        <h2>1. Comparison operators</h2>
+        <p class="example-label">Example code</p>
+        <div class="code-block">let num1 = 9;
+let num2 = 7;
+
+console.log(num1 > num2);  // true
+console.log(num1 < num2);  // false
+console.log(num1 >= num2); // true</div>
+        <div class="btn-row"><button class="btn" id="btn-compare" type="button">Run</button></div>
+        <pre class="output" id="out-compare">Result…</pre>
+        <p class="tip">Comparisons: <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></p>
+      </section>
+      <section class="step">
+        <h2>2. == vs ===</h2>
+        <p>
+          <code>==</code> checks value only (loose). <code>===</code> checks value <strong>and</strong> type (strict).
+        </p>
+        <div class="code-block">let num1 = 7;
+let num2 = "7";
+
+console.log(num1 == num2);  // true (same value)
+console.log(num1 === num2); // false (different types)</div>
+        <div class="btn-row"><button class="btn" id="btn-equals" type="button">Test equality</button></div>
+        <pre class="output" id="out-equals">Result…</pre>
+      </section>
+      <section class="step">
+        <h2>3. != vs !==</h2>
+        <p>
+          <code>!=</code> is "not equal" (loose). <code>!==</code> is "strictly not equal."
+        </p>
+        <div class="code-block">let num1 = 9;
+let num2 = 7;
+
+console.log(num1 != num2);  // true
+console.log(num1 !== num2); // true</div>
+        <div class="btn-row"><button class="btn" id="btn-notequal" type="button">Test not-equal</button></div>
+        <pre class="output" id="out-notequal">Result…</pre>
+        <p class="tip">Pro tip: Always use <code>===</code> and <code>!==</code> to avoid surprises.</p>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

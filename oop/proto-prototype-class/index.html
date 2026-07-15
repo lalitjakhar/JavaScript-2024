@@ -3,9 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>__proto__, prototype & class</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Proto.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../prototype/index.html">← Prototype</a>
+        <a href="../getter-setter/index.html">Next: Getters & setters →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 7 · OOP</p>
+      <h1>__proto__ vs prototype & class syntax</h1>
+      <p class="lesson-lead">
+        Objects have <code>__proto__</code> (link to parent). Functions have
+        <code>.prototype</code> (blueprint for instances). Classes are just
+        syntactic sugar over this system.
+      </p>
+
+      <div class="why">
+        <strong>Key idea:</strong> <code>new</code> creates an object with
+        <code>__proto__</code> pointing to the constructor's
+        <code>.prototype</code>.
+      </div>
+
+      <section class="step">
+        <h2>Factory pattern with shared methods</h2>
+        <div class="code-block">function createUser(firstName, age) {
+  const user = {};
+  user.firstName = firstName;
+  user.age = age;
+  user.about = function () {
+    return `${this.firstName} is ${this.age} years old.`;
+  };
+  user.is18 = function () {
+    return this.age >= 18;
+  };
+  return user;
+}
+
+const user1 = createUser("lalit", 18);
+console.log(user1.about());
+console.log(user1.is18());</div>
+        <button class="btn" id="btn-factory" type="button">Run</button>
+        <pre class="output" id="out-factory">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>Modern: class syntax</h2>
+        <p>
+          Classes do the same thing internally but with cleaner syntax.
+        </p>
+        <div class="code-block">class User {
+  constructor(firstName, age) {
+    this.firstName = firstName;
+    this.age = age;
+  }
+  
+  about() {
+    return `${this.firstName} is ${this.age} years old.`;
+  }
+  
+  is18() {
+    return this.age >= 18;
+  }
+}
+
+const user = new User("lalit", 18);</div>
+        <button class="btn" id="btn-class" type="button">Run</button>
+        <pre class="output" id="out-class">Output…</pre>
+        <p class="tip">
+          Prefer <code>class</code> syntax in modern code. It's clearer and
+          less error-prone than manual prototype wiring.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

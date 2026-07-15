@@ -3,9 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>find() — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Find.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../reduce/index.html">← reduce</a>
+        <a href="../some/index.html">Next: some →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · find</p>
+      <h1>find() — get the first match</h1>
+      <p class="lesson-lead">
+        <code>find</code> searches the array and returns the
+        <strong>first item</strong> where the test returns <code>true</code>.
+      </p>
+
+      <div class="why">
+        <strong>Best mental model:</strong> "Find the user with ID 3" / "Find the
+        first word that's 3 letters long."
+      </div>
+
+      <section class="step">
+        <h2>1. Find by condition</h2>
+        <p>
+          Pass a test function. <code>find</code> returns the first item that
+          passes.
+        </p>
+        <p class="example-label">Code</p>
+        <div class="code-block">const words = ["Hello", "cat", "Dog", "Lion"];
+
+const result = words.find((word) => word.length === 3);
+// → "cat" (first match)</div>
+        <div class="array-view" id="view-words"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-length" type="button">Find length = 3</button>
+        </div>
+        <pre class="output" id="out-length">Click to find…</pre>
+        <p class="tip">
+          If no match is found, <code>find</code> returns <code>undefined</code>.
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>2. Find object by property</h2>
+        <p>
+          Very common: search an array of objects for a specific ID or property.
+        </p>
+        <div class="code-block">const users = [
+  { userId: 1, firstName: "jakhar", age: "18" },
+  { userId: 2, firstName: "arpit", age: "29" },
+  { userId: 3, firstName: "sunny", age: "31" },
+  { userId: 4, firstName: "mohit", age: "61" },
+];
+
+const myUser = users.find((user) => user.userId === 3);
+// → { userId: 3, firstName: "sunny", age: "31" }</div>
+        <div class="field-row">
+          <label>
+            Find user by ID
+            <input id="user-id" type="number" value="3" min="1" max="4" />
+          </label>
+          <button class="btn" id="btn-user" type="button">Find user</button>
+        </div>
+        <pre class="output" id="out-user">Enter ID above…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. No match → undefined</h2>
+        <p>If nothing matches, you get <code>undefined</code> back.</p>
+        <div class="code-block">const result = words.find((word) => word.length === 100);
+// → undefined</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-nomatch" type="button">Search for length = 100</button>
+        </div>
+        <pre class="output" id="out-nomatch">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. find vs filter</h2>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Returns</th>
+              <th>When to use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>find</code></td>
+              <td>First match (or undefined)</td>
+              <td>Looking for one specific item</td>
+            </tr>
+            <tr>
+              <td><code>filter</code></td>
+              <td>Array of all matches</td>
+              <td>Need all matching items</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

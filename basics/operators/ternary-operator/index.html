@@ -3,9 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Ternary Operator — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./TernaryOprators.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../and-or-operator/index.html">← AND & OR</a>
+        <a href="../../if-else/index.html">Next: if / else →</a>
+      </nav>
+      <p class="lesson-brand">Basics · operators</p>
+      <h1>Ternary Operator — shortcut if/else</h1>
+      <p class="lesson-lead">
+        The ternary operator <code>? :</code> is a one-line if/else. Use it for simple assignments.
+      </p>
+      <div class="why"><strong>Why learn this?</strong> Write clean, concise code. Perfect for picking between two values.</div>
+      <section class="step">
+        <h2>1. Long way (if/else)</h2>
+        <p class="example-label">Before</p>
+        <div class="code-block">let age = 4;
+let drink;
+
+if (age >= 5) {
+  drink = "coffee";
+} else {
+  drink = "milk";
+}
+console.log(drink);</div>
+        <div class="btn-row"><button class="btn" id="btn-long" type="button">Run long way</button></div>
+        <pre class="output" id="out-long">Result…</pre>
+      </section>
+      <section class="step">
+        <h2>2. Short way (ternary)</h2>
+        <p class="example-label">After</p>
+        <div class="code-block">let age = 8;
+let drink = age >= 5 ? "coffee" : "milk";
+
+console.log(drink);</div>
+        <div class="btn-row"><button class="btn" id="btn-short" type="button">Run short way</button></div>
+        <pre class="output" id="out-short">Result…</pre>
+        <p class="tip">Format: <code>condition ? valueIfTrue : valueIfFalse</code></p>
+      </section>
+      <section class="step">
+        <h2>3. When to use</h2>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Use</th>
+              <th>When</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ternary</td>
+              <td>Simple pick between two values</td>
+            </tr>
+            <tr>
+              <td>if/else</td>
+              <td>Multiple lines, complex logic</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="tip">Ternary is great for inline assignments, but don't nest them — gets confusing!</p>
+      </section>
+    </div>
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

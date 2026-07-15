@@ -4,9 +4,83 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Error Handling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../lesson-ui/lesson.css" />
   </head>
   <body>
-    <p>Open the browser console to see try/catch examples.</p>
-    <script src="./ErrorHandling.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../oop/getter-setter/index.html">← Getters & setters</a>
+        <a href="../async-js/promises/index.html">Next: Promises →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 8 · Resilience</p>
+      <h1>Error Handling — catch problems without crashing</h1>
+      <p class="lesson-lead">
+        Wrap risky code in <code>try/catch</code>. If something breaks, your
+        app keeps running and you can respond gracefully.
+      </p>
+
+      <div class="why">
+        <strong>Why it matters:</strong> Unhandled errors crash your app.
+        Catching them lets you show user-friendly messages, retry, or log for
+        debugging.
+      </div>
+
+      <section class="step">
+        <h2>try / catch</h2>
+        <div class="code-block">try {
+  const data = JSON.parse("{ bad json }");
+  console.log(data);
+} catch (error) {
+  console.log("Caught error:", error.message);
+}</div>
+        <button class="btn" id="btn-try" type="button">Run</button>
+        <pre class="output" id="out-try">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>Throwing your own errors</h2>
+        <div class="code-block">function divide(a, b) {
+  if (b === 0) {
+    throw new Error("Cannot divide by zero");
+  }
+  return a / b;
+}
+
+try {
+  console.log(divide(10, 2)); // 5
+  console.log(divide(10, 0)); // jumps to catch
+} catch (error) {
+  console.log("Math problem:", error.message);
+}</div>
+        <button class="btn" id="btn-throw" type="button">Run</button>
+        <pre class="output" id="out-throw">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>finally — always runs</h2>
+        <div class="code-block">try {
+  console.log("Working...");
+} catch (error) {
+  console.log(error.message);
+} finally {
+  console.log("Cleanup done (finally)");
+}</div>
+        <button class="btn" id="btn-finally" type="button">Run</button>
+        <pre class="output" id="out-finally">Output…</pre>
+        <p class="tip">
+          Read the <strong>first line</strong> of an error — it usually names
+          the file + line number. Stack traces point you to the problem.
+        </p>
+      </section>
+    </div>
+    <script src="../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

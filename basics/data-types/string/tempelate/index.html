@@ -3,9 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Template Strings — Easy Lesson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./tempelate.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../concetenation/index.html">← String concatenation</a>
+        <a href="../methods/index.html">Next: String methods →</a>
+      </nav>
+      <p class="lesson-brand">Basics · strings</p>
+      <h1>Template Strings — embed variables</h1>
+      <p class="lesson-lead">
+        Use backticks <code>`</code> and <code>${}</code> to insert variables directly into text. Much cleaner than <code>+</code> concatenation.
+      </p>
+      <div class="why"><strong>Why learn this?</strong> Build readable text with variables. The modern standard for string building.</div>
+      <section class="step">
+        <h2>1. Old way vs new way</h2>
+        <p class="example-label">Old concatenation</p>
+        <div class="code-block">let firstName = "Lalit Choudhary";
+let age = 22;
+
+let aboutMe = "my name is " + firstName + " and my age is " + age;
+console.log(aboutMe);</div>
+        <p class="example-label">New template string</p>
+        <div class="code-block">let aboutMe = `my name is ${firstName} and my age is ${age}`;
+console.log(aboutMe);</div>
+        <div class="btn-row"><button class="btn" id="btn-compare" type="button">Run both</button></div>
+        <pre class="output" id="out-compare">Result…</pre>
+        <p class="tip">Use backticks <code>`</code>, not quotes. Find it under Esc key.</p>
+      </section>
+      <section class="step">
+        <h2>2. Embed expressions</h2>
+        <p>
+          You can put <strong>any expression</strong> inside <code>${}</code> — calculations, function calls, etc.
+        </p>
+        <div class="code-block">let price = 100;
+let message = `Total: $${price * 1.2} with tax`;
+console.log(message); // "Total: $120 with tax"</div>
+        <div class="btn-row"><button class="btn" id="btn-expr" type="button">Run calculation</button></div>
+        <pre class="output" id="out-expr">Result…</pre>
+      </section>
+      <section class="step">
+        <h2>3. Multi-line strings</h2>
+        <p>
+          Template strings preserve line breaks. No need for <code>\n</code>.
+        </p>
+        <div class="code-block">let message = `Line one
+Line two
+Line three`;
+console.log(message);</div>
+        <div class="btn-row"><button class="btn" id="btn-multi" type="button">Show multi-line</button></div>
+        <pre class="output" id="out-multi">Result…</pre>
+        <p class="tip">Template strings are the best practice for modern JavaScript.</p>
+      </section>
+    </div>
+    <script src="../../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

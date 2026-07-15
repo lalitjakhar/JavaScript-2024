@@ -3,9 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Hoisting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Hoisting.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../arrow-functions/index.html">← Arrow functions</a>
+        <a href="../block-function-scope/index.html">Next: Block & function scope →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 4 · Functions</p>
+      <h1>Hoisting</h1>
+      <p class="lesson-lead">
+        <strong>Call before you define?</strong> Function declarations are
+        "hoisted" to the top — but expressions and arrows are not.
+      </p>
+
+      <div class="why">
+        <strong>Why hoisting matters?</strong> Avoid errors. Know when you
+        can call functions before they're written in the code.
+      </div>
+
+      <section class="step">
+        <h2>1. Function declaration — hoisted</h2>
+        <p>You can call it before the definition!</p>
+        <div class="code-block">hello(); // Works!
+
+function hello() {
+  return "Hello world";
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-decl" type="button">Call before define</button>
+        </div>
+        <pre class="output" id="out-decl">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Function expression — NOT hoisted</h2>
+        <p>Calling before definition throws an error.</p>
+        <div class="code-block">// greet(); // ❌ ReferenceError
+
+const greet = function() {
+  return "Hello!";
+};</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-expr" type="button">Call after define</button>
+        </div>
+        <pre class="output" id="out-expr">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Arrow function — NOT hoisted</h2>
+        <div class="code-block">// welcome(); // ❌ ReferenceError
+
+const welcome = () => {
+  return "Welcome!";
+};</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-arrow" type="button">Call after define</button>
+        </div>
+        <pre class="output" id="out-arrow">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Why hoisting happens</h2>
+        <p>
+          JavaScript moves function <strong>declarations</strong> to the top
+          during compilation. Variables (<code>const</code>, <code>let</code>)
+          are not hoisted the same way.
+        </p>
+        <div class="code-block">// Behind the scenes:
+function hello() { ... } // Moved to top
+hello(); // Now safe to call</div>
+        <p class="tip">
+          Best practice: Define functions <strong>before</strong> you call them.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

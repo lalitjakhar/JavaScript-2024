@@ -3,9 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Function Inside Function</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Function.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../callback-function/index.html">← Callbacks</a>
+        <a href="../fnc-returning-fnc/index.html">Next: Returning a function →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 4 · Functions</p>
+      <h1>Function Inside Function</h1>
+      <p class="lesson-lead">
+        Define <strong>helper functions</strong> inside another function —
+        they're private and only visible to the outer function.
+      </p>
+
+      <div class="why">
+        <strong>Why nested?</strong> Organize code, hide implementation details,
+        and create closures (coming in advanced topics).
+      </div>
+
+      <section class="step">
+        <h2>1. Basic nested function</h2>
+        <div class="code-block">function app() {
+  const greet = () => {
+    return "Hello World";
+  };
+  console.log(greet());
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-basic" type="button">Run app</button>
+        </div>
+        <pre class="output" id="out-basic">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Multiple inner functions</h2>
+        <div class="code-block">function app() {
+  const addTwo = (a, b) => a + b;
+  const multiply = (a, b) => a * b;
+  
+  console.log(addTwo(2, 4));
+  console.log(multiply(2, 4));
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-multi" type="button">Run with multiple</button>
+        </div>
+        <pre class="output" id="out-multi">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Helper functions example</h2>
+        <p>Inner functions can help organize complex logic.</p>
+        <div class="code-block">function calculate(x, y) {
+  const square = n => n * n;
+  const sum = (a, b) => a + b;
+  
+  return sum(square(x), square(y));
+}</div>
+        <div class="field-row">
+          <label>X <input id="calc-x" type="number" value="3" /></label>
+          <label>Y <input id="calc-y" type="number" value="4" /></label>
+          <button class="btn" id="btn-calc" type="button">Calculate</button>
+        </div>
+        <pre class="output" id="out-calc">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Scope reminder</h2>
+        <p>
+          Inner functions are <strong>not accessible</strong> outside the outer function.
+          They're private helpers.
+        </p>
+        <div class="code-block">function app() {
+  const helper = () => "I'm private";
+  return helper();
+}
+// helper(); // ❌ ReferenceError</div>
+        <p class="tip">
+          This encapsulation is powerful — keeps global scope clean!
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

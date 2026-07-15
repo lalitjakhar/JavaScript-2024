@@ -3,9 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Prototype Property</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./ProtoType.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../arrow-functions/index.html">← Arrows & this</a>
+        <a href="../proto-prototype-class/index.html">Next: proto · prototype · class →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 7 · OOP</p>
+      <h1>Prototype — functions are objects</h1>
+      <p class="lesson-lead">
+        Every function has a <code>.prototype</code> property (an object). You
+        can add methods to it, and they'll be shared by all instances.
+      </p>
+
+      <div class="why">
+        <strong>Why?</strong> Functions in JS are objects. They have properties
+        like <code>.name</code> and <code>.prototype</code>. The
+        <code>prototype</code> object is where shared methods live.
+      </div>
+
+      <section class="step">
+        <h2>Exploring function properties</h2>
+        <div class="code-block">function hello() {
+  console.log("hello world");
+}
+
+console.log(hello.name); // "hello"
+hello.myOwnProperty = "very unique value";
+console.log(hello.myOwnProperty);
+console.log(hello.prototype); // {}</div>
+        <button class="btn" id="btn-props" type="button">Run</button>
+        <pre class="output" id="out-props">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>Adding to the prototype</h2>
+        <div class="code-block">function hello() {}
+
+hello.prototype.abc = "abc";
+hello.prototype.xyz = "xyz";
+hello.prototype.sing = function () {
+  return "lalalla";
+};
+
+console.log(hello.prototype.abc);
+console.log(hello.prototype.sing());</div>
+        <button class="btn" id="btn-proto" type="button">Run</button>
+        <pre class="output" id="out-proto">Output…</pre>
+        <p class="tip">
+          Only functions have <code>.prototype</code>. Regular objects don't.
+          Next: see how <code>__proto__</code> links objects together.
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

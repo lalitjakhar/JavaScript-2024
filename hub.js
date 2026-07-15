@@ -1,73 +1,51 @@
-const fruits = ["apple", "banana"];
+/**
+ * Homepage helpers — curriculum UX
+ */
 
-function setOutput(id, text) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.textContent = text;
-  el.classList.remove("is-flash");
-  // restart animation
-  void el.offsetWidth;
-  el.classList.add("is-flash");
+// Stagger rise animation for concept list items
+document.querySelectorAll(".concept-list li").forEach((item, i) => {
+  item.style.animationDelay = `${0.04 * i}s`;
+});
+
+// Remember which curriculum sections the visitor opened
+const STORAGE_KEY = "js-curriculum-open";
+
+function loadOpenSections() {
+  try {
+    return JSON.parse(sessionStorage.getItem(STORAGE_KEY) || "[]");
+  } catch {
+    return [];
+  }
 }
 
-const runners = {
-  variables() {
-    const name = document.getElementById("demo-name").value.trim() || "Friend";
-    setOutput(
-      "out-variables",
-      `const name = "${name}";\nconsole.log("Hello, " + name);\n\n→ Hello, ${name}!`
-    );
-  },
+function saveOpenSections(ids) {
+  try {
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
+  } catch {
+    /* ignore */
+  }
+}
 
-  conditions() {
-    const age = Number(document.getElementById("demo-age").value);
-    const allowed = age >= 18;
-    const message = allowed
-      ? "You can vote 👍"
-      : "Too young to vote — keep learning!";
-    setOutput(
-      "out-conditions",
-      `if (age >= 18) { ... }\n\nage = ${age}\n→ ${message}`
-    );
-  },
+const details = [...document.querySelectorAll("#curriculum .path-item")];
+const saved = loadOpenSections();
 
-  arrays() {
-    const fruit = document.getElementById("demo-fruit").value.trim();
-    if (fruit) fruits.push(fruit);
-    document.getElementById("demo-fruit").value = "";
-    setOutput(
-      "out-arrays",
-      `fruits = [${fruits.map((f) => `"${f}"`).join(", ")}]\nlength = ${fruits.length}\nfirst item = "${fruits[0]}"`
-    );
-  },
+details.forEach((el, i) => {
+  const id = String(i);
+  if (saved.includes(id)) el.open = true;
 
-  functions() {
-    const a = Number(document.getElementById("demo-a").value);
-    const b = Number(document.getElementById("demo-b").value);
-    const sum = a + b;
-    setOutput(
-      "out-functions",
-      `function add(a, b) {\n  return a + b;\n}\n\nadd(${a}, ${b})\n→ ${sum}`
-    );
-  },
-
-  dom() {
-    const target = document.getElementById("dom-target");
-    target.textContent = "Changed by JavaScript!";
-    target.classList.add("changed");
-    setOutput(
-      "out-dom",
-      `document.getElementById("dom-target").textContent = "Changed by JavaScript!";\n\n→ The text on the page updated.`
-    );
-  },
-};
-
-document.querySelectorAll("[data-run]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const key = btn.getAttribute("data-run");
-    if (runners[key]) runners[key]();
+  el.addEventListener("toggle", () => {
+    const openIds = details
+      .map((d, idx) => (d.open ? String(idx) : null))
+      .filter(Boolean);
+    saveOpenSections(openIds);
   });
 });
 
-// Show a friendly first result so the page feels alive
-runners.variables();
+// Soft highlight when landing on #curriculum via CTA
+if (location.hash === "#curriculum" || location.hash === "#what-is-js") {
+  const target = document.querySelector(location.hash);
+  if (target) {
+    target.classList.add("section-pulse");
+    setTimeout(() => target.classList.remove("section-pulse"), 1200);
+  }
+}

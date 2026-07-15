@@ -3,9 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Callback Functions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./CallbackFunction.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../param-destructuring/index.html">← Param destructuring</a>
+        <a href="../fnc-in-fnc/index.html">Next: Function inside function →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 4 · Functions</p>
+      <h1>Callback Functions</h1>
+      <p class="lesson-lead">
+        Pass a <strong>function as an argument</strong> to another function.
+        The receiving function "calls it back" later.
+      </p>
+
+      <div class="why">
+        <strong>Why callbacks?</strong> Handle async operations, events,
+        and custom behaviors. Core of <code>map</code>, <code>filter</code>, <code>forEach</code>.
+      </div>
+
+      <section class="step">
+        <h2>1. Basic callback</h2>
+        <div class="code-block">function greet() {
+  return "Hello!";
+}
+
+function callFunc(fn) {
+  return fn(); // Call the passed function
+}
+
+callFunc(greet);</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-basic" type="button">Run callback</button>
+        </div>
+        <pre class="output" id="out-basic">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Callback with map</h2>
+        <p>Pass a function to <code>map</code> — it calls it for each item.</p>
+        <div class="code-block">const nums = [1, 2, 3, 4];
+const doubled = nums.map(n => n * 2);</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-map" type="button">Map with callback</button>
+        </div>
+        <pre class="output" id="out-map">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Custom operation</h2>
+        <p>Pass different functions to do different things.</p>
+        <div class="code-block">function operate(a, b, operation) {
+  return operation(a, b);
+}
+operate(5, 3, (x, y) => x + y); // 8
+operate(5, 3, (x, y) => x * y); // 15</div>
+        <div class="field-row">
+          <label>A <input id="op-a" type="number" value="5" /></label>
+          <label>B <input id="op-b" type="number" value="3" /></label>
+          <label>
+            Op
+            <select id="op-select">
+              <option value="add">Add</option>
+              <option value="multiply">Multiply</option>
+              <option value="subtract">Subtract</option>
+            </select>
+          </label>
+          <button class="btn" id="btn-operate" type="button">Operate</button>
+        </div>
+        <pre class="output" id="out-operate">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Real-world: event listeners</h2>
+        <div class="code-block">button.addEventListener("click", () => {
+  console.log("Clicked!");
+});</div>
+        <p class="tip">
+          The arrow function is a <strong>callback</strong> — called when the event fires!
+        </p>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

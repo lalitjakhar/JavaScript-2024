@@ -1,10 +1,10 @@
-# JavaScript Learning Journey
+# JavaScript — Complete Learning Guide
 
-A step-by-step practice repo with **visual lessons** (explanations + live examples + Run buttons). You don’t need the console to understand the basics.
+A full JavaScript learning site: **what JavaScript is**, how it works, and **~80 visual lessons** covering basics → arrays → objects → functions → OOP → async → DOM. Each lesson has explanations, live examples, and Run buttons — no console required.
 
-**Start here:** [`index.html`](./index.html) or run `npm start` → then open **Lesson 1** ([variables](./basics/variables/index.html)).
+**Start here:** [`index.html`](./index.html) or run `npm start` — the home page explains the language, then open **Lesson 1** ([console.log](./basics/console-log/index.html)). Every lesson page uses the same format: **why it matters → explanation → example code → Run → live output → next lesson**.
 
-**Playlist:** [Learn JavaScript](https://www.youtube.com/playlist?list=PLwgFb6VsUj_l3XGLgZTf5lXq9rPAQ9COu) · **Docs:** [javascript.info](https://javascript.info/)
+**Docs:** [javascript.info](https://javascript.info/) · [MDN JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
 ---
 

@@ -3,9 +3,129 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>forEach() — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./ForEach.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../loop/for-of-in-loop/index.html">← for…of & for…in</a>
+        <a href="../filter/index.html">Next: filter →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · forEach</p>
+      <h1>forEach() — loop without the boilerplate</h1>
+      <p class="lesson-lead">
+        <code>forEach</code> runs a function for each item. Cleaner than
+        <code>for</code> loops when you don't need to break early.
+      </p>
+
+      <div class="why">
+        <strong>Why forEach?</strong> Functional style. No index variables to
+        manage. Reads like plain English.
+      </div>
+
+      <section class="step">
+        <h2>1. Basic forEach</h2>
+        <p>Pass a function. It runs once per item.</p>
+        <p class="example-label">Code</p>
+        <div class="code-block">const numbers = [2, 3, 6, 7, 5];
+
+numbers.forEach(function(number) {
+  console.log(number * 3);
+});
+
+// Arrow function style
+numbers.forEach((number) => {
+  console.log(number * 3);
+});</div>
+        <div class="array-view" id="view-nums"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-basic" type="button">Run forEach</button>
+        </div>
+        <pre class="output" id="out-basic">Click to loop…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. forEach with index</h2>
+        <p>
+          The callback gets <code>(item, index)</code> — useful when you need both.
+        </p>
+        <div class="code-block">numbers.forEach(function(number, index) {
+  console.log(`[${index}] = ${number}`);
+});</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-index" type="button">Show with index</button>
+        </div>
+        <pre class="output" id="out-index">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Real-world: loop over objects</h2>
+        <p>
+          Extract data from an array of objects — very common in web apps.
+        </p>
+        <div class="code-block">const users = [
+  { firstName: "jakhar", age: "18" },
+  { firstName: "arpit", age: "29" },
+  { firstName: "sunny", age: "31" },
+];
+
+users.forEach((user) => {
+  console.log(user.firstName);
+});</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-users" type="button">Loop users</button>
+        </div>
+        <pre class="output" id="out-users">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Limitations</h2>
+        <p>
+          <code>forEach</code> cannot <code>break</code> or <code>return</code>
+          early. Use <code>for</code> or <code>for...of</code> if you need that.
+        </p>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>forEach</th>
+              <th>for loop</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Clean syntax</td>
+              <td>✓</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Can break early</td>
+              <td></td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>Returns new array</td>
+              <td></td>
+              <td>Use map instead</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="tip">
+          <code>forEach</code> doesn't return anything. To build a new array, use
+          <code>map</code>.
+        </p>
+      </section>
+    </div>
+
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

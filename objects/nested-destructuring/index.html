@@ -3,9 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Nested Destructuring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Nested.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../destructuring/index.html">← Object destructuring</a>
+        <a href="../object-in-array/index.html">Next: Objects in arrays →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 3 · Objects</p>
+      <h1>Nested Destructuring</h1>
+      <p class="lesson-lead">
+        Destructure <strong>objects inside arrays</strong> or
+        <strong>arrays inside objects</strong> — drill down in one line.
+      </p>
+
+      <div class="why">
+        <strong>Why nested?</strong> Real APIs return deeply nested data.
+        Extract exactly what you need without temporary variables.
+      </div>
+
+      <section class="step">
+        <h2>1. Array of objects</h2>
+        <div class="code-block">const users = [
+  { user_id: 1, firstName: "Jakhar", gender: "male" },
+  { user_id: 2, firstName: "Lalit", gender: "male" },
+  { user_id: 3, firstName: "Kumar", gender: "male" }
+];</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-show" type="button">Show users</button>
+        </div>
+        <pre class="output" id="out-show">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Destructure first user</h2>
+        <div class="code-block">const [{ firstName, user_id }] = users;
+// Gets firstName & user_id from first object</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-first" type="button">Destructure first</button>
+        </div>
+        <pre class="output" id="out-first">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Skip elements</h2>
+        <p>Use commas to skip array positions.</p>
+        <div class="code-block">const [, , { gender: user3gender }] = users;
+// Skips first two, gets gender from third</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-skip" type="button">Destructure third</button>
+        </div>
+        <pre class="output" id="out-skip">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Multiple values with rename</h2>
+        <div class="code-block">const [
+  { firstName: user1Name, user_id },
+  ,
+  { gender: user3gender }
+] = users;</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-multi" type="button">Extract multiple</button>
+        </div>
+        <pre class="output" id="out-multi">Result…</pre>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

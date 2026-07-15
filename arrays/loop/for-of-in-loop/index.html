@@ -3,9 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>for...of & for...in loops — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./ForOfInLoop.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../while-loop/index.html">← while on arrays</a>
+        <a href="../../array-methods/for-each/index.html">Next: forEach →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · loops</p>
+      <h1>for...of &amp; for...in</h1>
+      <p class="lesson-lead">
+        Two modern shortcuts: <code>for...of</code> loops over
+        <strong>values</strong>, <code>for...in</code> loops over
+        <strong>indexes</strong> (or keys).
+      </p>
+
+      <div class="why">
+        <strong>Best practice:</strong> Use <code>for...of</code> for arrays.
+        Avoid <code>for...in</code> on arrays — it can cause bugs.
+      </div>
+
+      <section class="step">
+        <h2>1. for...of — loop over values directly</h2>
+        <p>Clean syntax. No index needed. Perfect for arrays.</p>
+        <p class="example-label">Code</p>
+        <div class="code-block">const fruits = ["apple", "mango", "grapes"];
+
+for (let fruit of fruits) {
+  console.log(fruit);
+}
+// → "apple", "mango", "grapes"</div>
+        <div class="array-view" id="view-fruits"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-of" type="button">Run for...of</button>
+        </div>
+        <pre class="output" id="out-of">Click to loop…</pre>
+        <p class="tip">
+          <code>for...of</code> is the modern way to loop arrays when you don't
+          need the index.
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>2. Transform with for...of</h2>
+        <p>Build a new array by processing each value.</p>
+        <div class="code-block">const fruits = ["apple", "mango", "grapes"];
+const upperFruits = [];
+
+for (let fruit of fruits) {
+  upperFruits.push(fruit.toUpperCase());
+}
+// → ["APPLE", "MANGO", "GRAPES"]</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-transform" type="button">Transform</button>
+        </div>
+        <div class="array-view" id="view-transform"></div>
+        <pre class="output" id="out-transform">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. for...in — loop over indexes (not recommended for arrays)</h2>
+        <p>
+          <code>for...in</code> gives you the <em>index</em>, not the value. It's
+          designed for objects, not arrays.
+        </p>
+        <div class="code-block">const vegetables = ["Tomato", "Potato", "Pea"];
+
+for (let index in vegetables) {
+  console.log(index);       // "0", "1", "2" (strings!)
+  console.log(vegetables[index]);  // "Tomato", "Potato", "Pea"
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-in" type="button">Run for...in</button>
+        </div>
+        <pre class="output" id="out-in">Click to see…</pre>
+        <p class="tip">
+          ⚠️ <code>for...in</code> returns indexes as <em>strings</em>, can
+          include inherited properties, and is slower. Use
+          <code>for...of</code> instead for arrays.
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>4. Quick comparison</h2>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Loop</th>
+              <th>Gives you</th>
+              <th>Best for</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>for...of</code></td>
+              <td>Values</td>
+              <td>Arrays ✓</td>
+            </tr>
+            <tr>
+              <td><code>for...in</code></td>
+              <td>Keys/indexes</td>
+              <td>Objects (avoid for arrays)</td>
+            </tr>
+            <tr>
+              <td><code>forEach</code></td>
+              <td>Value + index</td>
+              <td>Arrays (functional style)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

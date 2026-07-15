@@ -3,34 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DOM — Select elements</title>
-    <style>
-      body {
-        font-family: sans-serif;
-        max-width: 420px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-      }
-      #title {
-        color: #1f6b4a;
-      }
-      .card {
-        border: 1px solid #c5d1c8;
-        padding: 1rem;
-        margin-top: 1rem;
-      }
-    </style>
+    <title>DOM Selection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <h1 id="title">Hello DOM</h1>
-    <p class="intro">Change this page with JavaScript.</p>
-    <div class="card">
-      <p data-role="hint">Use querySelector / getElementById</p>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../../async-js/fetch/index.html">← fetch</a>
+        <a href="../events/index.html">Next: Events →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 10 · DOM</p>
+      <h1>DOM Selection — find elements on the page</h1>
+      <p class="lesson-lead">
+        Use <code>querySelector</code> and <code>querySelectorAll</code> to
+        find HTML elements by id, class, or any CSS selector. Then read or
+        change them.
+      </p>
+
+      <div class="why">
+        <strong>Common methods:</strong>
+        <code>getElementById</code>, <code>querySelector</code> (first match),
+        <code>querySelectorAll</code> (all matches). Prefer
+        <code>querySelector</code> for flexibility.
+      </div>
+
+      <section class="step">
+        <h2>Select and modify elements</h2>
+        <p id="demo-title">Original title text</p>
+        <p class="demo-intro">Original intro text</p>
+        <p data-role="hint">Original hint text</p>
+        <ul id="demo-list">
+          <li>Item one</li>
+          <li>Item two</li>
+        </ul>
+        <div class="code-block">const title = document.getElementById("demo-title");
+title.textContent = "Updated by id!";
+
+const intro = document.querySelector(".demo-intro");
+intro.textContent = "Updated by querySelector!";
+
+const hint = document.querySelector("[data-role='hint']");
+hint.style.fontWeight = "bold";
+
+const items = document.querySelectorAll("#demo-list li");
+items.forEach((item, i) => {
+  console.log(`Item ${i + 1}:`, item.textContent);
+});</div>
+        <button class="btn" id="btn-select" type="button">Run</button>
+        <pre class="output" id="out-select">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>Create and add elements</h2>
+        <div class="code-block">const newItem = document.createElement("li");
+newItem.textContent = "Item three (added by JS)";
+document.getElementById("demo-list").appendChild(newItem);</div>
+        <button class="btn" id="btn-create" type="button">Add Item</button>
+        <p class="tip">
+          <code>querySelector</code> uses CSS selectors: <code>.class</code>,
+          <code>#id</code>, <code>[attribute]</code>, <code>tag</code>, etc.
+          Very flexible!
+        </p>
+      </section>
     </div>
-    <ul id="list">
-      <li>Item one</li>
-      <li>Item two</li>
-    </ul>
-    <script src="./Select.js"></script>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

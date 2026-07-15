@@ -3,9 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Primitive vs Reference Types — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./PrimitivevsRef.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../intro/index.html">← Arrays intro</a>
+        <a href="../methods/push-pop/index.html">Next: push & pop →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · data types</p>
+      <h1>Primitive vs Reference types</h1>
+      <p class="lesson-lead">
+        Numbers copy their <strong>value</strong>. Arrays copy their
+        <strong>address</strong> in memory — two names can point to the same
+        list.
+      </p>
+
+      <div class="why">
+        <strong>Why does this matter?</strong> If you don't know about
+        references, you can accidentally change an array in two places at once.
+      </div>
+
+      <section class="step">
+        <h2>1. Primitive types — copies are independent</h2>
+        <p>Numbers, strings, booleans: when you copy them, they are truly separate.</p>
+        <p class="example-label">Code</p>
+        <div class="code-block">let num1 = 6;
+let num2 = num1;  // num2 gets its own copy
+num1++;
+// num1 = 7, num2 = 6</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-primitive" type="button">Run demo</button>
+        </div>
+        <pre class="output" id="out-primitive">Click Run…</pre>
+        <p class="tip">
+          Primitive types: number, string, boolean, undefined, null, symbol, bigint
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>2. Reference types — copies share the same data</h2>
+        <p>
+          Arrays and objects: when you copy them, both variables point to the
+          <strong>same</strong> data in memory.
+        </p>
+        <div class="code-block">let array1 = ["item1", "item2"];
+let array2 = array1;  // both point to same array
+array1.push("item3");
+// both arrays now have 3 items!</div>
+        <div class="array-view" id="view-ref"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-ref" type="button">Run reference demo</button>
+        </div>
+        <pre class="output" id="out-ref">Click to see what happens…</pre>
+        <p class="tip">
+          Reference types: arrays, objects, functions. They live in memory; variables
+          hold a "pointer" to that memory location.
+        </p>
+      </section>
+
+      <section class="step">
+        <h2>3. How to make a true copy of an array</h2>
+        <p>
+          Use <code>slice()</code> or spread <code>[...array]</code> to create
+          a new array in memory.
+        </p>
+        <div class="code-block">let array1 = ["item1", "item2"];
+let array2 = [...array1];  // new array
+array1.push("item3");
+// array1 has 3 items, array2 still has 2</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-clone" type="button">Clone demo</button>
+        </div>
+        <pre class="output" id="out-clone">Result…</pre>
+      </section>
+    </div>
+
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

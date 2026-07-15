@@ -3,9 +3,122 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>splice() — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Splice.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../sort/index.html">← sort</a>
+        <a href="../fill-method/index.html">Next: fill →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · splice</p>
+      <h1>splice() — delete, insert, or replace</h1>
+      <p class="lesson-lead">
+        <code>splice(start, deleteCount, ...items)</code> is a powerful
+        <strong>mutating</strong> method. It changes the original array.
+      </p>
+
+      <div class="why">
+        <strong>Watch out:</strong> <code>splice</code> modifies the array
+        in-place. Clone first if you need to preserve the original.
+      </div>
+
+      <section class="step">
+        <h2>1. Delete items</h2>
+        <p>Remove items starting at an index.</p>
+        <p class="example-label">Code</p>
+        <div class="code-block">const myArray = ["item1", "item2", "item3", "item4"];
+
+// Start at index 1, delete 2 items
+const deleted = myArray.splice(1, 2);
+// deleted → ["item2", "item3"]
+// myArray → ["item1", "item4"]</div>
+        <div class="array-view" id="view-delete"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-delete" type="button">Delete items</button>
+          <button class="btn ghost" id="btn-reset" type="button">Reset</button>
+        </div>
+        <pre class="output" id="out-delete">Click to delete…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Insert items (no deletion)</h2>
+        <p>Set deleteCount to 0 to insert without removing.</p>
+        <div class="code-block">const myArray = ["item1", "item2"];
+
+// Start at index 1, delete 0, insert "new"
+myArray.splice(1, 0, "inserted item");
+// → ["item1", "inserted item", "item2"]</div>
+        <div class="array-view" id="view-insert"></div>
+        <div class="field-row">
+          <label>
+            Insert at index
+            <input id="insert-index" type="number" value="1" min="0" max="5" />
+          </label>
+          <label>
+            New item
+            <input id="insert-value" type="text" value="new item" />
+          </label>
+          <button class="btn" id="btn-insert" type="button">Insert</button>
+        </div>
+        <pre class="output" id="out-insert">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Replace items (delete + insert)</h2>
+        <p>Remove some items and insert new ones in their place.</p>
+        <div class="code-block">const myArray = ["item1", "item2", "item3", "item4"];
+
+// Start at 1, delete 2, insert 2 new items
+myArray.splice(1, 2, "insertedA", "insertedB");
+// → ["item1", "insertedA", "insertedB", "item4"]</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-replace" type="button">Replace items</button>
+        </div>
+        <div class="array-view" id="view-replace"></div>
+        <pre class="output" id="out-replace">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Parameters summary</h2>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>start</code></td>
+              <td>Index to begin at</td>
+            </tr>
+            <tr>
+              <td><code>deleteCount</code></td>
+              <td>How many items to remove</td>
+            </tr>
+            <tr>
+              <td><code>...items</code></td>
+              <td>Items to insert at <code>start</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="tip">
+          <code>splice</code> returns an array of deleted items. The original
+          array is modified.
+        </p>
+      </section>
+    </div>
+
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

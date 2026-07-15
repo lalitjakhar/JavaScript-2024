@@ -3,10 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>How JavaScript Works</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Hjw01.js"></script>
-    <!-- <script src="./Hjw02.js"></script> -->
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../functions/fnc-returning-fnc/index.html">← Returning a function</a>
+        <a href="../set-map-chaining/sets/index.html">Next: Set →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 5 · Under the Hood</p>
+      <h1>How JavaScript Works</h1>
+      <p class="lesson-lead">
+        JS runs in two phases: compilation (memory setup) then execution (line
+        by line). Understanding this helps you predict hoisting, scope, and
+        closures.
+      </p>
+
+      <div class="why">
+        <strong>Why it matters:</strong> Before any code runs, JS scans for
+        variables and functions, giving them memory. That's why you can call
+        functions before they're defined.
+      </div>
+
+      <section class="step">
+        <h2>Global execution context</h2>
+        <p>
+          When your script starts, JS creates a <strong>global execution
+          context</strong> with the <code>window</code> object and
+          <code>this</code>.
+        </p>
+        <div class="code-block">console.log(this);
+console.log(window);
+console.log(this === window); // true (in browsers)</div>
+        <button class="btn" id="btn-global" type="button">Run</button>
+        <pre class="output" id="out-global">Output…</pre>
+      </section>
+
+      <section class="step">
+        <h2>Hoisting in action</h2>
+        <p>
+          Variables declared with <code>var</code> are hoisted (moved to top)
+          and initialized to <code>undefined</code>. Functions are fully
+          hoisted.
+        </p>
+        <div class="code-block">console.log(firstName); // undefined
+var firstName = "Lalit Jakhar";
+console.log(firstName); // "Lalit Jakhar"
+
+console.log(myFunction); // [Function]
+function myFunction() {
+  return "this is my function";
+}</div>
+        <button class="btn" id="btn-hoist" type="button">Run</button>
+        <pre class="output" id="out-hoist">Output…</pre>
+        <p class="tip">
+          <code>let</code> and <code>const</code> are hoisted but not
+          initialized — accessing them before declaration throws a
+          ReferenceError. Prefer <code>const</code> and <code>let</code> over
+          <code>var</code>.
+        </p>
+      </section>
+    </div>
+    <script src="../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

@@ -3,9 +3,106 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Lexical Scope</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./LexicalScope.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../block-function-scope/index.html">← Block & function scope</a>
+        <a href="../parameters/default-parameters/index.html">Next: Default parameters →</a>
+      </nav>
+
+      <p class="lesson-brand">Step 4 · Functions</p>
+      <h1>Lexical Scope</h1>
+      <p class="lesson-lead">
+        A function can <strong>see variables</strong> from its parent scope
+        — determined by <strong>where it's written</strong>, not where it's called.
+      </p>
+
+      <div class="why">
+        <strong>Why lexical?</strong> Inner functions inherit outer variables —
+        the foundation of closures and private data.
+      </div>
+
+      <section class="step">
+        <h2>1. Inner function sees outer</h2>
+        <div class="code-block">function outer() {
+  const message = "Hello";
+  function inner() {
+    console.log(message); // Can see message!
+  }
+  inner();
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-inner" type="button">Run inner function</button>
+        </div>
+        <pre class="output" id="out-inner">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Nearest variable wins</h2>
+        <p>If inner and outer both have the same variable, inner wins.</p>
+        <div class="code-block">function myApp() {
+  const myVar = "outer";
+  function myFunc() {
+    const myVar = "inner";
+    console.log(myVar); // "inner"
+  }
+  myFunc();
+  console.log(myVar); // "outer"
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-nearest" type="button">Show nearest</button>
+        </div>
+        <pre class="output" id="out-nearest">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. Chain of scopes</h2>
+        <p>Functions look up through parent scopes until they find the variable.</p>
+        <div class="code-block">const global = "I'm global";
+function outer() {
+  const outerVar = "I'm outer";
+  function inner() {
+    console.log(global);   // from global
+    console.log(outerVar); // from outer
+  }
+  inner();
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-chain" type="button">Show scope chain</button>
+        </div>
+        <pre class="output" id="out-chain">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>4. Scope is by position, not call</h2>
+        <p>
+          Where the function is <strong>written</strong> determines its scope,
+          not where it's called.
+        </p>
+        <div class="code-block">const x = 10;
+function show() {
+  console.log(x); // Sees x = 10
+}
+function caller() {
+  const x = 20;
+  show(); // Still logs 10, not 20!
+}</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-position" type="button">Test position</button>
+        </div>
+        <pre class="output" id="out-position">Result…</pre>
+      </section>
+    </div>
+    <script src="../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

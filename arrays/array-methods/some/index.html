@@ -3,9 +3,102 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>some() — Explained</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../lesson-ui/lesson.css" />
   </head>
   <body>
-    <script src="./Some.js"></script>
+    <div class="lesson">
+      <nav class="lesson-nav">
+        <a href="../find/index.html">← find</a>
+        <a href="../every/index.html">Next: every →</a>
+      </nav>
+
+      <p class="lesson-brand">Arrays · some</p>
+      <h1>some() — test if at least one matches</h1>
+      <p class="lesson-lead">
+        <code>some</code> returns <code>true</code> if <strong>any</strong> item
+        passes the test. Otherwise <code>false</code>.
+      </p>
+
+      <div class="why">
+        <strong>Best mental model:</strong> "Is there at least one even number?" /
+        "Does any product cost less than $100?"
+      </div>
+
+      <section class="step">
+        <h2>1. Basic example: even numbers</h2>
+        <p>Check if the array contains at least one even number.</p>
+        <p class="example-label">Code</p>
+        <div class="code-block">const numbers = [3, 5, 8, 9];
+
+const hasEven = numbers.some((number) => number % 2 === 0);
+// → true (because 8 is even)</div>
+        <div class="array-view" id="view-nums"></div>
+        <div class="btn-row">
+          <button class="btn" id="btn-even" type="button">Check for even</button>
+        </div>
+        <pre class="output" id="out-even">Click to test…</pre>
+      </section>
+
+      <section class="step">
+        <h2>2. Real-world: shopping cart check</h2>
+        <p>
+          "Is there anything in my cart under $100,000?" Useful for quick
+          validation.
+        </p>
+        <div class="code-block">const userCart = [
+  { productId: 1, productName: "mobile", price: 33000 },
+  { productId: 2, productName: "laptop", price: 122000 },
+  { productId: 3, productName: "tv", price: 18000 },
+  { productId: 4, productName: "refrigerator", price: 12000 },
+];
+
+const affordable = userCart.some((item) => item.price < 100000);
+// → true</div>
+        <div class="btn-row">
+          <button class="btn" id="btn-cart" type="button">Check cart prices</button>
+        </div>
+        <pre class="output" id="out-cart">Result…</pre>
+      </section>
+
+      <section class="step">
+        <h2>3. some vs every</h2>
+        <p>Two sides of the same coin.</p>
+        <table class="mini-table">
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Returns true if…</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>some</code></td>
+              <td>At least one item passes</td>
+            </tr>
+            <tr>
+              <td><code>every</code></td>
+              <td>All items pass</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btn-row">
+          <button class="btn" id="btn-compare" type="button">Compare both</button>
+        </div>
+        <pre class="output" id="out-compare">Result…</pre>
+        <p class="tip">
+          <code>some</code> stops checking as soon as it finds a match (efficient).
+        </p>
+      </section>
+    </div>
+
+    <script src="../../../lesson-ui/lesson.js"></script>
+    <script src="./lesson.js"></script>
   </body>
 </html>

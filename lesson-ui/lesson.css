@@ -43,6 +43,8 @@ body {
   justify-content: space-between;
   margin-bottom: 1.5rem;
   font-size: 0.9rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
 }
 
 .lesson-nav a {
