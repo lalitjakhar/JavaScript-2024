@@ -12,6 +12,17 @@ window.Lesson = {
     btn.addEventListener("click", fn);
   },
 
+  /** Wrap wide tables so they scroll on small screens */
+  enhanceTables() {
+    document.querySelectorAll(".mini-table").forEach((table) => {
+      if (table.parentElement?.classList.contains("mini-table-wrap")) return;
+      const wrap = document.createElement("div");
+      wrap.className = "mini-table-wrap";
+      table.parentNode.insertBefore(wrap, table);
+      wrap.appendChild(table);
+    });
+  },
+
   log(outputId, ...values) {
     const el = document.getElementById(outputId);
     const text = values
@@ -71,3 +82,7 @@ window.Lesson = {
     });
   },
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  Lesson.enhanceTables();
+});

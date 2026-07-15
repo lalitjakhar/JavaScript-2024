@@ -154,4 +154,73 @@ a {
   display: block;
   margin: auto;
   margin-top: 1rem;
+  min-height: 44px;
+  border: none;
+  cursor: pointer;
+}
+
+.headline h2 {
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    min-height: auto;
+  }
+
+  .nav-items {
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .header {
+    min-height: 50vh;
+  }
+
+  .form-todo {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-todo input[type="text"],
+  .form-todo input[type="submit"] {
+    width: 100%;
+  }
+
+  .todo-list li {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+    font-size: 1rem;
+  }
+
+  .todo-btn {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .section-todo,
+  .section-signup {
+    margin-top: 2.5rem;
+  }
+
+  .signup-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    width: 94%;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
 }
